@@ -5,10 +5,10 @@ import { Footer } from "~/components/footer";
 export function Index(){
     return(
         <> 
-            <div className="">
+            <div>
                 <Header/>
+                <Footer/>
             </div>
-            
         </>
     )
 }

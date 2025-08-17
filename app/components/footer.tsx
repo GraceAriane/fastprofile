@@ -1,8 +1,8 @@
 export function Footer(){
     return(
         <>
-            <footer>
-                <p>Footer</p>
+            <footer className="max-w-11/12 w-11/12">
+               
             </footer>
         </>
     )
