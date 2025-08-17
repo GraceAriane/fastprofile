@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { Separator } from "./ui/separator"
 import { Button } from "./ui/button"
 
@@ -11,15 +12,28 @@ export function Footer(){
     return(
         <footer className="">
             <div className="max-w-11/12 w-11/12 m-auto p-2.5 flex flex-col gap-7">
-                <Logo width="self-center"/>
-                <div className="flex flex-col gap-5">
-                    <div className="flex flex-col items-center gap-3.5">
-                        <h2 className="text-[20px]">À Propos</h2>
-                        <p className="text-center">
-                            FastProfile est une plateforme moderne qui vous permet de créer
-                            un profil unique, simple et professionnel en quelques minutes
-                        </p>
+                
+                <div className="flex flex-col items-center gap-6 md:justify-between max-w-[1000px] lg:flex-row">
+                    <Logo width="md:self-start"/>
+                    <div className="flex flex-col gap-5 max-w-[520px] md:flex-row md:self-start">
+                        <div className="flex flex-col items-center gap-3.5 md:content-baseline md:items-start">
+                            <h2 className="text-[23px] font-medium">À Propos</h2>
+                            <p className="text-center md:text-left">
+                                FastProfile est une plateforme moderne qui vous permet de créer
+                                un profil unique, simple et professionnel en quelques minutes
+                            </p>
+                        </div>
+                        <div className="flex flex-col items-center gap-3.5 md:content-baseline md:items-start">
+                            <h2 className="text-[23px] font-medium">Contact</h2>
+                            <div className="flex items-center gap-1">
+                                <FontAwesomeIcon icon={faEnvelope} />
+                                <a href="">support@fastProfile.com</a>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <div className="flex flex-col gap-2.5 items-center">
                     <Separator className=""></Separator>
                     <div>
                         <ul className="flex justify-center gap-2">
@@ -28,8 +42,9 @@ export function Footer(){
                             <li><Button variant="ghost"><a href=""><FontAwesomeIcon icon={faTiktok} className="text-[21px]"/></a></Button></li>
                         </ul>
                     </div>
-                    <p className="self-center">© 2025 FastProfile, Tous droits réservés.</p>
+                    <p>© 2025 FastProfile, Tous droits réservés.</p>
                 </div>
+                
             </div>
         </footer>
     )
