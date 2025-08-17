@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBoltLightning } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { MenuBar } from "./menuBar";
 
 export function Header() {
   return (
@@ -19,8 +20,9 @@ export function Header() {
             <div className="flex items-center gap-3">
                 <Button  variant="ghost" className="font-medium text-[#FACC15]"><a href="">Login</a></Button>
                 <Button className="font-normal bg-[#1E3A8A] text-white"><a href="">Sign up free</a></Button>
-                <FontAwesomeIcon icon={faBars} className="text-[#6B7280]" />
+                <MenuBar></MenuBar>
             </div>
+            
         </div>
     </header>
   );
