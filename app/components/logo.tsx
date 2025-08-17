@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBoltLightning } from '@fortawesome/free-solid-svg-icons'
 
-type widthProps = {
-    width?: string
+type cssProps = {
+    css?: string
+    visibility?: string
 }
-export function Logo({width}: widthProps){
+export function Logo({css,visibility}: cssProps){
     return(
-        <div className={`flex items-center gap-0 ${width}`}>
+        <div className={`flex items-center gap-0 ${css}`}>
             <FontAwesomeIcon icon={faBoltLightning} />
-            <h1 className="font-semibold text-2xl">FastProfile</h1>
+            <h1 className={`font-semibold text-2xl ${visibility}`}>FastProfile</h1>
         </div>
     )
 }

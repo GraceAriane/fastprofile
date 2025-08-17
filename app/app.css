@@ -11,7 +11,7 @@
 html,
 body {
   @apply bg-[#F9FAFB] dark:bg-gray-950;
-  @apply text-[#111827] text-[17px];
+  @apply text-[#111827] text-[clamp(1rem,2vw,2rem)];
 
 
   @media (prefers-color-scheme: dark) {

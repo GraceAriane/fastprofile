@@ -3,10 +3,13 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from "react"
 
-export function MenuBar(){
+type cssProps = {
+    css?: string
+}
+export function MenuBar({css}: cssProps){
     const [open, setOpen] = useState(false)
     return (
-        <div className="md:hidden">
+        <div className={`md:hidden ${css}`}>
             <Button variant="ghost" className="cursor-pointer relative" onClick={()=>setOpen(!open)}><FontAwesomeIcon icon={faBars} className="text-[#6B7280]"/></Button>
             <div className={`absolute right-0 mt-2 w-60 mr-8 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ${open ? "opacity-100" : "opacity-0" }`}>
                 <ul className="flex h-22 flex-col justify-around">
