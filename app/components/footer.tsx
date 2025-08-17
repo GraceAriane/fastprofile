@@ -25,7 +25,7 @@ export function Footer(){
                         </div>
                         <div className="flex flex-col items-center gap-3.5 md:content-baseline md:items-start">
                             <h2 className="text-[23px] font-medium">Contact</h2>
-                            <div className="flex items-center gap-1">
+                            <div className="flex items-center gap-1 hover:text-gray-500 hover:transition-all">
                                 <FontAwesomeIcon icon={faEnvelope} />
                                 <a href="">support@fastProfile.com</a>
                             </div>
@@ -37,9 +37,9 @@ export function Footer(){
                     <Separator className=""></Separator>
                     <div>
                         <ul className="flex justify-center gap-2">
-                            <li><Button variant="ghost"><a href=""><FontAwesomeIcon icon={faInstagram} className="text-[21px]"/></a></Button></li>
-                            <li><Button variant="ghost"><a href=""><FontAwesomeIcon icon={faFacebook} className="text-[21px]"/></a></Button></li>
-                            <li><Button variant="ghost"><a href=""><FontAwesomeIcon icon={faTiktok} className="text-[21px]"/></a></Button></li>
+                            <li><a href=""><FontAwesomeIcon icon={faInstagram} className="text-[23px] hover:text-gray-500 hover:transition-all"/></a></li>
+                            <li><a href=""><FontAwesomeIcon icon={faFacebook} className="text-[23px] hover:text-gray-500 hover:transition-all"/></a></li>
+                            <li><a href=""><FontAwesomeIcon icon={faTiktok} className="text-[23px] hover:text-gray-500 hover:transition-all"/></a></li>
                         </ul>
                     </div>
                     <p>© 2025 FastProfile, Tous droits réservés.</p>
