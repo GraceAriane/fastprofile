@@ -2,16 +2,17 @@ import { div, h1 } from "motion/react-client";
 import { Header } from "~/components/header";
 import { Footer } from "~/components/footer";
 import { Hero } from "./hero";
+import { Error } from "./error";
 
 export function Index(){
     return(
         <> 
-            <div className="">
-                <div className="bg-linear-to-l from-[] to-[]">
+            <div>
+                <div className="">
                     <div className="mt-4">
                         <Header/>
                     </div>
-                    <Hero></Hero>
+                    <Error></Error>
                 </div>
                 <Footer/>
             </div>
