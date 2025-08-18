@@ -9,6 +9,36 @@
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+@theme{
+  --animate-floatXg: floatXg 4s ease-in-out infinite;
+  --animate-floatXd: floatXd 4s ease-in-out infinite;
+  --animate-floatY: floatY 4.5s ease-in-out infinite;
+  @keyframes floatXg{
+    0%, 100%{
+      transform: translate(0);
+    }
+    50%{
+      transform: translate(-5px, -10px);
+    }
+  }
+    @keyframes floatXd{
+    0%, 100%{
+      transform: translate(0,0);
+    }
+    50%{
+      transform: translate(5px,-10px);
+    }
+  }
+  @keyframes floatY{
+    0%, 100%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.1);
+    }
+  }
+}
+
 
 html,
 body {
