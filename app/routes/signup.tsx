@@ -1,7 +1,7 @@
 
 import { SignupPage } from "~/pages/signupPage"
 
-export function Signup() {
+export default function Signup() {
   return (
     <SignupPage/>
   )

@@ -11,7 +11,7 @@ export function LoginForm({
   return (
     <form className={cn("flex flex-col gap-6", className)} {...props}>
       <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-[28px] font-bold">Bon retour parmi nous !</h1>
+        <h1 className="text-[27px] font-black">Bon retour parmi nous !</h1>
         <p className="text-neutral-500 text-sm text-balance dark:text-neutral-400">
           Connectez vous à votre FastProfile
         </p>
