@@ -6,11 +6,14 @@ import { Hero } from "./hero";
 export function Index(){
     return(
         <> 
-            <div className="max-w-11/12 w-11/12 m-auto">
-                <Header/>
-                <main>
+            <div className="">
+                <div className="bg-linear-to-l from-[] to-[]">
+                    <div className="mt-4">
+                        <Header/>
+                    </div>
                     <Hero></Hero>
-                </main>
+                </div>
+
                 <Footer/>
             </div>
         </>

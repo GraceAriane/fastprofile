@@ -12,7 +12,7 @@
 @theme{
   --animate-floatXg: floatXg 4s ease-in-out infinite;
   --animate-floatXd: floatXd 4s ease-in-out infinite;
-  --animate-floatY: floatY 4.5s ease-in-out infinite;
+  --animate-floatY: floatY 4s ease-in-out infinite;
   @keyframes floatXg{
     0%, 100%{
       transform: translate(0);

@@ -5,7 +5,7 @@ import { Logo } from "./logo";
 export function Header() {
   return (
     <header>
-      <div className="bg-white m-auto flex flex-row items-center justify-between h-18 p-4 mt-4 rounded-2xl">
+      <div className="max-w-11/12 w-11/12 bg-white m-auto flex flex-row items-center justify-between h-18 p-4 rounded-2xl">
         <a href="">
           <Logo visibility="hidden md:flex" />
         </a>

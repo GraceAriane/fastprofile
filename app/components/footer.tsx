@@ -8,7 +8,7 @@ import { Separator } from "./ui/separator";
 
 export function Footer() {
   return (
-    <footer className="">
+    <footer className="max-w-11/12 w-11/12 m-auto">
       <div className="p-2.5 flex flex-col gap-7 2xl:m-w-[90%]">
         <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between max-w-[1100px] 2xl:max-w-[80%]">
           <Logo css="md:self-start" />
