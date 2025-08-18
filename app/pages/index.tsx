@@ -4,7 +4,7 @@ import { Hero } from "./hero";
 import { Error } from "./error";
 import { Fonction } from "~/components/fonction";
 import { faChartLine, faUsers,faChartSimple } from "@fortawesome/free-solid-svg-icons";
-
+import { Faq } from "~/components/faq";
 
 
 export function Index(){
@@ -18,10 +18,13 @@ export function Index(){
                     <Hero></Hero>
                 </div>
                 <main>
-                    <section className="h-[100vh] flex flex-col mt-10">
+                    <section className="flex flex-col mt-10 gap-5">
                         <Fonction iconProp={faChartLine} titre="5min" sTitre="De temps de création"></Fonction>
                         <Fonction iconProp={faChartSimple} titre="10K+" sTitre="Utilisateurs par mois"></Fonction>
                         <Fonction iconProp={faChartSimple} titre="99%" sTitre="Temps de disponibilité"></Fonction>
+                    </section>
+                    <section>
+                        <Faq></Faq>
                     </section>
                 </main>
                 <Footer/>
