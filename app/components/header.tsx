@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { MenuBar } from "./menuBar";
 import { Logo } from "./logo";
+import { NavLink } from "react-router";
 
 export function Header() {
   return (
@@ -18,15 +19,17 @@ export function Header() {
           </li>
         </ul>
         <div className="flex items-center gap-3">
-          <Button
-            variant="link"
-            className="font-medium text-[#FACC15] hover:transition-all"
-          >
-            <a href="">Login</a>
-          </Button>
-          <Button className="font-normal bg-[#1E3A8A] text-white hover:bg-[#2547A7] hover:transition-all">
-            <a href="">Sign up free</a>
-          </Button>
+          <NavLink to="login">
+              <Button
+                variant="link"
+                className="font-medium text-[#FACC15] hover:transition-all"
+              >
+                <a href="">Login</a>
+              </Button>
+          </NavLink>
+            <Button className="font-normal bg-[#1E3A8A] text-white hover:bg-[#2547A7] hover:transition-all">
+              <a href="">Sign up free</a>
+            </Button>
           <MenuBar />
         </div>
       </div>

@@ -13,7 +13,6 @@ export function Index(){
                     </div>
                     <Hero></Hero>
                 </div>
-
                 <Footer/>
             </div>
         </>
