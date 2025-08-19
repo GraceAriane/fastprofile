@@ -7,6 +7,10 @@
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+@theme {
+  --breakpoint-md: 46rem;
+}
 @theme{
   --animate-floatXg: floatXg 4s ease-in-out infinite;
   --animate-floatXd: floatXd 4s ease-in-out infinite;

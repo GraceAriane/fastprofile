@@ -6,7 +6,7 @@ import mary from "../assets/images/marry_portman.svg"
 
 export function Hero(){
     return(
-       <div className="max-w-11/12 w-11/12 m-auto flex flex-col items-center gap-[50px] md:flex-row md:gap-[30px] lg:mt-18">
+       <div className="min-h-screen max-w-11/12 w-11/12 m-auto flex flex-col justify-center items-center gap-[50px] md:flex-row md:gap-[30px] ">
             <div className="flex flex-col gap-3">
                 <div className="flex flex-col gap-5 self-center">
                     <h1 className="text-[9.6vw] mt-24 leading-[107%] text-[#1E3A8A] font-black md:text-[6vw] lg:text-[4vw] ">Crée ton profil <span className="text-[#FACC15]">en ligne</span>  en un clin d’œil.</h1>
