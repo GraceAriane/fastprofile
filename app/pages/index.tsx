@@ -20,10 +20,16 @@ export function Index(){
                 <main>
                     <section className="flex flex-col mt-10 gap-5">
                         <Fonction iconProp={faChartLine} titre="5min" sTitre="De temps de création"></Fonction>
-                        <Fonction iconProp={faChartSimple} titre="10K+" sTitre="Utilisateurs par mois"></Fonction>
+                        <Fonction iconProp={faUsers} titre="10K+" sTitre="Utilisateurs par mois"></Fonction>
                         <Fonction iconProp={faChartSimple} titre="99%" sTitre="Temps de disponibilité"></Fonction>
                     </section>
                     <section>
+
+                    </section>
+                    <section>
+
+                    </section>
+                    <section className="bg-[#153BA3] text-[#F0F0F0] ">
                         <Faq></Faq>
                     </section>
                 </main>
