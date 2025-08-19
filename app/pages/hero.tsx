@@ -16,8 +16,8 @@ export function Hero(){
                     </p>
                 </div>
                 <div className="flex flex-col gap-4 max-w-[400px]">
-                    <input placeholder="fastProfile.com/" className="h-16 placeholder:font-semibold border-2 border-solid border-[#3B559C] outline-none rounded-2xl px-3 focus:shadow-md focus:shadow-[#4867BE] focus:transition-shadow"/>
-                    <Button className="w-[200px] py-6 text-[4vw] bg-[#8F58E8] text-white hover:bg-[#8451D6] hover:transition-all md:text-[2.5vw] lg:text-[1.2rem]">Créer</Button>
+                    <input placeholder="fastProfile.com/" className="h-16 bg-[#fff] placeholder:font-semibold placeholder:text-[#969696] border-2 border-solid border-[#3B57A3] outline-none rounded-2xl px-3 focus:shadow-md focus:shadow-[#4867BE] focus:transition-shadow"/>
+                    <Button className="w-[200px] py-6 text-[4vw] bg-[#501FA1] text-white hover:bg-[#6024BF] hover:transition-all md:text-[2.5vw] lg:text-[1.2rem]">Créer</Button>
                 </div>
             </div>
             <div className="flex p-2">

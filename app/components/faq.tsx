@@ -7,7 +7,7 @@ import { Accordion,
 export function Faq(){
     return(
         <div className="max-w-11/12 w-11/12 mx-auto my-3.5 py-10 flex flex-col gap-[3vw] lg:gap-[2.5vw]">
-            <h2 className="scroll-m-20 pb-2 text-[7vw] font-semibold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
+            <h2 className="scroll-m-20 pb-2 text-[6.5vw] font-semibold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
                 Avez vous des questions ?
             </h2>
             <div className="flex flex-col gap-[2vw] lg:gap-[1vw] lg:w-[65%] lg:m-auto">
