@@ -16,13 +16,20 @@ export function Index(){
                         <Header/>
                     </div>
                     <Hero></Hero>
+                    
                 </div>
                 <main>
-                    <section>
-                        <h2 className="scroll-m-20 pb-2 text-[6.5vw] font-semibold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
-                            Tout ce dont tu as besoin, en un seul lien
-                        </h2>
-                        <div>
+                    <section className="py-24 md:py-32 lg:py-40">
+                        <div className="w-[90%] mx-auto mb-6">
+                            <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
+                                Tout ce dont tu as besoin, en un seul lien
+                            </h2>
+                            <p className="text-[#6B7280] text-lg md:text-xl my-4 text-center">
+                                Rassemble tes liens, projets et réseaux sociaux sur une page unique et élégante.
+                            </p>
+                        </div>
+
+                        <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8">
                             <Fonction iconProp={faChartLine} titre="Un seul lien pour tout" sTitre="Regroupe tes réseaux sociaux, projets et contacts au même endroit."></Fonction>
                             <Fonction iconProp={faUsers} titre="Rapide à configurer" sTitre="Crée ton profil en quelques minutes, sans aucune compétence technique."></Fonction>
                             <Fonction iconProp={faChartSimple} titre="Design moderne" sTitre="Choisis parmi des thèmes élégants qui reflètent ta personnalité."></Fonction> 

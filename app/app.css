@@ -9,7 +9,7 @@
 }
 
 @theme {
-  --breakpoint-md: 46rem;
+  --breakpoint-md: 47rem;
 }
 @theme{
   --animate-floatXg: floatXg 4s ease-in-out infinite;
