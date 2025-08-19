@@ -5,6 +5,7 @@ import { Fonction } from "~/components/fonction";
 import { faChartLine, faUsers,faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import { Faq } from "~/components/faq";
 import { Button } from "~/components/ui/button";
+import { Price } from "~/components/price";
 
 
 export function Index(){
@@ -57,77 +58,47 @@ export function Index(){
 
                     </section> */}
 
-                    <section className="py-24 md:py-32 lg:py-30">
+                    <section className="py-20 md:py-32 lg:py-30">
                         <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
                             Choisis ton plan
                         </h2>
-                        <div>
-                            <div>
-                                <div>
-                                    <h3>Gratuit</h3>
-                                </div>
-                                
-                                <div>
-                                    <p>0$US</p>
-                                    <p>Gratuit pour toujours</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>🔗 1 profil</li>
-                                        <li>📎Liens illimités</li>
-                                        <li>🎨 1 thème simple</li>
-                                        <li>✅ Toujours gratuit</li>
-                                    </ul>
-                                </div>
-                                <Button>Commencer</Button>
-                            </div>
+                        <div className="my-6 mx-auto px-4 flex flex-wrap justify-center gap-8 md:w-[90%] lg:w-auto">
+                            <Price
+                                titre="Gratuit"
+                                sousTitre="Commencez avec votre propre lien FastProfile"
+                                prix="0 $US"
+                                infoPrix="Gratuit pour toujours"
+                                l1="🔗 1 profil"
+                                l2="📎Liens illimités"
+                                l3="🎨 1 thème simple"
+                                l4="✅ Toujours gratuit"
+                                buttonText="Commencer"
+                            ></Price>
 
-                            <div>
-                                <div>
-                                    <h3>🌟 Premium</h3>
-                                </div>
-                                
-                                <div>
-                                    <div>
-                                        <span>4 $US</span>
-                                        <span>USD/mo</span>
-                                    </div>
-                                    <p>Par an, ou 5$ par mois</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Tout du plan gratuit</li>
-                                        <li>🎨 Thèmes premium</li>
-                                        <li>📊 Statistiques de clics</li>
-                                        <li>📧 Support par email</li>
-                                    </ul>
-                                </div>
-                                <Button>Essayer Premium</Button>
-                            </div>
+                            <Price
+                                titre="🌟 Pro"
+                                tag="recommandé"
+                                sousTitre="Pour créateurs et solo-entrepreneurs à la recherche d'évolution"
+                                prix="4 $US"
+                                infoPrix="Par an, ou 5$ par mois"
+                                l1="Tout du plan gratuit"
+                                l2="🎨 Thèmes premium"
+                                l3="📊 Statistiques de clics"
+                                l4="📧 Support par email"
+                                buttonText="Essayer Premium"
+                            ></Price>
 
-                            <div>
-                                <div>
-                                    <h3>Pro</h3>
-                                </div>
-                                
-                                <div>
-                                    <div>
-                                        <span>7£</span>
-                                        <span>USD/mo</span>
-                                    </div>
-                                    <p>Par an, ou 9$ par mois</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Tout du plan Premium</li>
-                                        <li>🎨 Personnalisation avancée</li>
-                                        <li>❌ Suppression du branding FastProfile</li>
-                                        <li>⚡ Support prioritaire</li>
-                                    </ul>
-                                </div>
-                                <Button>Passer Pro</Button>
-                            </div>
-                            
+                            <Price
+                                titre="Premium"
+                                sousTitre="Pour le business, équipes voulant zéro limites et des résultats rapides"
+                                prix="7 $US"
+                                infoPrix="Par an, ou 9$ par mois"
+                                l1="Tout du plan Premium"
+                                l2="❌ Suppression du branding FastProfile"
+                                l3="⚡ Support prioritaire"
+                                l4="🎨 Personnalisation avancée"
+                                buttonText="Essayer Premium"
+                            ></Price>
 
                             <div>
                             </div>
