@@ -21,14 +21,14 @@ export function Header() {
         <div className="flex items-center gap-3">
           <NavLink to="login">
               <Button
-                variant="link"
-                className="font-medium text-[#FACC15] hover:transition-all"
+                variant="outline"
+                className="font-medium text-[#1E3A8A] bg-white hover:transition-all"
               >
                 <a href="">Login</a>
               </Button>
           </NavLink>
           <NavLink to="signup">
-            <Button className="font-normal bg-[#1E3A8A] text-white hover:bg-[#2547A7] hover:transition-all">
+            <Button className="font-normal bg-[#1E3A8A] text-white hover:bg-[#3B57A3] hover:transition-all">
               <a href="">Sign up free</a>
             </Button>
           </NavLink>

@@ -1,11 +1,9 @@
 import { Header } from "~/components/header";
 import { Footer } from "~/components/footer";
 import { Hero } from "./hero";
-import { Error } from "./error";
 import { Fonction } from "~/components/fonction";
 import { faChartLine, faUsers,faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import { Faq } from "~/components/faq";
-import waves from "../assets/images/waves.svg"
 
 
 export function Index(){
@@ -33,11 +31,13 @@ export function Index(){
                     <section>
 
                     </section>
-                    <section className="bg-[#153BA3] text-[#F0F0F0] ">
+                    <section className="bg-[#FFFFFF] text-[#1E3A8A] ">
                         <Faq></Faq>
                     </section>
                 </main>
-                <Footer/>
+                <footer className="py-3 bg-[#1E3A8A] text-white">
+                    <Footer/>
+                </footer>
             </div>
         </>
     )

@@ -22,7 +22,7 @@ export function Footer() {
             </div>
             <div className="flex flex-col items-center gap-3.5 md:content-baseline md:items-start">
               <h2 className="font-medium">Contact</h2>
-              <div className="flex items-center gap-1 hover:text-gray-500 hover:transition-all">
+              <div className="flex items-center gap-1 hover:text-[#FACC15] hover:transition-all">
                 <FontAwesomeIcon icon={faEnvelope} />
                 <a href="" className="">
                   support@fastProfile.com
@@ -40,7 +40,7 @@ export function Footer() {
                 <a href="">
                   <FontAwesomeIcon
                     icon={faInstagram}
-                    className="text-[23px] hover:text-gray-500 hover:transition-all"
+                    className="text-[23px] hover:text-[#FACC15] hover:transition-all"
                   />
                 </a>
               </li>
@@ -48,7 +48,7 @@ export function Footer() {
                 <a href="">
                   <FontAwesomeIcon
                     icon={faFacebook}
-                    className="text-[23px] hover:text-gray-500 hover:transition-all"
+                    className="text-[23px] hover:text-[#FACC15] hover:transition-all"
                   />
                 </a>
               </li>
@@ -56,7 +56,7 @@ export function Footer() {
                 <a href="">
                   <FontAwesomeIcon
                     icon={faTiktok}
-                    className="text-[23px] hover:text-gray-500 hover:transition-all"
+                    className="text-[23px] hover:text-[#FACC15] hover:transition-all"
                   />
                 </a>
               </li>
