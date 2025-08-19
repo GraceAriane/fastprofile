@@ -19,7 +19,7 @@ export function Index(){
                     
                 </div>
                 <main>
-                    <section className="py-24 md:py-32 lg:py-40">
+                    <section className="py-24 md:py-32 lg:py-30">
                         <div className="w-[90%] mx-auto mb-6">
                             <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
                                 Tout ce dont tu as besoin, en un seul lien
@@ -29,7 +29,7 @@ export function Index(){
                             </p>
                         </div>
 
-                        <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8">
+                        <div className="my-10 mx-auto px-4 flex flex-wrap justify-center gap-8 md:w-[90%] lg:w-auto">
                             <Fonction iconProp={faChartLine} titre="Un seul lien pour tout" sTitre="Regroupe tes réseaux sociaux, projets et contacts au même endroit."></Fonction>
                             <Fonction iconProp={faUsers} titre="Rapide à configurer" sTitre="Crée ton profil en quelques minutes, sans aucune compétence technique."></Fonction>
                             <Fonction iconProp={faChartSimple} titre="Design moderne" sTitre="Choisis parmi des thèmes élégants qui reflètent ta personnalité."></Fonction> 
@@ -57,8 +57,8 @@ export function Index(){
 
                     </section> */}
 
-                    <section>
-                        <h2 className="scroll-m-20 pb-2 text-[6.5vw] font-semibold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
+                    <section className="py-24 md:py-32 lg:py-30">
+                        <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
                             Choisis ton plan
                         </h2>
                         <div>
