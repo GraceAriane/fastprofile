@@ -2,6 +2,7 @@ import { Button } from "~/components/ui/button"
 import valerie from "../assets/images/Doudou_valerie.svg"
 import arnold from "../assets/images/arnold_Dombou.svg"
 import grace from "../assets/images/tchoukeu_grace.svg"
+import { NavLink } from "react-router"
 
 
 export function Hero(){
@@ -17,7 +18,9 @@ export function Hero(){
                 </div>
                 <div className="flex flex-col gap-3 max-w-[400px] items-center md:items-start min-[1190px]:flex-row">
                     <input placeholder="fastProfile.com/" className="h-14 w-[100%] bg-[#fff] placeholder:font-semibold placeholder:text-[#969696] border-1 border-solid border-[#3B57A3] outline-none rounded-2xl px-3 focus:shadow-md focus:shadow-[#4867BE] focus:transition-shadow md:w-auto"/>
-                    <Button className="w-[200px] py-6 text-[4vw] bg-[#1E3A8A] text-white hover:bg-[#3B57A3] hover:transition-all md:text-[2.5vw] lg:text-[1.2rem]">Créer</Button>
+                    <NavLink to="admin">
+                        <Button className="w-[200px] py-6 text-[4vw] bg-[#1E3A8A] text-white hover:bg-[#3B57A3] hover:transition-all md:text-[2.5vw] lg:text-[1.2rem]">Créer</Button>
+                    </NavLink>
                 </div>
             </div>
             <div className="flex p-2 xl:pt-18">
