@@ -24,6 +24,7 @@ export function MenuBar({ css }: cssProps) {
           <li>
             <a
               href=""
+              
               className="hover:text-gray-600 hover:transition-all pl-4 pt-4"
             >
               Fonctionnalités

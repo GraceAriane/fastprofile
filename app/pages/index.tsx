@@ -4,8 +4,8 @@ import { Hero } from "./hero";
 import { Fonction } from "~/components/fonction";
 import { faChartLine, faUsers,faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import { Faq } from "~/components/faq";
-import { Button } from "~/components/ui/button";
 import { Price } from "~/components/price";
+import vector from "../assets/images/blur.svg"
 
 
 export function Index(){
@@ -20,7 +20,7 @@ export function Index(){
                     
                 </div>
                 <main>
-                    <section className="py-24 md:py-32 lg:py-30">
+                    <section id="" className="py-24 md:py-32 lg:py-30">
                         <div className="w-[90%] mx-auto mb-6">
                             <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
                                 Tout ce dont tu as besoin, en un seul lien
@@ -58,14 +58,19 @@ export function Index(){
 
                     </section> */}
 
-                    <section className="py-20 md:py-32 lg:py-30">
-                        <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
-                            Choisis ton plan
-                        </h2>
-                        <div className="my-6 mx-auto px-4 flex flex-wrap justify-center gap-8 md:w-[90%] lg:w-auto">
+                    <section className="py-20 md:py-28 lg:py-30">
+                        <div className="w-[90%] mx-auto mb-10">
+                            <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
+                                Choisis ton plan
+                            </h2>
+                            <p className="text-[#6B7280] text-lg md:text-xl my-4 text-center">
+                                Sectionne celui qui te convient et commence une aventure inoubliable.
+                            </p> 
+                        </div>
+                        <div className="my-6 mx-auto p-4 flex flex-col  justify-center items-center gap-8 md:w-[90%] lg:flex-row lg:w-auto">
                             <Price
                                 titre="Gratuit"
-                                sousTitre="Commencez avec votre propre lien FastProfile"
+                                sousTitre="Commencez avec votre propre lien FastProfile facilement"
                                 prix="0 $US"
                                 infoPrix="Gratuit pour toujours"
                                 l1="🔗 1 profil"
@@ -76,7 +81,8 @@ export function Index(){
                             ></Price>
 
                             <Price
-                                titre="🌟 Pro"
+                                titre="Pro"
+                                addcss="flex items-center justify-between mb-[3px]"
                                 tag="recommandé"
                                 sousTitre="Pour créateurs et solo-entrepreneurs à la recherche d'évolution"
                                 prix="4 $US"
@@ -86,6 +92,7 @@ export function Index(){
                                 l3="📊 Statistiques de clics"
                                 l4="📧 Support par email"
                                 buttonText="Essayer Premium"
+                                
                             ></Price>
 
                             <Price
