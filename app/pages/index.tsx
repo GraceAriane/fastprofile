@@ -6,15 +6,30 @@ import { faChartLine, faUsers,faChartSimple } from "@fortawesome/free-solid-svg-
 import { Faq } from "~/components/faq";
 import { Price } from "~/components/price";
 import vector from "../assets/images/blur.svg"
-
+import { useState, useEffect } from "react";
 
 export function Index(){
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return(
         <> 
             <div>
                 <div className="">
-                    <div className="mt-4">
-                        <Header/>
+                    <div className="m-auto w-[90%]">
+                        <Header isSticky={isSticky}/>
                     </div>
                     <Hero></Hero>
                 </div>

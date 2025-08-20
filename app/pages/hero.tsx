@@ -20,7 +20,7 @@ export function Hero(){
                     <Button className="w-[200px] py-6 text-[4vw] bg-[#1E3A8A] text-white hover:bg-[#3B57A3] hover:transition-all md:text-[2.5vw] lg:text-[1.2rem]">Créer</Button>
                 </div>
             </div>
-            <div className="flex p-2">
+            <div className="flex p-2 xl:pt-18">
                 {/* border-2 border-solid border-amber-600 */}
                 <div className="perspective-distant rotate-[-5deg] animate-floatXg">
                     <img src={valerie} alt="" />

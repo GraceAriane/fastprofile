@@ -12,10 +12,10 @@ export function MenuBar({ css }: cssProps) {
     <div className={`md:hidden ${css}`}>
       <Button
         variant="ghost"
-        className="cursor-pointer relative"
+        className="cursor-pointer relative "
         onClick={() => setOpen(!open)}
       >
-        <FontAwesomeIcon icon={faBars} className="text-[#6B7280]" />
+        <FontAwesomeIcon icon={faBars} className="text-white" />
       </Button>
       <div
         className={`absolute right-0 mt-2 w-60 mr-8 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ${open ? "opacity-100" : "opacity-0"}`}
@@ -25,7 +25,7 @@ export function MenuBar({ css }: cssProps) {
             <a
               href=""
               
-              className="hover:text-gray-600 hover:transition-all pl-4 pt-4"
+              className="text-[#505050] hover:text-gray-600 hover:transition-all pl-4 pt-4"
             >
               Fonctionnalités
             </a>
@@ -33,7 +33,7 @@ export function MenuBar({ css }: cssProps) {
           <li>
             <a
               href=""
-              className="hover:text-gray-600 hover:transition-all pl-4 pt-5"
+              className="text-[#505050] hover:text-gray-600 hover:transition-all pl-4 pt-5"
             >
               Tarifs
             </a>
