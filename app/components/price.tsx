@@ -25,14 +25,14 @@ export function Price({titre,sousTitre, prix, infoPrix, l1, l2,l3,l4,buttonText,
         buttonClass="bg-[#FACC15] font-bold hover:bg-[#FCD34D] hover:transition-all hover:duration-300"
         fond="bg-[#1E3A8A] text-white"
         textcolor="text-white"
-        withScale="lg:scale-110"
+        withScale="min-[1024px]:scale-100 max-[1260]:scale-110"
     }else{
         buttonClass="bg-[#1E3A8A] text-white hover:bg-[#3B57A3] hover:transition-all hover:duration-500"
         fond="bg-[rgb(227,228,230)]"
         textcolor="text-[#505050]"
     }
     return(
-        <div className={`bg-white rounded-3xl flex flex-col m-auto w-[400px] shadow-md hover:-translate-y-1.5 hover:transition-all hover:duration-300 ${withScale}`}>
+        <div className={`bg-white rounded-3xl flex flex-col m-auto  md:w-[400px] shadow-md hover:-translate-y-1.5 hover:transition-all hover:duration-300 ${withScale}`}>
             <div className={`${fond} rounded-tl-3xl rounded-tr-3xl px-4.5 py-8`}>
                 <div className={`${addcss}`}>
                     <h3 className={`scroll-m-20 text-[25px] ${textcolor} font-bold tracking-tight first:mt-0 md:text-3xl lg:text-[32px]`}>{titre}</h3>

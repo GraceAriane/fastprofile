@@ -67,7 +67,7 @@ export function Index(){
                                 Sectionne celui qui te convient et commence une aventure inoubliable.
                             </p> 
                         </div>
-                        <div className="my-6 mx-auto p-4 flex flex-col  justify-center items-center gap-8 md:w-[90%] lg:flex-row lg:w-auto">
+                        <div className="my-6 mx-auto p-4 flex flex-wrap justify-center items-center gap-8 w-[90%] md:flex-col lg:flex-row lg:w-auto">
                             <Price
                                 titre="Gratuit"
                                 sousTitre="Commencez avec votre propre lien FastProfile facilement"
