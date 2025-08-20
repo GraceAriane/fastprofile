@@ -17,8 +17,8 @@ export function Index(){
                         <Header/>
                     </div>
                     <Hero></Hero>
-                    
                 </div>
+                
                 <main>
                     <section id="" className="py-24 md:py-32 lg:py-30">
                         <div className="w-[90%] mx-auto mb-6">
@@ -64,7 +64,8 @@ export function Index(){
                                 Choisis ton plan
                             </h2>
                             <p className="text-[#6B7280] text-lg md:text-xl my-4 text-center">
-                                Sectionne celui qui te convient et commence une aventure inoubliable.
+                               
+                                Tarification simple avec des fonctionnalités puissantes, annulez à tout moment.
                             </p> 
                         </div>
                         <div className="my-6 mx-auto p-4 flex flex-wrap justify-center items-center gap-8 w-[90%] md:flex-col lg:flex-row lg:w-auto">
@@ -87,12 +88,11 @@ export function Index(){
                                 sousTitre="Pour créateurs et solo-entrepreneurs à la recherche d'évolution"
                                 prix="4 $US"
                                 infoPrix="Par an, ou 5$ par mois"
-                                l1="Tout du plan gratuit"
+                                l1="Tout du plan gratuit, plus :"
                                 l2="🎨 Thèmes premium"
                                 l3="📊 Statistiques de clics"
                                 l4="📧 Support par email"
-                                buttonText="Essayer Premium"
-                                
+                                buttonText="Passer Pro"
                             ></Price>
 
                             <Price
@@ -100,7 +100,7 @@ export function Index(){
                                 sousTitre="Pour le business, équipes voulant zéro limites et des résultats rapides"
                                 prix="7 $US"
                                 infoPrix="Par an, ou 9$ par mois"
-                                l1="Tout du plan Premium"
+                                l1="Tout du plan Pro, plus:"
                                 l2="❌ Suppression du branding FastProfile"
                                 l3="⚡ Support prioritaire"
                                 l4="🎨 Personnalisation avancée"
