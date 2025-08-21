@@ -1,7 +1,7 @@
-import { DashboardPage } from "~/pages/dashboardPage"
+import Layout from "./layout"
 
 export default function Dashboard(){
     return(
-        <DashboardPage/>
+        <Layout/>
     )
 }
