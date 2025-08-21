@@ -2,8 +2,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import { Button } from "~/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket, faGear, faChartLine,faUserGroup, faBars } from "@fortawesome/free-solid-svg-icons";
+import { UserPage } from "./linkPage";
+import type { User } from "~/types/user";
+  const mockUser: User = {
+    name: "tchoukeu grace" ,
+    avatar: "https://i.pravatar.cc/150?img=3",
+    description: "Entrepreneur",
+    links: [
+      { title: "Mon GitHub", url: "https://github.com/" },
+      { title: "Mon LinkedIn", url: "https://linkedin.com/" },
+    ],
+  };
+
 
 export function MyfastProfile(){
+    
     return(
         <div>
             <div className="flex justify-between">
@@ -27,12 +40,12 @@ export function MyfastProfile(){
             </div>
 
             <div className="flex gap-5">
-                <Button className="rounded-2xl shadow-none py-4 px-6 text-[17px] bg-[#9C9C9C] text-white font-semibold">Pages</Button>
-                <Button className="rounded-2xl shadow-none py-4 px-6 text-[17px] bg-[#E8E8E8]">Archives</Button>
+                <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#9C9C9C] text-white font-semibold">Pages</Button>
+                <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#E8E8E8]">Archives</Button>
             </div>
 
-            <div>
-
+            <div className=" mt-4">
+                <UserPage user={mockUser}></UserPage>
                 
             </div>
 
