@@ -64,7 +64,8 @@ export function MyfastProfile(){
                     </div>
                 </div>
 
-                <div className="md:flex md:h-[100vh]">
+                <div className="gap-8 md:flex">
+                    {/* grid md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)] */}
                     <div className="hidden md:flex flex-col gap-8">
                         <div className="flex  gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100">
                             <FontAwesomeIcon icon={faCircleExclamation} className="mt-2 text-[17px]"/>
@@ -77,11 +78,11 @@ export function MyfastProfile(){
                             </div>
                         </div>
 
-                        <div>
-                            <div>
+                        <div className="hidden md:flex flex-col ">
+                            <div className="flex items-center gap-4">
                                 <img src="https://github.com/shadcn.png" alt="" className="w-[60px] rounded-full"/>
-                                <div>
-                                    <h3>@tchoukeugrace</h3>
+                                <div className="flex flex-col gap-1">
+                                    <h3 className="text-[22px] font-bold">@tchoukeugrace</h3>
                                     <p>ajoute une bio</p>
 
                                     <div>
@@ -99,7 +100,7 @@ export function MyfastProfile(){
                         </div>
                     </div>
 
-                    <div className=" mt-4 md:mt-0 border border-cyan-600 md:w-[60%] md:self-center md:shadow-lg">
+                    <div className=" mt-4 md:mt-0 md:w-[60%] md:self-center md:shadow-lg">
                         <UserPage user={mockUser}></UserPage>
                     </div>
                 </div>
