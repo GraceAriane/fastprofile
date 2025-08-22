@@ -8,7 +8,7 @@ import { Button } from "~/components/ui/button";
 
 export default function Layout() {
   return (
-    <div className="flex flex-col h-[100vh] p-4 md:p-0 md:bg-[#1E3A8A]">
+    <div className="flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A]">
         <div className="hidden md:flex md:items-center md:justify-between md:p-3 bg-[#1E3A8A]">
             <FontAwesomeIcon icon={faBoltLightning} className="text-[#FACC15] text-2xl"/>
             <Button
@@ -19,22 +19,21 @@ export default function Layout() {
             </Button>
         </div>
 
-        <div className="self-start h-[95%] w-[100%] md:rounded-tl-3xl md:rounded-tr-3xl md:p-4  md:bg-[#F9FAFB]">
+        <div className="self-start h-[95%] w-[100%] md:rounded-tl-3xl md:rounded-tr-3xl md:bg-[#F5F5F5] md:flex">
 
-            <div className="sidebar hidden md:flex bg-[#E1E3E8] w-[30%]">
-            dsfdsf
+            <div className="sidebar hidden md:flex bg-[#efefef] w-[30%]">
+                
             </div>
-            <div className="md:w-[70%]">
+            <div className="p-4 md:w-[70%]">
                 <MyfastProfile></MyfastProfile>
             </div>
 
         </div>
         
-
         
-        <div className="self-end w-[100%] h-[10%] pt-[2.5%] md:hidden">
+        <div className="self-end w-[100%] h-[10%] pt-[2%] bg-[#F5F5F5] flex md:hidden">
 
-            <div className="flex w-[90%] m-auto justify-between text-[#6D6D6D]">
+            <div className="flex w-[90%] m-auto justify-between items-center text-[#6D6D6D]">
                 
                 <Link to="" className="flex flex-col justify-center items-center gap-2">
                     <FontAwesomeIcon icon={faArrowUpFromBracket} className="text-[25px]"/>
