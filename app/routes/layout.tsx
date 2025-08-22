@@ -24,7 +24,7 @@ export default function Layout() {
             <div className="sidebar hidden md:flex bg-[#efefef] w-[30%]">
                 
             </div>
-            <div className="p-4 md:w-[70%]">
+            <div className="p-4 md:w-[75%]">
                 <MyfastProfile></MyfastProfile>
             </div>
 

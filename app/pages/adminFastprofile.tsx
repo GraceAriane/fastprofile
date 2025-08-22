@@ -49,32 +49,32 @@ export function MyfastProfile(){
             <div className="">
                 <div className="hidden md:flex justify-between items-center">
                     <h2>Mon FastProfile</h2>
-                    <div>
-                        <Button>
+                    <div className="flex gap-3">
+                        <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
                             <FontAwesomeIcon icon={faArrowUpFromBracket} className=""/>
                             Design
                         </Button>
-                        <Button>
+                        <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
                             <FontAwesomeIcon icon={faArrowUpFromBracket} className=""/>
                             Share
                         </Button>
-                        <Button>
+                        <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
                             <FontAwesomeIcon icon={faGear} className=""/>
                         </Button>
                     </div>
                 </div>
 
-                <div className="md:flex border border-amber-600">
-                    <div className="hidden md:flex flex-col">
-                        <div>
-                            <div>
-                                <FontAwesomeIcon icon={faCircleExclamation} />
-                                <p>
+                <div className="md:flex md:h-[100vh]">
+                    <div className="hidden md:flex flex-col gap-8">
+                        <div className="flex  gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100">
+                            <FontAwesomeIcon icon={faCircleExclamation} className="mt-2 text-[17px]"/>
+                            <div className="flex flex-col gap-">
+                                <p className="">
                                     Vous avez créé votre FastProfile !🔥
                                     FastProfile.com/Tchoukeugrace
                                 </p>
+                                <a href="" className="underline">Copier votre lien FastProfile</a>
                             </div>
-                            <a href="" className="underline">Copier votre lien FastProfile</a>
                         </div>
 
                         <div>
@@ -99,7 +99,7 @@ export function MyfastProfile(){
                         </div>
                     </div>
 
-                    <div className=" mt-4 md:mt-0">
+                    <div className=" mt-4 md:mt-0 border border-cyan-600 md:w-[60%] md:self-center md:shadow-lg">
                         <UserPage user={mockUser}></UserPage>
                     </div>
                 </div>
