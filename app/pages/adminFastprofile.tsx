@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket,faCircleExclamation, faGear, faChartLine,faUserGroup, faBars, faPlus, faCamera, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { UserPage } from "./linkPage";
+import { Separator } from "~/components/ui/separator";
 import type { User } from "~/types/user";
   const mockUser: User = {
     name: "tchoukeu grace" ,
@@ -46,10 +47,10 @@ export function MyfastProfile(){
                     <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#E8E8E8]">Archives</Button>
                 </div>
             </div>
-            <div className="">
-                <div className="hidden md:flex justify-between items-center">
+            <div className="md:flex md:flex-col">
+                <div className="hidden md:flex justify-between items-center p-4">
                     <h2>Mon FastProfile</h2>
-                    <div className="flex gap-3">
+                    <div className="flex gap-2.5">
                         <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
                             <FontAwesomeIcon icon={faArrowUpFromBracket} className=""/>
                             Design
@@ -63,15 +64,15 @@ export function MyfastProfile(){
                         </Button>
                     </div>
                 </div>
-
-                <div className="gap-8 md:flex">
+                <Separator></Separator>
+                <div className="gap-8 md:flex md:h-[80vh] md:p-4">
                     {/* grid md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)] */}
-                    <div className="hidden md:flex flex-col gap-8">
-                        <div className="flex  gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100">
+                    <div className="hidden md:flex flex-col gap-8 ">
+                        <div className="flex gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100">
                             <FontAwesomeIcon icon={faCircleExclamation} className="mt-2 text-[17px]"/>
                             <div className="flex flex-col gap-">
                                 <p className="">
-                                    Vous avez créé votre FastProfile !🔥
+                                    Votre FastProfile est créé !🔥
                                     FastProfile.com/Tchoukeugrace
                                 </p>
                                 <a href="" className="underline">Copier votre lien FastProfile</a>
@@ -79,10 +80,10 @@ export function MyfastProfile(){
                         </div>
 
                         <div className="hidden md:flex flex-col ">
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-4 mb-2.5">
                                 <img src="https://github.com/shadcn.png" alt="" className="w-[60px] rounded-full"/>
-                                <div className="flex flex-col gap-1">
-                                    <h3 className="text-[22px] font-bold">@tchoukeugrace</h3>
+                                <div className="flex flex-col gap-1.5">
+                                    <h3 className="text-[20px] font-black">@tchoukeugrace</h3>
                                     <p>ajoute une bio</p>
 
                                     <div>
@@ -94,13 +95,15 @@ export function MyfastProfile(){
                                     </div>
                                 </div>
                             </div>
-                            <Button>
-                                Ajouter
+                            <Button
+                            className="p-7 text-[17px] font-medium bg-[#3B57A3] text-white hover:transition-all rounded-4xl"
+                            >
+                            <a href="">Ajouter</a>
                             </Button>
                         </div>
                     </div>
-
-                    <div className=" mt-4 md:mt-0 md:w-[60%] md:self-center md:shadow-lg">
+                    
+                    <div className=" mt-4 md:m-auto md:w-[450px] md:max-w-[400px] md:self-center">
                         <UserPage user={mockUser}></UserPage>
                     </div>
                 </div>
