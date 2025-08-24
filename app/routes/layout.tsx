@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBoltLightning,faArrowUpFromBracket, faGear, faChartLine,faUserGroup, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBoltLightning,faArrowUpFromBracket, faGear, faChartLine,faUserGroup, faBars, faUser, faArrowRightFromBracket, faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 import { MyfastProfile } from "~/pages/adminFastprofile";
 import { Button } from "~/components/ui/button";
 import {
@@ -39,7 +39,7 @@ export default function Layout() {
                         <img src="https://github.com/shadcn.png" alt="" className="w-[25px] rounded-full"/>
                         <h3 className="text-[15px] text-[#373737]">tchoukeugrace</h3>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className="rounded-2xl">
                         <DropdownMenuLabel className="flex gap-2 items-center">
                             <img src="https://github.com/shadcn.png" alt="" className="w-[30px] rounded-full"/>
                             <div className="">
@@ -49,17 +49,29 @@ export default function Layout() {
                             <Button className="rounded-3xl border border-[#F5F5F5]">Free</Button>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Profile</DropdownMenuItem>
-                        <DropdownMenuItem>Billing</DropdownMenuItem>
-                        <DropdownMenuItem>Team</DropdownMenuItem>
-                        <DropdownMenuItem>Subscription</DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <FontAwesomeIcon icon={faUser}/>
+                            Compte
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <FontAwesomeIcon icon={faBoltLightning}/>
+                            Upgrade
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <FontAwesomeIcon icon={faCircleQuestion} />
+                            Poser une question
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                            Se déconnecter
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
                 <div>
                     <Accordion type="single" collapsible className="">
                         <AccordionItem value="item-1" className="pl-2 rounded-[10px]">
-                            <AccordionTrigger className="md:text-[15px] lg:text-[1.5vw] hover:no-underline">My FastProfile</AccordionTrigger>
-                            <AccordionContent className="ml-2 flex flex-col md:text-[15px] gap-2 lg:text-[1.4vw]">
+                            <AccordionTrigger className="md:text-[15px] hover:no-underline">My FastProfile</AccordionTrigger>
+                            <AccordionContent className="ml-2 flex flex-col md:text-[15px] gap-2 border-l-[#c7c7c7] border-l">
                                 <a href="" className="p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all">Liens</a>
                                 <a href="" className="p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all">Design</a>
                             </AccordionContent>

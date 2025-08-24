@@ -79,17 +79,16 @@ export function MyfastProfile(){
                             </div>
                         </div>
 
-                        <div className="hidden md:flex flex-col ">
+                        <div className="hidden md:flex flex-col gap-1">
                             <div className="flex items-center gap-4 mb-2.5">
                                 <img src="https://github.com/shadcn.png" alt="" className="w-[60px] rounded-full"/>
-                                <div className="flex flex-col gap-1.5">
+                                <div className="flex flex-col gap-1">
                                     <h3 className="text-[20px] font-black">@tchoukeugrace</h3>
-                                    <p>ajoute une bio</p>
+                                    <p className="text-[#9C9C9C]">ajoute une bio</p>
 
-                                    <div>
+                                    <div className="text-[#9C9C9C] flex gap-1">
                                         <FontAwesomeIcon icon={faEnvelope} />
                                         <FontAwesomeIcon icon={faCamera} />
-                                        <FontAwesomeIcon icon={faPlus} />
                                         <FontAwesomeIcon icon={faInstagram} />
                                         <FontAwesomeIcon icon={faTiktok} />
                                     </div>
