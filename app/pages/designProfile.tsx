@@ -50,11 +50,11 @@ export function Design(){
                     </div>
                 </div>
 
-                <div className="border-1 rounded-tl-3xl rounded-tr-3xl">
+                <div className="border-1 rounded-tl-3xl rounded-tr-3xl relative">
 
                     <UserPage user={mockUser} variant="design"></UserPage>
 
-                    <div className="fixed z-50 rounded-[24px] translate-x-[20%] bottom-3.5 p-4 shadow-lg flex items-center justify-center bg-[#fff]">
+                    <div className="fixed z-50 rounded-[24px] left-1/2 -translate-x-1/2 bottom-3.5 p-4 shadow-lg flex items-center justify-center bg-[#fff]">
                         <Button variant="ghost" className="flex flex-col justify-center">
                             <FontAwesomeIcon icon={faCircleUser} />
                             Profil
