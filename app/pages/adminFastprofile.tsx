@@ -52,7 +52,7 @@ export function MyfastProfile(){
 
             <div className="md:flex md:flex-col">
 
-                <div className="hidden md:flex sticky justify-between items-center p-4">
+                <div className="hidden md:flex sticky top-0 justify-between items-center p-4">
                     <h2>Mon FastProfile</h2>
                     <div className="flex gap-2.5">
                         <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
@@ -69,11 +69,11 @@ export function MyfastProfile(){
                     </div>
                 </div>
 
-                <Separator></Separator>
+                <Separator className="hidden md:block"></Separator>
 
                 <div className="gap-6 md:flex md:h-[80vh] md:px-4">
 
-                    <div className="hidden md:flex flex-col gap-8 lg:w-[70%] md:overflow-y-auto md:pr-1">
+                    <div className="hidden md:flex flex-col gap-8 md:p-1 lg:w-[70%] lg:overflow-y-auto lg:pr-1">
 
                         <div className="flex gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100 lg:mt-4">
                             <FontAwesomeIcon icon={faCircleExclamation} className="mt-2 text-[17px]"/>
@@ -127,8 +127,8 @@ export function MyfastProfile(){
 
                     </div>
                     
-                    <div className=" mt-4 md:m-auto md:w-[450px] md:max-w-[220px] lg:max-w-[250px]">
-                        <UserPage user={mockUser}></UserPage>
+                    <div className="sticky right-0 mt-4 md:m-auto md:w-[450px] md:max-w-[220px] lg:max-w-[250px]">
+                        <UserPage user={mockUser} variant="admin"></UserPage>
                     </div>
 
                 </div>

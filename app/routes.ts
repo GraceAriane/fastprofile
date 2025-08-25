@@ -7,9 +7,9 @@ export default [
     ...prefix("admin",[
         index("routes/dashboard.tsx"),
         layout("routes/layout.tsx",[
-            index("pages/adminFastprofile.tsx")
-            
-        ])
+            index("pages/adminFastprofile.tsx"),
+        ]),
+        route("design","routes/design.tsx")
         
     ])
 

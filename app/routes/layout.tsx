@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBoltLightning,faArrowUpFromBracket, faGear, faChartLine,faUserGroup, faBars, faUser, faArrowRightFromBracket, faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faBoltLightning,faArrowUpFromBracket, faGear, faChartLine,faUserGroup, faBars, faUser, faArrowRightFromBracket, faCircleQuestion, faAngleDown, faHeadset } from "@fortawesome/free-solid-svg-icons";
 import { MyfastProfile } from "~/pages/adminFastprofile";
 import { Button } from "~/components/ui/button";
 import {
@@ -16,17 +16,23 @@ import { Accordion,
     AccordionItem,
     AccordionTrigger,
 } from "~/components/ui/accordion"
-
+import { Design } from "~/pages/designProfile";
 
 export default function Layout() {
+    let active;
+    active="bg-[#c7c7c7]"
+
   return (
-    <div className="flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px] md:overflow-hidden">
+    <div className="flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
         
         <div className="hidden md:flex md:items-center md:justify-between md:p-3 bg-[#1E3A8A]">
-            <FontAwesomeIcon icon={faBoltLightning} className="text-[#FACC15] text-2xl"/>
-            <div className="lg:flex lg:items-center lg:gap-1.5 lg:text-white">
-                <p className="md:hidden text-[12px] lg:block">
-                    <span>Essayez Pro gratuitement !</span> -
+            <Link to="/">
+                <FontAwesomeIcon icon={faBoltLightning} className="text-[#FACC15] text-2xl"/>
+            </Link>
+
+            <div className="lg:flex lg:items-center lg:gap-4 lg:text-white">
+                <p className="md:hidden text-[13px] lg:block">
+                    <span className="font-semibold">Essayez Pro gratuitement !</span> -
                     Notre plan le plus populaire et le plus utilisés par les créateurs de contenus
                 </p>
                 <Button
@@ -40,11 +46,14 @@ export default function Layout() {
 
         <div className="self-start h-[95%] w-[100%] md:rounded-tl-2xl md:rounded-tr-3xl md:bg-[#F5F5F5] md:flex">
 
-            <div className="sidebar hidden sticky md:flex flex-col gap-3 p-4 bg-[#efefef] w-[30%] lg:w-[25%] xl:w-[20%] md:rounded-tl-3xl">
+            <div className="sidebar hidden sticky left-0 md:flex flex-col gap-3 p-4 bg-[#efefef] w-[30%] lg:w-[25%] xl:w-[20%] md:rounded-tl-3xl">
                 <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center gap-1.5">
                         <img src="https://github.com/shadcn.png" alt="" className="w-[25px] rounded-full"/>
-                        <h3 className="text-[15px] text-[#373737] lg:text-xl">tchoukeugrace</h3>
+                        <h3 className="text-[15px] text-[#373737] lg:text-xl">
+                            tchoukeugrace
+                            <FontAwesomeIcon icon={faAngleDown} className="text-[12px] ml-2"/>
+                        </h3>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="rounded-2xl">
                         <DropdownMenuLabel className="flex gap-2 items-center">
@@ -78,9 +87,13 @@ export default function Layout() {
                     <Accordion type="single" collapsible className="">
                         <AccordionItem value="item-1" className="pl-2 rounded-[10px]">
                             <AccordionTrigger className="md:text-[15px] hover:no-underline">My FastProfile</AccordionTrigger>
-                            <AccordionContent className="ml-2 flex flex-col md:text-[15px] gap-2 border-l-[#c7c7c7] border-l">
-                                <a href="" className="p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all">Liens</a>
-                                <a href="" className="p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all">Design</a>
+                            <AccordionContent className="ml-2 p-2 flex flex-col md:text-[15px] gap-2 border-l-[#dadada] border-l">
+                                <Link to="" className={`p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all ${active}`}>
+                                    <a href="" >Liens</a>
+                                </Link>
+                                <Link to="design" className={`p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all`}>
+                                    <a href="">Design</a>
+                                </Link>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
@@ -96,6 +109,14 @@ export default function Layout() {
                         </Link>
                     </div>
                 </div>
+                {/* <div className="fixed bottom-0 border-4 left-0">
+                    <a href="">
+                        <FontAwesomeIcon icon={faCircleQuestion} />
+                    </a>
+                    <a href="">
+                        <FontAwesomeIcon icon={faHeadset} />
+                    </a>
+                </div> */}
             </div>
 
             <div className="p-4 md:w-[75%] md:p-0 xl:w-[80%]">
