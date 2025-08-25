@@ -1,6 +1,6 @@
 import { Button } from "~/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faArrowRotateRight, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faArrowRotateRight, faCircleUser, faLayerGroup, faPaintRoller, faRotateLeft, faSliders } from "@fortawesome/free-solid-svg-icons";
 import { UserPage } from "./linkPage";
 import type { User } from "~/types/user";
 
@@ -50,9 +50,31 @@ export function Design(){
                     </div>
                 </div>
 
-                <div className="border-3 rounded-tl-3xl rounded-tr-3xl">
+                <div className="border-1 rounded-tl-3xl rounded-tr-3xl">
+
                     <UserPage user={mockUser} variant="design"></UserPage>
+
+                    <div className="fixed z-50 rounded-[24px] translate-x-[20%] bottom-3.5 p-4 shadow-lg flex items-center justify-center bg-[#fff]">
+                        <Button variant="ghost" className="flex flex-col justify-center">
+                            <FontAwesomeIcon icon={faCircleUser} />
+                            Profil
+                        </Button>
+                        <Button variant="ghost" className="flex flex-col justify-center">
+                            <FontAwesomeIcon icon={faSliders} />
+                            Thème
+                        </Button>
+                        <Button variant="ghost" className="flex flex-col justify-center">
+                            <FontAwesomeIcon icon={faLayerGroup} />
+                            Fond
+                        </Button>
+                        <Button variant="ghost" className="flex flex-col justify-center">
+                            <FontAwesomeIcon icon={faPaintRoller} />
+                            Style
+                        </Button>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     )
