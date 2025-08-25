@@ -20,24 +20,31 @@ import { Accordion,
 
 export default function Layout() {
   return (
-    <div className="flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
+    <div className="flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px] md:overflow-hidden">
+        
         <div className="hidden md:flex md:items-center md:justify-between md:p-3 bg-[#1E3A8A]">
             <FontAwesomeIcon icon={faBoltLightning} className="text-[#FACC15] text-2xl"/>
-            <Button
-            variant="outline"
-            className="font-medium text-white  hover:transition-all rounded-3xl"
-            >
-            <a href="">upgrade</a>
-            </Button>
+            <div className="lg:flex lg:items-center lg:gap-1.5 lg:text-white">
+                <p className="md:hidden text-[12px] lg:block">
+                    <span>Essayez Pro gratuitement !</span> -
+                    Notre plan le plus populaire et le plus utilisés par les créateurs de contenus
+                </p>
+                <Button
+                variant="outline"
+                className="font-medium text-white  hover:transition-all rounded-3xl"
+                >
+                <a href="">upgrade</a>
+                </Button>
+            </div>
         </div>
 
         <div className="self-start h-[95%] w-[100%] md:rounded-tl-2xl md:rounded-tr-3xl md:bg-[#F5F5F5] md:flex">
 
-            <div className="sidebar hidden md:flex flex-col gap-3 p-4 bg-[#efefef] w-[30%]">
+            <div className="sidebar hidden sticky md:flex flex-col gap-3 p-4 bg-[#efefef] w-[30%] lg:w-[25%] xl:w-[20%] md:rounded-tl-3xl">
                 <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center gap-1.5">
                         <img src="https://github.com/shadcn.png" alt="" className="w-[25px] rounded-full"/>
-                        <h3 className="text-[15px] text-[#373737]">tchoukeugrace</h3>
+                        <h3 className="text-[15px] text-[#373737] lg:text-xl">tchoukeugrace</h3>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="rounded-2xl">
                         <DropdownMenuLabel className="flex gap-2 items-center">
@@ -90,12 +97,12 @@ export default function Layout() {
                     </div>
                 </div>
             </div>
-            <div className="p-4 md:w-[75%] md:p-0">
+
+            <div className="p-4 md:w-[75%] md:p-0 xl:w-[80%]">
                 <MyfastProfile></MyfastProfile>
             </div>
 
         </div>
-        
         
         <div className="fixed bottom-0 self-end w-[100%] h-[10%] pt-[2%] bg-[#F5F5F5] flex md:hidden">
 
@@ -123,7 +130,6 @@ export default function Layout() {
             </div>
 
         </div>
-
 
     </div>
   )

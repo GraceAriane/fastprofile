@@ -7,7 +7,7 @@ interface UserPageProps{
 
 export function UserPage({user}: UserPageProps){
     return(
-        <div className="w-[48%]  bg-[#f7f9fe] border-[#E1E3E8] border-1 rounded-2xl gap-2 p-5 flex flex-col items-center justify-center md:w-[100%] md:h-[400px] md:max-w-[350px] md:shadow-lg">
+        <div className="w-[48%] bg-[#f7f9fe] border-[#E1E3E8] border-1 rounded-2xl gap-2 p-5 flex flex-col items-center justify-center md:w-[100%] md:h-[400px] md:max-w-[350px] md:shadow-lg xl:h-[450px] lg:shadow-2xl lg:border-2 lg:border-black">
             {/* Header */}
             <img src={user.avatar} className="w-11 rounded-full" alt={user.name} />
             <div>
