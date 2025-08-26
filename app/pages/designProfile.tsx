@@ -3,17 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faArrowRotateRight, faCircleUser, faLayerGroup, faPaintRoller, faRotateLeft, faSliders, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { UserPage } from "./linkPage";
 import type { User } from "~/types/user";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "~/components/ui/drawer"
+import { Link } from "react-router";
+
 import { useState } from "react";
+import { themes } from "~/config/themes";
 
   const mockUser: User = {
     name: "tchoukeu grace" ,
@@ -27,13 +20,17 @@ import { useState } from "react";
 
 export function Design(){
     const [open,setOpen] = useState(false)
+    const [theme, setTheme] = useState<keyof typeof themes>("light")
+    
 
     return(
         <div className="">
             <div className="min-h-screen grid grid-cols-1 grid-rows-[85px_1fr]">
                 <div className="flex items-center justify-between p-4">
                     <h2 className="flex items-center gap-1 scroll-m-20 font-semibold tracking-tight first:mt-0 text-center">
-                        <FontAwesomeIcon icon={faAngleLeft} className="text-xs"/>
+                        <Link to="/admin" className="px-2 py-1 rounded-full hover:bg-[#d3d3d3]">
+                            <FontAwesomeIcon icon={faAngleLeft} className="text-xs"/>
+                        </Link>
                         <span className="text-2xl">Design</span>
                     </h2>
                     <div className="flex items-center gap-1">
@@ -66,7 +63,7 @@ export function Design(){
 
                 <div className={`border-1 rounded-tl-3xl rounded-tr-3xl relative transition-all duration-500 ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"}`}>
 
-                    <UserPage user={mockUser} variant="design"></UserPage>
+                    <UserPage user={mockUser} variant="design" theme={theme}></UserPage>
 
                 </div>
 
@@ -102,9 +99,9 @@ export function Design(){
                     </div>
 
                     <div className="border-2 overflow-y-auto">
-                        <Button>black</Button>
-                        <Button>light</Button>
-                        <Button>fancy</Button>
+                        <Button onClick={()=>setTheme("dark")}>black</Button>
+                        <Button onClick={()=>setTheme("light")}>light</Button>
+                        <Button onClick={()=>setTheme("fancy")}>fancy</Button>
 
                     </div>
                 </div>
