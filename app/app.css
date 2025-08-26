@@ -4,8 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif,
+  --font-sans: "Geist","Purple Purse","Montserrat", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-purple: "Purple Purse";
+  --font-montserrat: "Montserrat";
+  --font-baby: "Oooh Baby";
 }
 
 @theme {

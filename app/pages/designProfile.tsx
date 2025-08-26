@@ -1,8 +1,19 @@
 import { Button } from "~/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faArrowRotateRight, faCircleUser, faLayerGroup, faPaintRoller, faRotateLeft, faSliders } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faArrowRotateRight, faCircleUser, faLayerGroup, faPaintRoller, faRotateLeft, faSliders, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { UserPage } from "./linkPage";
 import type { User } from "~/types/user";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "~/components/ui/drawer"
+import { useState } from "react";
 
   const mockUser: User = {
     name: "tchoukeu grace" ,
@@ -15,6 +26,8 @@ import type { User } from "~/types/user";
   };
 
 export function Design(){
+    const [open,setOpen] = useState(false)
+
     return(
         <div className="">
             <div className="min-h-screen grid grid-cols-1 grid-rows-[85px_1fr]">
@@ -35,6 +48,7 @@ export function Design(){
                         </Button>
                     </div>
                 </div>
+
                 <div className="hidden">
 
                     <div>
@@ -50,30 +64,50 @@ export function Design(){
                     </div>
                 </div>
 
-                <div className="border-1 rounded-tl-3xl rounded-tr-3xl relative">
+                <div className={`border-1 rounded-tl-3xl rounded-tr-3xl relative transition-all duration-500 ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"}`}>
 
                     <UserPage user={mockUser} variant="design"></UserPage>
 
-                    <div className="fixed z-50 rounded-[24px] left-1/2 -translate-x-1/2 bottom-3.5 p-4 shadow-lg flex items-center justify-center bg-[#fff]">
-                        <Button variant="ghost" className="flex flex-col justify-center">
-                            <FontAwesomeIcon icon={faCircleUser} />
-                            Profil
-                        </Button>
-                        <Button variant="ghost" className="flex flex-col justify-center">
-                            <FontAwesomeIcon icon={faSliders} />
-                            Thème
-                        </Button>
-                        <Button variant="ghost" className="flex flex-col justify-center">
-                            <FontAwesomeIcon icon={faLayerGroup} />
-                            Fond
-                        </Button>
-                        <Button variant="ghost" className="flex flex-col justify-center">
-                            <FontAwesomeIcon icon={faPaintRoller} />
-                            Style
-                        </Button>
-                    </div>
                 </div>
 
+                <div className="fixed z-50 rounded-[24px] left-1/2 -translate-x-1/2 bottom-3.5 p-4 shadow-lg flex items-center justify-center bg-[#fff]">
+                    <Button variant="ghost" className="flex flex-col justify-center">
+                        <FontAwesomeIcon icon={faCircleUser} />
+                        Profil
+                    </Button>
+                    <Button variant="ghost" className="flex flex-col justify-center" onClick={()=>setOpen(!open)}>
+                        <FontAwesomeIcon icon={faSliders} />
+                        Thème
+                    </Button>
+                    <Button variant="ghost" className="flex flex-col justify-center">
+                        <FontAwesomeIcon icon={faLayerGroup} />
+                        Fond
+                    </Button>
+                    <Button variant="ghost" className="flex flex-col justify-center">
+                        <FontAwesomeIcon icon={faPaintRoller} />
+                        Style
+                    </Button>
+                </div>
+
+                <div className={`grid grid-cols-1 grid-rows-[40px_40px_1fr] h-[60%] p-4 absolute bottom-0 left-0 right-0 ${open ? "translate-y-0" : "translate-y-full"} z-1000 shadow-2xl rounded-tl-2xl rounded-tr-2xl bg-white transition-transform duration-500`}>
+                    <div className="flex justify-between">
+                        <h4 className="text-[18px]">Thème</h4>
+                        <Button className="bg-[#cecece] rounded-full" onClick={()=>{setOpen(!open)}}>
+                            <FontAwesomeIcon icon={faXmark} />
+                        </Button>
+                    </div>
+                    <div className="flex justify-around">
+                        <Button className="text-xl" variant="ghost">Customisable</Button>
+                        <Button className="text-xl" variant="ghost">Curated</Button>
+                    </div>
+
+                    <div className="border-2 overflow-y-auto">
+                        <Button>black</Button>
+                        <Button>light</Button>
+                        <Button>fancy</Button>
+
+                    </div>
+                </div>
 
             </div>
         </div>

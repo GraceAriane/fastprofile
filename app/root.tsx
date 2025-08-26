@@ -20,6 +20,22 @@ export const links: Route.LinksFunction = () => [
   {
     rel: "stylesheet",
     href:"https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+  },
+  {
+    rel: "stylesheet",
+    href:"https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+  },
+  {
+    rel: "stylesheet",
+    href:"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+  },
+  {
+    rel: "stylesheet",
+    href:"https://fonts.googleapis.com/css2?family=Purple+Purse&display=swap"
+  },
+  {
+    rel: "stylesheet",
+    href:"https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
   }
 ];
 
