@@ -1,6 +1,8 @@
 import { Button } from "~/components/ui/button"
+import { Switch } from "~/components/ui/switch";
+import { Separator } from "@radix-ui/react-separator";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faArrowRotateRight, faCircleUser, faLayerGroup, faPaintRoller, faRotateLeft, faSliders, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faArrowRotateRight, faBolt, faBoltLightning, faCircleUser, faLayerGroup, faPaintRoller, faPlus, faRotateLeft, faSliders, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { UserPage } from "./linkPage";
 import type { User } from "~/types/user";
 import { Link } from "react-router";
@@ -35,8 +37,31 @@ export function Design(){
         switch (content) {
             case "Profil":
                 return(
-                  <div>
+                  <div className="flex flex-col gap-3">
+                        <div className="flex items-center gap-6">
+                            <img src={mockUser.avatar} alt={mockUser.name} className="rounded-full w-[100px]" />
+                            <button className="px-5 py-3 text-white bg-black text-[17px] rounded-4xl">
+                                <FontAwesomeIcon icon={faPlus} />
+                                add
+                            </button>
+                        </div>
+                       
+                        <div className="border-t border-[#a2a2a2] pt-4">
+                            <div className="flex items-center justify-between bg-[#E6E5E3] p-6 rounded-2xl">
+                                <div className="flex gap-1 items-center">
+                                    <FontAwesomeIcon icon={faBoltLightning} />
+                                    <p>Cacher le pied de page</p>
+                                </div>
 
+                                <div className="flex items-center gap-2">
+                                    <FontAwesomeIcon icon={faBolt} className="bg-white text-[#a2a2a2] p-1 text-[10px] rounded-full"/>
+                                    <Switch />
+                                </div>
+                            </div>
+                            <div className="bg-[#E6E5E3]">
+                                
+                            </div>
+                        </div>
                   </div>  
                 )
                 break;
@@ -98,22 +123,7 @@ export function Design(){
                     </div>
                 </div>
 
-                <div className="hidden">
-
-                    <div>
-
-                    </div>
-
-                    <div>
-
-                    </div>
-
-                    <div>
-
-                    </div>
-                </div>
-
-                <div className={`border-1 rounded-tl-4xl rounded-tr-4xl relative transition-all duration-500 ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"}`}>
+                <div className={`border-1 rounded-tl-4xl rounded-tr-4xl relative transition-all duration-500  ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"} `}>
 
                     <UserPage user={mockUser} variant="design" theme={theme}></UserPage>
 
@@ -152,6 +162,22 @@ export function Design(){
                         {content && contentDrawer(content)}
 
                     </div>
+
+                </div>
+
+            </div>
+
+            <div className="hidden">
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
 
                 </div>
 
