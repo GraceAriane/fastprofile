@@ -4,6 +4,10 @@ import { faAngleLeft, faArrowRotateRight, faCircleUser, faLayerGroup, faPaintRol
 import { UserPage } from "./linkPage";
 import type { User } from "~/types/user";
 import { Link } from "react-router";
+import dark from "../assets/images/dark.svg"
+import light from "../assets/images/light.svg"
+import fancy from "../assets/images/fancy.svg"
+
 
 import { useState } from "react";
 import { themes } from "~/config/themes";
@@ -61,7 +65,7 @@ export function Design(){
                     </div>
                 </div>
 
-                <div className={`border-1 rounded-tl-3xl rounded-tr-3xl relative transition-all duration-500 ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"}`}>
+                <div className={`border-1 rounded-tl-4xl rounded-tr-4xl relative transition-all duration-500 ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"}`}>
 
                     <UserPage user={mockUser} variant="design" theme={theme}></UserPage>
 
@@ -86,22 +90,29 @@ export function Design(){
                     </Button>
                 </div>
 
-                <div className={`grid grid-cols-1 grid-rows-[40px_40px_1fr] h-[60%] p-4 absolute bottom-0 left-0 right-0 ${open ? "translate-y-0" : "translate-y-full"} z-1000 shadow-2xl rounded-tl-2xl rounded-tr-2xl bg-white transition-transform duration-500`}>
-                    <div className="flex justify-between">
+                <div className={`grid grid-cols-1 grid-rows-[40px_40px_1fr] gap-2 h-[60%] p-4 absolute bottom-0 left-0 right-0 ${open ? "translate-y-0" : "translate-y-full"} z-1000 shadow-2xl rounded-tl-2xl rounded-tr-2xl bg-white transition-transform duration-500`}>
+                    <div className="flex justify-between items-center">
                         <h4 className="text-[18px]">Thème</h4>
                         <Button className="bg-[#cecece] rounded-full" onClick={()=>{setOpen(!open)}}>
                             <FontAwesomeIcon icon={faXmark} />
                         </Button>
                     </div>
-                    <div className="flex justify-around">
-                        <Button className="text-xl" variant="ghost">Customisable</Button>
-                        <Button className="text-xl" variant="ghost">Curated</Button>
-                    </div>
 
-                    <div className="border-2 overflow-y-auto">
-                        <Button onClick={()=>setTheme("dark")}>black</Button>
-                        <Button onClick={()=>setTheme("light")}>light</Button>
-                        <Button onClick={()=>setTheme("fancy")}>fancy</Button>
+                        <Button className="text-xl" variant="ghost">Customisable</Button>
+                        
+                    <div className="overflow-y-auto">
+                        
+                        <div className="grid grid-cols-3 gap-4 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+                            <Button onClick={()=>setTheme("light")} variant="ghost" className="p-0 h-full w-full focus:border-2 rounded-2xl">
+                                <img src={light} alt="" className={`h-full w-full rounded-2xl`}/>
+                            </Button>
+                            <Button onClick={()=>setTheme("dark")} variant="ghost" className="p-0 h-full w-full focus:border-2 rounded-2xl">
+                                <img src={dark} alt="" className={`h-full w-full rounded-2xl`}/>
+                            </Button>
+                            <Button onClick={()=>setTheme("fancy")} variant="ghost" className="p-0 h-full w-full focus:border-2 rounded-2xl">
+                                <img src={fancy} alt="" className={`h-full w-full rounded-2xl`}/>
+                            </Button>
+                        </div>
 
                     </div>
                 </div>

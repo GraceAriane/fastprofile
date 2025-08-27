@@ -13,5 +13,5 @@ export const themes = {
     container: "bg-gradient-to-r from-purple-400 to-pink-500 text-white",
     link: "bg-white/20 text-white rounded-4xl",
     police: "font-montserrat"
-  },
+  }
 }
