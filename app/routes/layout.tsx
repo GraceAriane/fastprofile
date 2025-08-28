@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBoltLightning,faArrowUpFromBracket, faGear, faChartLine,faUserGroup, faBars, faUser, faArrowRightFromBracket, faCircleQuestion, faAngleDown, faHeadset } from "@fortawesome/free-solid-svg-icons";
 import { MyfastProfile } from "~/pages/adminFastprofile";
 import { Button } from "~/components/ui/button";
+import { Pub } from "~/components/pub";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,24 +26,7 @@ export default function Layout() {
   return (
     <div className="flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
         
-        <div className="hidden md:flex md:items-center md:justify-between md:p-3 bg-[#1E3A8A]">
-            <Link to="/">
-                <FontAwesomeIcon icon={faBoltLightning} className="text-[#FACC15] text-2xl"/>
-            </Link>
-
-            <div className="lg:flex lg:items-center lg:gap-4 lg:text-white">
-                <p className="md:hidden text-[13px] lg:block">
-                    <span className="font-semibold">Essayez Pro gratuitement !</span> -
-                    Notre plan le plus populaire et le plus utilisés par les créateurs de contenus
-                </p>
-                <Button
-                variant="outline"
-                className="font-medium text-white  hover:transition-all rounded-3xl"
-                >
-                <a href="">upgrade</a>
-                </Button>
-            </div>
-        </div>
+        <Pub/>
 
         <div className="self-start h-[95%] w-[100%] md:rounded-tl-2xl md:rounded-tr-3xl md:bg-[#F5F5F5] md:flex">
 
