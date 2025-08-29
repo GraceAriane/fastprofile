@@ -1,3 +1,13 @@
+import dark from "../assets/images/dark.svg"
+import light from "../assets/images/light.svg"
+import fancy from "../assets/images/fancy.svg"
+
+export const themeImages = {
+  dark,
+  light,
+  fancy,
+} as const
+
 export const themes = {
   light: {
     container: "bg-[#F2F2F2] text-black",
