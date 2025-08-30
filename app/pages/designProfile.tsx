@@ -1,5 +1,6 @@
 import { Button } from "~/components/ui/button"
 import { Switch } from "~/components/ui/switch";
+import Color from "~/components/color";
 import { Pub } from "~/components/pub";
 import { DNavbar } from "~/components/designNavbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,10 +41,10 @@ export function Design(){
                   <div className="flex flex-col gap-3 md:gap-7">
                         <div className="flex items-center gap-6">
                             <img src={mockUser.avatar} alt={mockUser.name} className="rounded-full w-[100px] md:w-30" />
-                            <button className="px-5 py-3 text-white bg-black text-[17px] rounded-4xl">
+                            <Button className="px-5 py-3 text-white bg-black text-[17px] rounded-4xl">
                                 <FontAwesomeIcon icon={faPlus} />
                                 add
-                            </button>
+                            </Button>
                         </div>
                        
                         <div className="border-t border-[#a2a2a2] pt-4 md:border-none">
@@ -84,7 +85,7 @@ export function Design(){
                 break;
             case "Fond":
                 return(
-                    <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(110px,1fr))]">
+                    <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(110px,1fr))] md:h-[310px]">
 
                         <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl">
                             <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
@@ -105,6 +106,10 @@ export function Design(){
                                 <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
                             </div>
                             <span className="text-center mt-1">Blur</span>
+                        </div>
+                        
+                        <div>
+                            
                         </div>
 
                     </div> 
@@ -154,7 +159,7 @@ export function Design(){
                     </Button>
                 </div>
 
-                <div className={`grid grid-cols-1 grid-rows-[40px_1fr] gap-2 h-[60%] p-4 absolute bottom-0 left-0 right-0 ${open ? "translate-y-0" : "translate-y-full"} z-1000 shadow-2xl rounded-tl-2xl rounded-tr-2xl bg-white transition-transform duration-500`}>
+                <div className={`grid grid-cols-1 grid-rows-[40px_1fr] gap-2 h-[60%] p-4 absolute bottom-0 left-0 right-0  ${open ? "translate-y-0" : "hidden translate-y-full"} z-1000 shadow-2xl rounded-tl-2xl rounded-tr-2xl bg-white transition-transform duration-500`}>
 
                     <div className="flex justify-between items-center">
                         <h4 className="text-[18px]">{content}</h4>
@@ -177,13 +182,13 @@ export function Design(){
 
                 <Pub/>
 
-                <div className="grid grid-rows-[60px_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
+                <div className=" grid grid-rows-[60px_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
                     
                     <div className="bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
                         <DNavbar></DNavbar>
                     </div>
                     
-                    <div className="grid grid-cols-[auto_1fr_310px]">
+                    <div className="h-[88vh] grid grid-cols-[auto_1fr_310px]">
                         <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969]">
                             <Button variant="ghost" className="text-[20px]">
                                 <FontAwesomeIcon icon={faCircleUser}/>
@@ -203,7 +208,7 @@ export function Design(){
                             </Button>
                         </div>
 
-                        <div className="border-2 overflow-y-auto p-4 flex flex-col gap-14">
+                        <div className="overflow-y-auto p-4 flex flex-col gap-14">
                             <div>
                                 <h2 className="text-2xl mb-4 font-semibold">Profil</h2>
                                 <div>
