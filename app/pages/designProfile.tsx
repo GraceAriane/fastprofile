@@ -85,23 +85,23 @@ export function Design(){
                 break;
             case "Fond":
                 return(
-                    <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(110px,1fr))] md:h-[310px]">
+                    <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] h-auto">
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl">
+                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px]">
                             <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
                                 <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
                             </div>
                             <span className="text-center mt-1">Rempli</span>
                         </div>
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl">
+                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px]">
                             <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
                                 <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
                             </div>
                             <span className="text-center mt-1">Dégradé</span>
                         </div>  
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl">
+                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px]">
                             <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
                                 <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
                             </div>
@@ -178,17 +178,18 @@ export function Design(){
 
             </div>
 
-            <div className="hidden h-screen md:grid grid-rows-[60px_1fr] grid-cols-1 bg-[#1E3A8A]">
+            <div className="h-screen hidden md:flex flex-col bg-[#1E3A8A]">
+                <div className="shrink-0">
+                    <Pub/>
+                </div>
 
-                <Pub/>
-
-                <div className=" grid grid-rows-[60px_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
+                <div className="h-full grid grid-rows-[60px_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
                     
-                    <div className="bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
+                    <div className="sticky top-0 left-0 right-0 bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
                         <DNavbar></DNavbar>
                     </div>
                     
-                    <div className="h-[88vh] grid grid-cols-[auto_1fr_310px]">
+                    <div className="h-full overflow-y-auto grid grid-cols-[auto_1fr_310px] lg:grid-cols-[auto-1fr-500px]">
                         <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969]">
                             <Button variant="ghost" className="text-[20px]">
                                 <FontAwesomeIcon icon={faCircleUser}/>
@@ -221,7 +222,7 @@ export function Design(){
                                     {contentDrawer("Thème")}
                                 </div>
                             </div>
-                            <div>
+                            <div >
                                 <h2 className="text-2xl mb-4 font-semibold">Fond</h2>
                                 <div>
                                     {contentDrawer("Fond")}
