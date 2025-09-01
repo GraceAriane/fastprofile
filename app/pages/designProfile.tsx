@@ -85,23 +85,23 @@ export function Design(){
                 break;
             case "Fond":
                 return(
-                    <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] h-auto">
+                    <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] h-full">
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px]">
+                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
                             <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
                                 <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
                             </div>
                             <span className="text-center mt-1">Rempli</span>
                         </div>
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px]">
+                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
                             <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
                                 <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
                             </div>
                             <span className="text-center mt-1">Dégradé</span>
                         </div>  
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px]">
+                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
                             <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
                                 <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
                             </div>
@@ -189,7 +189,7 @@ export function Design(){
                         <DNavbar></DNavbar>
                     </div>
                     
-                    <div className="overflow-y-auto grid grid-cols-[auto_1fr_310px] xl:grid-cols-[250px_1fr_450px]">
+                    <div className="overflow-y-auto grid grid-cols-[auto_1fr_310px] xl:grid-cols-[250px_1fr_450px] 2xl:grid-cols-[250px_1fr_500px]">
                         <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969] xl:pt-8">
                             <Button variant="ghost" className="text-[20px] p-5 flex items-center justify-start">
                                 <FontAwesomeIcon icon={faCircleUser}/>
@@ -209,26 +209,26 @@ export function Design(){
                             </Button>
                         </div>
 
-                        <div className="overflow-y-auto p-4 flex flex-col gap-14">
-                            <div>
+                        <div className="overflow-y-auto p-4 flex flex-col gap-14 max-w-[1024px] 2xl:justify-self-center 2xl:w-[700px]">
+                            <div className="max-w-[700px]">
                                 <h2 className="text-2xl mb-4 font-semibold">Profil</h2>
                                 <div>
                                     {contentDrawer("Profil")}
                                 </div>
                             </div>
-                            <div>
+                            <div className="max-w-[700px]">
                                 <h2 className="text-2xl mb-4 font-semibold">Thème</h2>
-                                <div>
+                                <div className="max-w-[500px]">
                                     {contentDrawer("Thème")}
                                 </div>
                             </div>
-                            <div >
+                            <div className="max-w-[700px] h-auto xl:pb-14">
                                 <h2 className="text-2xl mb-4 font-semibold">Fond</h2>
-                                <div>
+                                <div className="max-w-[600px] h-full">
                                     {contentDrawer("Fond")}
                                 </div>
                             </div>
-                            <div>
+                            <div className="max-w-[700px]">
                                 <h2 className="text-2xl mb-4 font-semibold">Style</h2>
                                 <div>
                                     {contentDrawer("Style")}
