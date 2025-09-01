@@ -178,18 +178,18 @@ export function Design(){
 
             </div>
 
-            <div className="h-screen hidden md:flex flex-col bg-[#1E3A8A]">
+            <div className="h-screen overflow-hidden hidden md:flex flex-col bg-[#1E3A8A]">
                 <div className="shrink-0">
                     <Pub/>
                 </div>
 
-                <div className="h-full grid grid-rows-[60px_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
+                <div className="overflow-hidden h-full grid grid-rows-[60px_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
                     
-                    <div className="sticky top-0 left-0 right-0 bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
+                    <div className="bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
                         <DNavbar></DNavbar>
                     </div>
                     
-                    <div className="h-full overflow-y-auto grid grid-cols-[auto_1fr_310px] lg:grid-cols-[auto-1fr-500px]">
+                    <div className="overflow-y-auto grid grid-cols-[auto_1fr_310px] lg:grid-cols-[auto-1fr-500px]">
                         <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969]">
                             <Button variant="ghost" className="text-[20px]">
                                 <FontAwesomeIcon icon={faCircleUser}/>

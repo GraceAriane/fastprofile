@@ -12,7 +12,7 @@ export function UserPage({user, variant = "admin", theme = "light"}: UserPagePro
     const base ="flex flex-col items-center"
     const variants ={
         admin:"justify-center w-[48%] border-[#E1E3E8] border-4 rounded-2xl gap-2 p-5 md:w-[100%] md:h-[400px] md:max-w-[350px] md:shadow-lg xl:h-[450px] lg:shadow-2xl lg:border-2 lg:border-black",
-        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl "
+        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl lg:max-h-[450px]"
     }
     // bg-[#f7f9fe]
     const selectedTheme=themes[theme]
@@ -41,7 +41,7 @@ export function UserPage({user, variant = "admin", theme = "light"}: UserPagePro
             </div>
             
             {/* Footer */}
-            <p className={`rounded-full ${selectedTheme.police} ${variant === "admin" ? "mt-[65%] text-[5px]":"mt-[30%] gap-y-8 md:p-8 md:text-[8px]"} `}>Made with ❤️ by FastProfile</p>            
+            <p className={`rounded-full ${selectedTheme.police} ${variant === "admin" ? "mt-[65%] text-[5px]":"mt-[30%] gap-y-8 md:p-8 md:text-[8px] "} `}>Made with ❤️ by FastProfile</p>            
         </div>
 
     )
