@@ -189,23 +189,23 @@ export function Design(){
                         <DNavbar></DNavbar>
                     </div>
                     
-                    <div className="overflow-y-auto grid grid-cols-[auto_1fr_310px] lg:grid-cols-[auto-1fr-500px]">
-                        <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969]">
-                            <Button variant="ghost" className="text-[20px]">
+                    <div className="overflow-y-auto grid grid-cols-[auto_1fr_310px] xl:grid-cols-[250px_1fr_450px]">
+                        <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969] xl:pt-8">
+                            <Button variant="ghost" className="text-[20px] p-5 flex items-center justify-start">
                                 <FontAwesomeIcon icon={faCircleUser}/>
-                                <span className="hidden">Profil</span> 
+                                <span className="hidden xl:block">Profil</span> 
                             </Button>
-                            <Button variant="ghost" className="text-[20px]">
+                            <Button variant="ghost" className="text-[20px] p-5 flex items-center justify-start">
                                 <FontAwesomeIcon icon={faSliders} />
-                                <span className="hidden">Thème</span> 
+                                <span className="hidden xl:block">Thème</span> 
                             </Button>
-                            <Button variant="ghost" className="text-[20px]">
+                            <Button variant="ghost" className="text-[20px] p-5 flex items-center justify-start">
                                 <FontAwesomeIcon icon={faLayerGroup} />
-                                <span className="hidden">Fond</span> 
+                                <span className="hidden xl:block">Fond</span> 
                             </Button>
-                            <Button variant="ghost" className="text-[20px]">
+                            <Button variant="ghost" className="text-[20px] p-5 flex items-center justify-start">
                                 <FontAwesomeIcon icon={faPaintRoller} />
-                                <span className="hidden">Style</span> 
+                                <span className="hidden xl:block">Style</span> 
                             </Button>
                         </div>
 

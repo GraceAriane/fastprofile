@@ -12,7 +12,7 @@ export function UserPage({user, variant = "admin", theme = "light"}: UserPagePro
     const base ="flex flex-col items-center"
     const variants ={
         admin:"justify-center w-[48%] border-[#E1E3E8] border-4 rounded-2xl gap-2 p-5 md:w-[100%] md:h-[400px] md:max-w-[350px] md:shadow-lg xl:h-[450px] lg:shadow-2xl lg:border-2 lg:border-black",
-        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl lg:max-h-[450px]"
+        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl lg:max-h-[450px] lg:max-w-[450px] xl:w-[270px] xl:max-h-[600px] "
     }
     // bg-[#f7f9fe]
     const selectedTheme=themes[theme]
