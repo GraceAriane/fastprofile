@@ -21,7 +21,7 @@ import type { User } from "~/types/user";
 export function MyfastProfile(){
     
     return(
-        <div>
+        <div className="p-4">
 
             <div className="md:hidden">
                 <div className="flex justify-between">
@@ -34,9 +34,9 @@ export function MyfastProfile(){
                             <a href="">Try Pro for free</a>
                         </Button>
                     </div>
-                    <div className="flex items-center gap-2 w-[30%] justify-center text-[#373737]">
-                        <FontAwesomeIcon icon={faArrowUpFromBracket} className="text-2xl"/>
-                        <FontAwesomeIcon icon={faGear} className="text-2xl"/>
+                    <div className="flex items-center w-[30%] justify-around text-[#373737]">
+                        <FontAwesomeIcon icon={faArrowUpFromBracket} className="text-[20px]"/>
+                        <FontAwesomeIcon icon={faGear} className="text-[20px]"/>
                     </div>
                 </div>
                 <div className=" my-5 flex flex-col gap-2.5">

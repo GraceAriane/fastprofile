@@ -17,14 +17,14 @@ import { Accordion,
     AccordionItem,
     AccordionTrigger,
 } from "~/components/ui/accordion"
-import { Design } from "~/pages/designProfile";
+import { InsightPage } from "~/pages/adminInsights";
 
 export default function Layout() {
     let active;
     active="bg-[#c7c7c7]"
 
   return (
-    <div className="flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
+    <div className="bg-[#f1f0ec] flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
         
         <Pub/>
 
@@ -103,15 +103,16 @@ export default function Layout() {
                 </div> */}
             </div>
 
-            <div className="p-4 md:w-[75%] md:p-0 xl:w-[80%]">
-                <MyfastProfile></MyfastProfile>
+            <div className="md:w-[75%] md:p-0 xl:w-[80%]">
+                {/* <MyfastProfile></MyfastProfile> */}
+                <InsightPage></InsightPage>
             </div>
 
         </div>
         
-        <div className="fixed bottom-0 self-end w-[100%] h-[10%] pt-[2%] bg-[#F5F5F5] flex md:hidden">
+        <div className="fixed bottom-0 left-0 right-0 self-end w-[100%] h-[10%] pt-[2%] bg-[#f1f0ec] border-t-[#d1cfcd] border-t-1 flex md:hidden">
 
-            <div className="flex w-[90%] m-auto justify-between items-center text-[#6D6D6D]">
+            <div className="flex w-[90%] m-auto justify-between items-center text-[#666666]">
                 
                 <Link to="" className="flex flex-col justify-center items-center gap-2">
                     <FontAwesomeIcon icon={faArrowUpFromBracket} className="text-[25px]"/>

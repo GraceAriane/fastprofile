@@ -85,34 +85,46 @@ export function Design(){
                 break;
             case "Fond":
                 return(
-                    <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] h-full">
+                    <div>
+                        <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] h-full max-w-[500px]">
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
-                            <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
-                                <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
+                            <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
+                                <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
+                                    <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
+                                </div>
+                                <span className="text-center mt-1">Rempli</span>
                             </div>
-                            <span className="text-center mt-1">Rempli</span>
-                        </div>
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
-                            <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
-                                <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
-                            </div>
-                            <span className="text-center mt-1">Dégradé</span>
-                        </div>  
+                            <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
+                                <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
+                                    <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
+                                </div>
+                                <span className="text-center mt-1">Dégradé</span>
+                            </div>  
 
-                        <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
-                            <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
-                                <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
+                            <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
+                                <div onClick={()=>setTheme("light")} className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl">
+                                    <img src={mockUser.avatar} alt="" className={`rounded-full w-12 p-2`}/>
+                                </div>
+                                <span className="text-center mt-1">Blur</span>
                             </div>
-                            <span className="text-center mt-1">Blur</span>
-                        </div>
-                        
+
+                        </div> 
+
                         <div>
-                            
+                            {/* <h3>Couleurs :</h3>
+                            <div>
+                                <div>
+
+                                </div>
+                                <div>
+
+                                </div>
+                            </div> */}
                         </div>
 
-                    </div> 
+                    </div>
+
                 )
                 break;
             case "Style":
