@@ -107,9 +107,9 @@ export function ChartAreaAxes() {
           </AreaChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="mt-4">
         <div className="flex w-full items-start gap-2 text-sm">
-            <div className="flex flex-col gap-4">
+            <div className="flex gap-4">
               <Button variant="outline" className="text-[16px] px-6 rounded-full border-[#919190]">
                   <span className="bg-red-500 w-[10px] h-[10px] rounded-full"></span>
                   Vues

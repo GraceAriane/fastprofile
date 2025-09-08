@@ -55,6 +55,12 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+}
+
+svg[data-icon] {
+  width: 1em;
+  height: 1em;
 }
 
 /* :root {

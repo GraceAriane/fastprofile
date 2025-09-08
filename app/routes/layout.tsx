@@ -28,9 +28,9 @@ export default function Layout() {
         
         <Pub/>
 
-        <div className="self-start h-[95%] w-[100%] md:rounded-tl-2xl md:rounded-tr-3xl md:bg-[#F5F5F5] md:flex">
+        <div className="self-start h-full w-[100%] md:rounded-tl-2xl md:rounded-tr-2xl md:bg-[#F5F5F5] md:flex">
 
-            <div className="sidebar hidden sticky left-0 md:flex flex-col gap-3 p-4 bg-[#efefef] w-[30%] lg:w-[25%] xl:w-[20%] md:rounded-tl-3xl">
+            <div className="sidebar bg-[#F2F1ED] hidden sticky left-0 md:flex flex-col gap-3 p-4 w-[30%] lg:w-[25%] xl:w-[20%] md:rounded-tl-3xl">
                 <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center gap-1.5">
                         <img src="https://github.com/shadcn.png" alt="" className="w-[25px] rounded-full"/>
@@ -103,9 +103,10 @@ export default function Layout() {
                 </div> */}
             </div>
 
-            <div className="md:w-[75%] md:p-0 xl:w-[80%]">
+            <div className="md:w-[75%] md:p-0 xl:w-[80%] bg-[#F2F1ED] md:rounded-tr-2xl">
                 {/* <MyfastProfile></MyfastProfile> */}
                 <InsightPage></InsightPage>
+                
             </div>
 
         </div>

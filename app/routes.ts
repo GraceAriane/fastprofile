@@ -8,6 +8,7 @@ export default [
         index("routes/dashboard.tsx"),
         layout("routes/layout.tsx",[
             index("pages/adminFastprofile.tsx"),
+            route("insights", "routes/insights.tsx")
         ]),
         route("design","routes/design.tsx")
         
