@@ -17,17 +17,30 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "~/components/ui/chart"
-
+import { Button } from "./ui/button"
 export const description = "An area chart with axes"
 
-const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-]
+
+
+function getLast7DaysData() {
+  const today = new Date()
+  const days: { day: string; desktop: number; mobile: number }[] = []
+
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date(today)
+    date.setDate(today.getDate() - i)
+
+    days.push({
+      day: date.toLocaleDateString("en-US", { weekday: "short" }), // ex: "Mon"
+      desktop: Math.floor(Math.random() * 300) + 50, // valeurs mock
+      mobile: Math.floor(Math.random() * 200) + 20,
+    })
+  }
+
+  return days
+}
+
+const chartData = getLast7DaysData()
 
 const chartConfig = {
   desktop: {
@@ -44,9 +57,9 @@ export function ChartAreaAxes() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Area Chart - Axes</CardTitle>
+        <CardTitle className="text-2xl">Activité</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6 months
+          vues et clics
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -61,7 +74,7 @@ export function ChartAreaAxes() {
           >
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="month"
+              dataKey="day"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
@@ -70,24 +83,25 @@ export function ChartAreaAxes() {
             <YAxis
               tickLine={false}
               axisLine={false}
-              tickMargin={8}
-              tickCount={3}
+              tickMargin={12}
+              tickCount={4}
+              
             />
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <Area
               dataKey="mobile"
               type="natural"
-              fill="var(--color-mobile)"
+              fill="none"
               fillOpacity={0.4}
-              stroke="var(--color-mobile)"
+              stroke="red"
               stackId="a"
             />
             <Area
               dataKey="desktop"
               type="natural"
-              fill="var(--color-desktop)"
+              fill="none"
               fillOpacity={0.4}
-              stroke="var(--color-desktop)"
+              stroke="blue"
               stackId="a"
             />
           </AreaChart>
@@ -95,14 +109,16 @@ export function ChartAreaAxes() {
       </CardContent>
       <CardFooter>
         <div className="flex w-full items-start gap-2 text-sm">
-          <div className="grid gap-2">
-            <div className="flex items-center gap-2 leading-none font-medium">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+            <div className="flex flex-col gap-4">
+              <Button variant="outline" className="text-[16px] px-6 rounded-full border-[#919190]">
+                  <span className="bg-red-500 w-[10px] h-[10px] rounded-full"></span>
+                  Vues
+              </Button>
+              <Button variant="outline" className="text-[16px] px-6 rounded-full border-[#919190]">
+                  <span className="bg-blue-500 w-[10px] h-[10px] rounded-full"></span>
+                  Clics
+              </Button>
             </div>
-            <div className="text-muted-foreground flex items-center gap-2 leading-none">
-              January - June 2024
-            </div>
-          </div>
         </div>
       </CardFooter>
     </Card>

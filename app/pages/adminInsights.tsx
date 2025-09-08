@@ -10,8 +10,8 @@ export function InsightPage(){
                 <FontAwesomeIcon icon={faGear} className="text-[20px] text-[#656565]"/>
             </div>
 
-            <div className="mx-4 mt-5 p-4 bg-white rounded-2xl">
-                <h3>
+            <div className="mx-4 mt-5 p-4 bg-white rounded-2xl flex flex-col gap-4">
+                <h3 className="text-xl font-semibold">
                     Lifetime
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -34,7 +34,7 @@ export function InsightPage(){
                 </div>
             </div>
 
-            <div className="p-4">
+            <div className="px-4 pt-4 pb-25">
                 <ChartAreaAxes></ChartAreaAxes>
             </div>
         </div>
