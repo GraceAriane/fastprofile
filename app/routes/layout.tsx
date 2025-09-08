@@ -24,7 +24,7 @@ export default function Layout() {
     active="bg-[#c7c7c7]"
 
   return (
-    <div className="bg-[#f1f0ec] flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
+    <div className="bg-[#F2F1ED] flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
         
         <Pub/>
 
@@ -110,7 +110,7 @@ export default function Layout() {
 
         </div>
         
-        <div className="fixed bottom-0 left-0 right-0 self-end w-[100%] h-[10%] pt-[2%] bg-[#f1f0ec] border-t-[#d1cfcd] border-t-1 flex md:hidden">
+        <div className="fixed bottom-0 left-0 right-0 self-end w-[100%] h-[10%] pt-[2%] bg-[#F2F1ED] border-t-[#d1cfcd] border-t-1 flex md:hidden">
 
             <div className="flex w-[90%] m-auto justify-between items-center text-[#666666]">
                 

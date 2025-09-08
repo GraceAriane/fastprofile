@@ -14,22 +14,22 @@ export function InsightPage(){
                 <h3>
                     Lifetime
                 </h3>
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2.5">
-                        <FontAwesomeIcon icon={faEye} className="p-2 text-[20px]"/>
-                        <p><span>05</span> Vues</p>
+                        <FontAwesomeIcon icon={faEye} className="p-2 text-[15px] bg-[#DEDDDC] text-[#919190] rounded-[8px]"/>
+                        <p><span className="font-bold text-[18px]">5</span> Vues</p>
                     </div>
                     <div className="flex items-center gap-2.5">
-                        <FontAwesomeIcon icon={faPercent} className="p-2 text-[20px]"/>
-                        <p><span>0%</span> de Clics</p>
+                        <FontAwesomeIcon icon={faPercent} className="p-2 text-[15px] bg-[#DEDDDC] text-[#919190] rounded-[8px]"/>
+                        <p><span className="font-bold text-[18px]">0%</span> de Clics</p>
                     </div>
                     <div className="flex items-center gap-2.5">
-                        <FontAwesomeIcon icon={faLink} className="p-2 text-[20px]"/>
-                        <p><span>0 </span>Clicks</p>
+                        <FontAwesomeIcon icon={faLink} className="p-2 text-[15px] bg-[#DEDDDC] text-[#919190] rounded-[8px]"/>
+                        <p><span className="font-bold text-[18px]">0 </span>Clicks</p>
                     </div>
                     <div className="flex items-center gap-2.5">
-                        <FontAwesomeIcon icon={faUserPlus} className="p-2 text-[20px]"/>
-                        <p><span>05</span> Abonnés</p>
+                        <FontAwesomeIcon icon={faUserPlus} className="p-2 text-[15px] bg-[#DEDDDC] text-[#919190] rounded-[8px]"/>
+                        <p><span className="font-bold text-[18px]">5</span> Abonnés</p>
                     </div>
                 </div>
             </div>
