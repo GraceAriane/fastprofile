@@ -18,25 +18,26 @@ import { Accordion,
     AccordionTrigger,
 } from "~/components/ui/accordion"
 import { InsightPage } from "~/pages/adminInsights";
+import { Parameter } from "~/pages/parameters";
 
 export default function Layout() {
     let active;
     active="bg-[#c7c7c7]"
 
   return (
-    <div className="bg-[#F2F1ED] flex flex-col h-[100vh] md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
+    <div className="flex flex-col h-screen md:p-0 md:bg-[#1E3A8A] md:text-[16px] md:border-5 md:border-red-500">
         
         <Pub/>
 
-        <div className="self-start h-full w-[100%] md:rounded-tl-2xl md:rounded-tr-2xl md:bg-[#F5F5F5] md:flex">
+        <div className="self-start border-2 h-full w-[100%] md:rounded-tl-2xl md:rounded-tr-2xl md:grid md:grid-cols-[250px_1fr]">
 
-            <div className="sidebar bg-[#F2F1ED] hidden sticky left-0 md:flex flex-col gap-3 p-4 w-[30%] lg:w-[25%] xl:w-[20%] md:rounded-tl-3xl">
+            <div className="bg-[#f5f5f5] sidebar hidden md:flex flex-col gap-3 p-4 lg:w-[25%] xl:w-[20%] md:rounded-tl-3xl">
                 <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center gap-1.5">
-                        <img src="https://github.com/shadcn.png" alt="" className="w-[25px] rounded-full"/>
-                        <h3 className="text-[15px] text-[#373737] lg:text-xl">
+                    <DropdownMenuTrigger className="flex items-center gap-2 ">
+                        <img src="https://github.com/shadcn.png" alt="" className="w-[20px] rounded-full"/>
+                        <h3 className="text-[14px] text-[#373737]">
                             tchoukeugrace
-                            <FontAwesomeIcon icon={faAngleDown} className="text-[12px] ml-2"/>
+                            <FontAwesomeIcon icon={faAngleDown} className="text-[8px] ml-2 self-center"/>
                         </h3>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="rounded-2xl">
@@ -71,7 +72,7 @@ export default function Layout() {
                     <Accordion type="single" collapsible className="">
                         <AccordionItem value="item-1" className="pl-2 rounded-[10px]">
                             <AccordionTrigger className="md:text-[15px] hover:no-underline">My FastProfile</AccordionTrigger>
-                            <AccordionContent className="ml-2 p-2 flex flex-col md:text-[15px] gap-2 border-l-[#dadada] border-l">
+                            <AccordionContent className="ml-2 pl-2 flex flex-col md:text-[15px] gap-2 border-l-[#dadada] border-l">
                                 <Link to="" className={`p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all ${active}`}>
                                     <a href="" >Liens</a>
                                 </Link>
@@ -103,10 +104,10 @@ export default function Layout() {
                 </div> */}
             </div>
 
-            <div className="md:w-[75%] md:p-0 xl:w-[80%] bg-[#F2F1ED] md:rounded-tr-2xl">
-                {/* <MyfastProfile></MyfastProfile> */}
-                <InsightPage></InsightPage>
-                
+            <div className="border-4 border-amber-300 md:rounded-tr-2xl">
+                <MyfastProfile></MyfastProfile>
+                {/* <InsightPage></InsightPage> */}
+                {/* <Parameter></Parameter> */}
             </div>
 
         </div>
@@ -132,7 +133,7 @@ export default function Layout() {
                 
                 <Link to="" className="flex flex-col justify-center items-center gap-2">
                     <FontAwesomeIcon icon={faBars} className="text-[25px]"/>
-                    <p className="text-[0.645rem]">More</p>
+                    <p className="text-[0.645rem]">Plus</p>
                 </Link>
             </div>
 

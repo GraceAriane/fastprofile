@@ -21,7 +21,7 @@ import type { User } from "~/types/user";
 export function MyfastProfile(){
     
     return(
-        <div className="p-4">
+        <div className="p-4 bg-[#F9FAFB]">
 
             <div className="md:hidden">
                 <div className="flex justify-between">
@@ -52,7 +52,7 @@ export function MyfastProfile(){
 
             <div className="md:flex md:flex-col">
 
-                <div className="hidden md:flex sticky top-0 justify-between items-center p-4">
+                <div className="hidden md:flex justify-between items-center p-4">
                     <h2>Mon FastProfile</h2>
                     <div className="flex gap-2.5">
                         <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
@@ -71,7 +71,7 @@ export function MyfastProfile(){
 
                 <Separator className="hidden md:block"></Separator>
 
-                <div className="gap-6 md:flex md:h-[80vh] md:px-4">
+                <div className="gap-6 md:flex md:px-4">
 
                     <div className="hidden md:flex flex-col gap-8 md:p-1 lg:w-[70%] lg:overflow-y-auto lg:pr-1">
 
