@@ -30,9 +30,9 @@ export default function Layout() {
             <Pub/>
         </div>
 
-        <div className="self-start h-full w-[100%] md:grid md:grid-cols-[200px_1fr] md:overflow-y-hidden md:rounded-tl-2xl md:rounded-tr-2xl">
+        <div className="self-start w-full h-full md:grid md:grid-cols-[200px_1fr] md:overflow-y-hidden md:rounded-tl-2xl md:rounded-tr-2xl">
 
-            <div className="bg-[#f5f5f5] sidebar hidden md:flex flex-col gap-3 p-4 md:rounded-tl-3xl">
+            <div className="bg-[#f5f5f5] sidebar hidden md:flex flex-col gap-3 p-4 -mr-1 md:rounded-tl-2xl">
                 <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center gap-2 ">
                         <img src="https://github.com/shadcn.png" alt="" className="w-[20px] rounded-full"/>
@@ -105,9 +105,9 @@ export default function Layout() {
                 </div> */}
             </div>
 
-            <div className="h-full overflow-auto md:rounded-tr-2xl ">
-                {/* <MyfastProfile></MyfastProfile> */}
-                <InsightPage></InsightPage>
+            <div className="overflow-auto md:rounded-tr-2xl bg-[#F9FAFB]">
+                <MyfastProfile></MyfastProfile>
+                {/* <InsightPage></InsightPage> */}
                 {/* <Parameter></Parameter> */}
             </div>
 

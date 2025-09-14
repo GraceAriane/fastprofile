@@ -61,7 +61,7 @@ export function MyfastProfile(){
                         </Button>
                         <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
                             <FontAwesomeIcon icon={faArrowUpFromBracket} className=""/>
-                            Share
+                            Partager
                         </Button>
                         <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
                             <FontAwesomeIcon icon={faGear} className=""/>
@@ -69,11 +69,11 @@ export function MyfastProfile(){
                     </div>
                 </div>
 
-                <Separator className="hidden md:block"></Separator>
+                <Separator className="hidden md:block my-2"></Separator>
 
-                <div className="gap-6 md:flex md:px-4">
+                <div className="gap-6 md:grid grid md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)]">
 
-                    <div className="hidden md:flex flex-col gap-8 md:p-1 lg:w-[70%] lg:overflow-y-auto lg:pr-1">
+                    <div className="hidden md:flex flex-col gap-8">
 
                         <div className="flex gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100 lg:mt-4">
                             <FontAwesomeIcon icon={faCircleExclamation} className="mt-2 text-[17px]"/>
@@ -127,8 +127,8 @@ export function MyfastProfile(){
 
                     </div>
                     
-                    <div className="sticky right-0 mt-4 md:m-auto md:w-[450px] md:max-w-[220px] lg:max-w-[250px]">
-                        <UserPage user={mockUser} variant="admin"></UserPage>
+                    <div className="mt-4 md:m-auto md:w-full md:max-w-[220px] lg:max-w-[250px]">
+                        <UserPage user={mockUser} variant="design"></UserPage>
                     </div>
 
                 </div>
