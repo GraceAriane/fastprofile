@@ -50,9 +50,9 @@ export function MyfastProfile(){
                 </div>
             </div>
 
-            <div className="md:flex md:flex-col">
+            <div className="md:flex md:flex-col w-full">
 
-                <div className="hidden md:flex justify-between items-center p-4">
+                <div className="hidden md:flex justify-between items-center px-3 py-1">
                     <h2>Mon FastProfile</h2>
                     <div className="flex gap-2.5">
                         <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">

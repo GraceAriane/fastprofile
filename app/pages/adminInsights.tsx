@@ -4,8 +4,8 @@ import { ChartAreaAxes } from "~/components/chart";
 
 export function InsightPage(){
     return(
-        <div>
-            <div className="bg-[#F2F1ED] flex justify-between items-center p-4 py-6 sticky top-0 left-0 right-0 md:bg-[#F2F1ED] md:rounded-tr-2xl">
+        <div className="bg-[#F9FAFB]">
+            <div className="bg-[#F2F1ED] flex justify-between items-center p-4 py-6 sticky top-0 left-0 right-0 md:bg-[#F9FAFB] md:rounded-tr-2xl">
                 <h2 className="text-2xl scroll-m-20 font-semibold tracking-tight first:mt-0 text-center">Insights</h2>
                 <FontAwesomeIcon icon={faGear} className="text-[20px] text-[#656565]"/>
             </div>
