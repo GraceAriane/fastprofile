@@ -1,16 +1,16 @@
 
 import type { User } from "~/types/user";
 import { themes } from "~/config/themes";
-import type { styles } from "~/config/styles";
+import { styles } from "~/config/styles";
 
 interface UserPageProps{
     user: User,
     variant?: "admin" | "design",
     theme?: keyof typeof themes
-    styles?: keyof typeof styles
+    style?: keyof typeof styles
 }
 
-export function UserPage({user, variant = "admin", theme = "light"}: UserPageProps){
+export function UserPage({user, variant = "admin", theme = "light", style="rounded"}: UserPageProps){
     const base ="flex flex-col items-center md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl lg:max-w-[450px] xl:w-[280px]"
     const variants ={
         admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4 md:border-black",
@@ -18,6 +18,7 @@ export function UserPage({user, variant = "admin", theme = "light"}: UserPagePro
     }
     // bg-[#f7f9fe]
     const selectedTheme=themes[theme]
+    const selectedStyle= styles[style]
     
     return(
         <div className={`${base} ${variants[variant]} ${selectedTheme.container}`}>
@@ -33,7 +34,7 @@ export function UserPage({user, variant = "admin", theme = "light"}: UserPagePro
             <div className={`mt-2 ${variant === "admin" ? "text-[8px] md:text-[14px] md:w-11/12" : "text-[18px] w-11/12 md:text-[14px]"}`}>
                 <ul className={`flex flex-col ${variant === "admin" ? "gap-2 md:gap-3" : "gap-3"}`}>
                     {user.links.map((link, idx) => (
-                    <li key={idx} className={`${selectedTheme.link} ${selectedTheme.police} text-center ${variant === "admin" ? "py-1 px-2 md:py-4.5 md:px-2" : "py-4.5 px-2"}`}>
+                    <li key={idx} className={`${selectedTheme.link} ${selectedStyle} ${selectedTheme.police} text-center ${variant === "admin" ? "py-1 px-2 md:py-4.5 md:px-2" : "py-4.5 px-2"}`}>
                         <a href={link.url} target="_blank" rel="noopener noreferrer">
                         {link.title}
                         </a>

@@ -339,6 +339,7 @@ export function Design() {
                 user={mockUser}
                 variant="design"
                 theme={theme}
+                style={style}
               ></UserPage>
             </div>
           </div>
