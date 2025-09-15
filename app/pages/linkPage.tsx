@@ -11,7 +11,7 @@ interface UserPageProps{
 export function UserPage({user, variant = "admin", theme = "light"}: UserPageProps){
     const base ="flex flex-col items-center md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl lg:max-w-[450px] xl:w-[280px]"
     const variants ={
-        admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4",
+        admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4 md:border-black",
         design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] lg:max-w-[450px] xl:w-[280px]"
     }
     // bg-[#f7f9fe]

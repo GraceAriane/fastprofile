@@ -22,10 +22,10 @@ import { Link } from "react-router";
 export function MyfastProfile(){
     
     return(
-        <div className="p-4 bg-[#F9FAFB]">
+        <div className=" bg-[#F9FAFB]">
 
             <div className="md:hidden">
-                <div className="flex justify-between">
+                <div className="flex justify-between px-4 pt-4">
                     <div className="flex items-center justify-between w-[70%]">
                         <img src="https://github.com/shadcn.png" alt="" className="w-[60px] rounded-full"/>
                         <Button
@@ -40,20 +40,20 @@ export function MyfastProfile(){
                         <FontAwesomeIcon icon={faGear} className="text-[20px]"/>
                     </div>
                 </div>
-                <div className=" my-5 flex flex-col gap-2.5">
+                <div className=" my-5 flex flex-col gap-2.5 px-4">
                     <h3 className="text-4xl font-bold text-[#373737]">tchoukeugrace</h3>
                     <p>fastprofile.com/tchoukeugrace</p>
                 </div>
 
-                <div className="flex gap-5">
+                <div className="flex gap-5 px-4">
                     <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#9C9C9C] text-white font-semibold">Pages</Button>
                     <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#E8E8E8]">Archives</Button>
                 </div>
             </div>
 
-            <div className="md:flex md:flex-col w-full">
+            <div className="md:flex md:flex-col">
 
-                <div className="hidden md:flex justify-between items-center px-3 py-1">
+                <div className="hidden md:flex justify-between items-center px-4 py-4 sticky top-0 bg-[#F9FAFB] z-20">
                     <h2>Mon FastProfile</h2>
                     <div className="flex gap-2.5">
                         <Link to="design" >
@@ -72,11 +72,9 @@ export function MyfastProfile(){
                     </div>
                 </div>
 
-                <Separator className="hidden md:block my-2"></Separator>
+                <div className="gap-6 md:grid grid md:gap-4 md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)]">
 
-                <div className="gap-6 md:grid grid md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)]">
-
-                    <div className="hidden md:flex flex-col gap-8">
+                    <div className="hidden md:flex flex-col gap-8 pl-4">
 
                         <div className="flex gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100 lg:mt-4">
                             <FontAwesomeIcon icon={faCircleExclamation} className="mt-2 text-[17px]"/>
@@ -124,7 +122,7 @@ export function MyfastProfile(){
 
                     </div>
                     
-                    <div className="flex flex-col gap-2 md:m-auto md:w-full md:max-w-[220px] lg:max-w-[250px]">
+                    <div className="flex flex-col gap-2 pl-4 md:m-auto md:w-full md:pl-0 md:max-w-[220px] lg:max-w-[250px]">
                         <UserPage user={mockUser} variant="admin"></UserPage>
                         <div className="flex items-center gap-2 md:hidden">
                             <p className="font-semibold ml-2 text-[18px]">Liens</p>
