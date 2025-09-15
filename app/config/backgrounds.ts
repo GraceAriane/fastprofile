@@ -1,16 +1,18 @@
-// ~/config/backgrounds.ts
 export const backgrounds = {
   solid: (color: string) => ({
-    className: "", // pas de classes spécifiques
-    style: { backgroundColor: color }, // applique la couleur directement
+    className: "",
+    style: { backgroundColor: color },
+    label: "Rempli",
   }),
   gradient: (color: string) => ({
-    className: "bg-gradient-to-r from-transparent to-white",
-    style: { background: `linear-gradient(to right, ${color}, white)` },
+    className: "",
+    style: { background: `linear-gradient(135deg, ${color}, #ffffff)` },
+    label: "Dégradé",
   }),
   blur: (color: string) => ({
-    className: "backdrop-blur-md bg-opacity-50",
+    className: "backdrop-blur-md bg-opacity-60",
     style: { backgroundColor: color },
+    label: "Blur",
   }),
 } as const;
 

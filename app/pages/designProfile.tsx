@@ -28,6 +28,8 @@ import { themes } from "~/config/themes";
 import { themeImages } from "~/config/themes";
 import { styles } from "~/config/styles";
 import { stylesImages } from "~/config/styles";
+import { backgrounds,type BackgroundType } from "~/config/backgrounds";
+
 const mockUser: User = {
   name: "tchoukeu grace",
   avatar: "https://i.pravatar.cc/150?img=3",
@@ -46,6 +48,8 @@ export function Design() {
   >(null);
   const [style, setStyle] = useState<keyof typeof styles>("rounded")
 
+  const [color, setColor] = useState("#ff0000");
+  const [backgroundType, setBackgroundType] = useState<BackgroundType>("solid");
 
   const handleOpen = (content: "Profil" | "Thème" | "Fond" | "Style") => {
     setContent(content);
@@ -54,6 +58,7 @@ export function Design() {
   const contentDrawer = (
     content: "Profil" | "Thème" | "Fond" | "Style" | null
   ) => {
+    
     switch (content) {
       case "Profil":
         return (
@@ -118,48 +123,31 @@ export function Design() {
       case "Fond":
         return (
           <div>
-            <div className="grid grid-cols-3 grid-rows-[150px] gap-4 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] h-full max-w-[500px]">
-              <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
-                <div
-                  onClick={() => setTheme("light")}
-                  className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl"
-                >
-                  <img
-                    src={mockUser.avatar}
-                    alt=""
-                    className={`rounded-full w-12 p-2`}
-                  />
-                </div>
-                <span className="text-center mt-1">Rempli</span>
-              </div>
+            <div className="border-3 grid grid-rows-[1fr] grid-cols-3 gap-4 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+              {(Object.keys(backgrounds) as typeof backgroundType[]).map((name) => {
+                const preview = backgrounds[name](color);
+                return(
+                  <div className="border-3 grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl">
+                    <Button
+                      variant="ghost"
+                      key={name}
+                      onClick={() => setBackgroundType(name)}
+                      className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl"
+                      style={preview.style}
+                    >
+                      <img
+                        src={mockUser.avatar}
+                        alt=""
+                        className={`rounded-full w-12 p-2`}
+                      />
+                    
+                    </Button>
+                    <span className="text-center mt-1">{preview.label}</span>
+                  </div>
 
-              <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
-                <div
-                  onClick={() => setTheme("light")}
-                  className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl"
-                >
-                  <img
-                    src={mockUser.avatar}
-                    alt=""
-                    className={`rounded-full w-12 p-2`}
-                  />
-                </div>
-                <span className="text-center mt-1">Dégradé</span>
-              </div>
+                )
+              })}
 
-              <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl md:h-[150px] xl:h-[200px]">
-                <div
-                  onClick={() => setTheme("light")}
-                  className="border-2 flex items-start justify-center p-0 h-full w-full focus:border-2 rounded-2xl"
-                >
-                  <img
-                    src={mockUser.avatar}
-                    alt=""
-                    className={`rounded-full w-12 p-2`}
-                  />
-                </div>
-                <span className="text-center mt-1">Blur</span>
-              </div>
             </div>
 
             <div className="flex pt-5">
@@ -167,8 +155,8 @@ export function Design() {
               <div className="">
                 <input
                   type="color"
-                //   value={backgroundColor}
-                //   onChange={(e) => setBackgroundColor(e.target.value)}
+                  value={color}
+                  onChange={(e) => setColor(e.target.value)}
                   className="ml-2 rounded-full w-8 h-8"
                 />
               </div>
@@ -214,7 +202,13 @@ export function Design() {
         <div
           className={`border-1 rounded-tl-4xl rounded-tr-4xl relative transition-all duration-500  ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"} `}
         >
-          <UserPage user={mockUser} variant="design" theme={theme}></UserPage>
+          <UserPage
+            user={mockUser} variant="design"
+            theme={theme}                 
+            style={style}
+            backgroundColor={color}
+            backgroundType={backgroundType}
+          ></UserPage>
         </div>
 
         <div className="fixed z-50 rounded-[24px] left-1/2 -translate-x-1/2 bottom-3.5 p-4 shadow-lg flex items-center justify-center bg-[#fff]">
@@ -340,6 +334,8 @@ export function Design() {
                 variant="design"
                 theme={theme}
                 style={style}
+                backgroundColor={color}
+                backgroundType={backgroundType}
               ></UserPage>
             </div>
           </div>

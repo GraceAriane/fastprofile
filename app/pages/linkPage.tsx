@@ -2,15 +2,18 @@
 import type { User } from "~/types/user";
 import { themes } from "~/config/themes";
 import { styles } from "~/config/styles";
+import { backgrounds, type BackgroundType } from "~/config/backgrounds";
 
 interface UserPageProps{
-    user: User,
-    variant?: "admin" | "design",
+    user: User
+    variant?: "admin" | "design"
     theme?: keyof typeof themes
     style?: keyof typeof styles
+    backgroundColor?: string; // couleur choisie
+    backgroundType?: BackgroundType; // solid, gradient ou blur
 }
 
-export function UserPage({user, variant = "admin", theme = "light", style="rounded"}: UserPageProps){
+export function UserPage({user, variant = "admin", theme = "light", style="rounded", backgroundColor="#fff", backgroundType="solid"}: UserPageProps){
     const base ="flex flex-col items-center md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl lg:max-w-[450px] xl:w-[280px]"
     const variants ={
         admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4 md:border-black",
@@ -19,9 +22,10 @@ export function UserPage({user, variant = "admin", theme = "light", style="round
     // bg-[#f7f9fe]
     const selectedTheme=themes[theme]
     const selectedStyle= styles[style]
-    
+    const selectedBackground = backgrounds[backgroundType](backgroundColor);
+
     return(
-        <div className={`${base} ${variants[variant]} ${selectedTheme.container}`}>
+        <div className={`${base} ${variants[variant]} ${selectedTheme.container} ${selectedBackground.className}`} style={selectedBackground.style}>
 
             {/* Header */}
             <img src={user.avatar} className={`rounded-full ${variant === "admin" ? "w-11 md:w-18":"w-22 mt-4 md:w-18"}`} alt={user.name} />
