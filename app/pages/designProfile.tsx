@@ -123,16 +123,16 @@ export function Design() {
       case "Fond":
         return (
           <div>
-            <div className="border-3 grid grid-rows-[1fr] grid-cols-3 gap-4 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+            <div className="grid grid-rows-[1fr] grid-cols-3 gap-4 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
               {(Object.keys(backgrounds) as typeof backgroundType[]).map((name) => {
                 const preview = backgrounds[name](color);
                 return(
-                  <div className="border-3 grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl">
+                  <div className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl">
                     <Button
                       variant="ghost"
                       key={name}
                       onClick={() => setBackgroundType(name)}
-                      className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl"
+                      className="h-[140px] w-full flex items-start focus:border-2 rounded-2xl md:h-[150px]"
                       style={preview.style}
                     >
                       <img

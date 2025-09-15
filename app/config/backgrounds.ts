@@ -6,7 +6,7 @@ export const backgrounds = {
   }),
   gradient: (color: string) => ({
     className: "",
-    style: { background: `linear-gradient(135deg, ${color}, #ffffff)` },
+    style: { background: `linear-gradient(45deg, ${color}, #ffffff)` },
     label: "Dégradé",
   }),
   blur: (color: string) => ({
