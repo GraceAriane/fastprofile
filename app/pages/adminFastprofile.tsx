@@ -6,6 +6,7 @@ import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { UserPage } from "./linkPage";
 import { Separator } from "~/components/ui/separator";
 import type { User } from "~/types/user";
+import { Link } from "react-router";
 
   const mockUser: User = {
     name: "tchoukeu grace" ,
@@ -55,10 +56,12 @@ export function MyfastProfile(){
                 <div className="hidden md:flex justify-between items-center px-3 py-1">
                     <h2>Mon FastProfile</h2>
                     <div className="flex gap-2.5">
-                        <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
-                            <FontAwesomeIcon icon={faArrowUpFromBracket} className=""/>
-                            Design
-                        </Button>
+                        <Link to="design" >
+                            <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
+                                <FontAwesomeIcon icon={faArrowUpFromBracket} className=""/>
+                                Design
+                            </Button>
+                        </Link>
                         <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
                             <FontAwesomeIcon icon={faArrowUpFromBracket} className=""/>
                             Partager
@@ -107,12 +110,6 @@ export function MyfastProfile(){
                             >
                             <a href="">Ajouter</a>
                             </Button>
-
-                            <a href="" className="self-end flex items-center gap-1 text-[#484848]">
-                                <FontAwesomeIcon icon={faBoxArchive} className="text-[12px]"/>
-                                Archives
-                                <FontAwesomeIcon icon={faChevronRight} className="text-[12px]"/>
-                            </a>
                         </div>
 
                         <div className="loader text-[#b1b1b1] flex flex-col items-center justify-center gap-2 mb-14">
@@ -127,8 +124,12 @@ export function MyfastProfile(){
 
                     </div>
                     
-                    <div className="mt-4 md:m-auto md:w-full md:max-w-[220px] lg:max-w-[250px]">
-                        <UserPage user={mockUser} variant="design"></UserPage>
+                    <div className="flex flex-col gap-2 md:m-auto md:w-full md:max-w-[220px] lg:max-w-[250px]">
+                        <UserPage user={mockUser} variant="admin"></UserPage>
+                        <div className="flex items-center gap-2 md:hidden">
+                            <p className="font-semibold ml-2 text-[18px]">Liens</p>
+                            <FontAwesomeIcon icon={faChevronRight} className="text-[10px]"/>
+                        </div>
                     </div>
 
                 </div>
