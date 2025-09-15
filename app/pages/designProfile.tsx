@@ -48,7 +48,7 @@ export function Design() {
   >(null);
   const [style, setStyle] = useState<keyof typeof styles>("rounded")
 
-  const [color, setColor] = useState("#ff0000");
+  const [color, setColor] = useState("#f1f1f1");
   const [backgroundType, setBackgroundType] = useState<BackgroundType>("solid");
 
   const handleOpen = (content: "Profil" | "Thème" | "Fond" | "Style") => {

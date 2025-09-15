@@ -10,7 +10,7 @@ export const stylesImages = {
 
 export const styles = {
   rounded: "rounded-lg px-4 py-2 text-black! bg-white",
-  full: "bg-gray-700 text-white",
-  transparent: "bg-white/20 text-white! rounded-4xl",
+  full: "bg-gray-700! text-white! rounded-none!",
+  transparent: "bg-white/20 text-white! rounded-4xl!",
   
 } as const;

@@ -15,7 +15,7 @@ export const themes = {
     link: `${styles.rounded} `,
   },
   dark: {
-    container: "bg-gray-900 text-white",
+    container: "bg-gray-900! text-white",
     police:"font-purple",
     link: styles.full,
   },

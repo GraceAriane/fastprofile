@@ -11,7 +11,7 @@ export const backgrounds = {
   }),
   blur: (color: string) => ({
     className: "backdrop-blur-md bg-opacity-60",
-    style: { backgroundColor: color },
+    style: { backgroundColor: `${color}` },
     label: "Blur",
   }),
 } as const;

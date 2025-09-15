@@ -145,8 +145,8 @@ export default function Layout() {
         </div>
 
         <div className="overflow-auto md:rounded-tr-2xl bg-[#F9FAFB]">
-          {/* <MyfastProfile></MyfastProfile> */}
-          <InsightPage></InsightPage>
+          <MyfastProfile></MyfastProfile>
+          {/* <InsightPage></InsightPage> */}
           {/* <Parameter></Parameter> */}
         </div>
       </div>

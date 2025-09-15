@@ -25,7 +25,7 @@ export function UserPage({user, variant = "admin", theme = "light", style="round
     const selectedBackground = backgrounds[backgroundType](backgroundColor);
 
     return(
-        <div className={`${base} ${variants[variant]} ${selectedTheme.container} ${selectedBackground.className}`} style={selectedBackground.style}>
+        <div className={`${base} ${variants[variant]} ${selectedTheme.container || ""} ${selectedBackground?.className  || ""} `} style={selectedBackground ? selectedBackground.style : {} }>
 
             {/* Header */}
             <img src={user.avatar} className={`rounded-full ${variant === "admin" ? "w-11 md:w-18":"w-22 mt-4 md:w-18"}`} alt={user.name} />
