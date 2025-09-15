@@ -26,7 +26,8 @@ import fancy from "../assets/images/fancy.svg";
 import { useState } from "react";
 import { themes } from "~/config/themes";
 import { themeImages } from "~/config/themes";
-
+import { styles } from "~/config/styles";
+import { stylesImages } from "~/config/styles";
 const mockUser: User = {
   name: "tchoukeu grace",
   avatar: "https://i.pravatar.cc/150?img=3",
@@ -43,6 +44,7 @@ export function Design() {
   const [content, setContent] = useState<
     "Profil" | "Thème" | "Fond" | "Style" | null
   >(null);
+  const [style, setStyle] = useState<keyof typeof styles>("rounded")
 
 
   const handleOpen = (content: "Profil" | "Thème" | "Fond" | "Style") => {
@@ -175,7 +177,29 @@ export function Design() {
         );
         break;
       case "Style":
-        return <div></div>;
+        return (
+          <div className="grid grid-rows-[1fr] grid-cols-3 gap-4 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+                {(Object.keys(styles) as (keyof typeof styles)[]).map((name) => (
+                <div
+                    key={name}
+                    className="grid grid-rows-[1fr_25px] focus:border-2 rounded-2xl"
+                >
+                    <Button
+                    onClick={() => setStyle(name)}
+                    variant="ghost"
+                    className="p-0 h-full w-full focus:border-2 rounded-2xl"
+                    >
+                    <img
+                        src={stylesImages[name]}
+                        alt=""
+                        className={`h-full w-full rounded-2xl`}
+                    />
+                    </Button>
+                    <span className="text-center mt-1">{name}</span>
+                </div>
+                ))}
+          </div>
+        )
         break;
       default:
         break;

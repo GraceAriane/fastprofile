@@ -1,11 +1,13 @@
 
 import type { User } from "~/types/user";
 import { themes } from "~/config/themes";
+import type { styles } from "~/config/styles";
 
 interface UserPageProps{
     user: User,
     variant?: "admin" | "design",
     theme?: keyof typeof themes
+    styles?: keyof typeof styles
 }
 
 export function UserPage({user, variant = "admin", theme = "light"}: UserPageProps){

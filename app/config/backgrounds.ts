@@ -1,14 +1,18 @@
+// ~/config/backgrounds.ts
 export const backgrounds = {
   solid: (color: string) => ({
-    container: `bg-[${color}]`, // ⚠️ pour Tailwind ça ne marche pas en runtime
-    style: { backgroundColor: color }, // solution dynamique
+    className: "", // pas de classes spécifiques
+    style: { backgroundColor: color }, // applique la couleur directement
   }),
   gradient: (color: string) => ({
-    container: "bg-gradient-to-r",
-    style: { backgroundImage: `linear-gradient(135deg, ${color}, white)` },
+    className: "bg-gradient-to-r from-transparent to-white",
+    style: { background: `linear-gradient(to right, ${color}, white)` },
   }),
   blur: (color: string) => ({
-    container: "backdrop-blur-md",
-    style: { backgroundColor: color, opacity: 0.7 },
+    className: "backdrop-blur-md bg-opacity-50",
+    style: { backgroundColor: color },
   }),
 } as const;
+
+export type BackgroundType = keyof typeof backgrounds;
+
