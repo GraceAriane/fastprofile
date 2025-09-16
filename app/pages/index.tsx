@@ -26,16 +26,16 @@ export function Index(){
 
     return(
         <> 
-            <div>
+            <div >
                 <div className="">
                     <div className="m-auto w-[90%]">
-                        <Header isSticky={isSticky}/>
+                        <Header isSticky={isSticky} ancrePricing="#tarifs" ancreFeatures="#fonctionnalités"/>
                     </div>
                     <Hero></Hero>
                 </div>
                 
                 <main>
-                    <section id="" className="py-24 md:py-32 lg:py-30">
+                    <section id="fonctionnalités" className="py-24 md:py-32 lg:py-30">
                         <div className="w-[90%] mx-auto mb-6">
                             <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
                                 Tout ce dont tu as besoin, en un seul lien
@@ -73,7 +73,7 @@ export function Index(){
 
                     </section> */}
 
-                    <section className="py-20 md:py-28 lg:py-30">
+                    <section id="tarifs" className="py-20 md:py-28 lg:py-30">
                         <div className="w-[90%] mx-auto mb-10">
                             <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
                                 Choisis ton plan

@@ -1,6 +1,7 @@
 import { Logo } from "~/components/logo"
 import { SignUpForm } from "~/components/signup-form"
 import signupbg from "../assets/images/blob-scatter-haikei.svg"
+import { Link } from "react-router"
 
 
 export function SignupPage() {
@@ -8,9 +9,9 @@ export function SignupPage() {
     <div className="grid min-h-svh lg:grid-cols-2 bg-[#F9FAFB]">
       <div className="flex flex-col gap-4 p-6 md:p-10 ">
         <div className="flex justify-center gap-2 md:justify-start">
-          <a href="#" className="flex items-center gap-2 font-medium">
+          <Link to="/" className="flex items-center gap-2 font-medium">
             <Logo colorIcon="text-[#FACC15]"></Logo>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-[450px]">

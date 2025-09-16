@@ -2,12 +2,12 @@ import { Button } from "~/components/ui/button"
 import valerie from "../assets/images/Doudou_valerie.svg"
 import arnold from "../assets/images/arnold_Dombou.svg"
 import grace from "../assets/images/tchoukeu_grace.svg"
-import { NavLink } from "react-router"
+import { Link } from "react-router"
 
 
 export function Hero(){
     return(
-       <div className="max-w-11/12 w-11/12 m-auto flex flex-col justify-center items-center gap-[50px] md:flex-row md:gap-[30px] lg:min-h-screen">
+       <div className="max-w-11/12 w-11/12 m-auto flex flex-col justify-center items-center gap-[50px] pt-10 md:flex-row md:gap-[30px] md:pt-15 lg:pt-40 xl:pt-0 xl:min-h-screen">
             <div className="flex flex-col gap-3">
                 <div className="flex flex-col gap-5 self-center">
                     <h1 className="text-[9.6vw] text-center mt-24 leading-[107%] text-[#1E3A8A] font-black md:text-[6vw] lg:text-[4vw] md:text-left">Crée ton profil <span className="text-[#FACC15]">en ligne</span>  en un clin d’œil.</h1>
@@ -16,11 +16,11 @@ export function Hero(){
                         sur une page unique, élégante et rapide à partager.
                     </p>
                 </div>
-                <div className="flex flex-col gap-3 max-w-[400px] items-center md:items-start min-[1190px]:flex-row">
-                    <input placeholder="fastProfile.com/" className="h-14 w-[100%] bg-[#fff] placeholder:font-semibold placeholder:text-[#969696] border-1 border-solid border-[#3B57A3] outline-none rounded-2xl px-3 focus:shadow-md focus:shadow-[#4867BE] focus:transition-shadow md:w-auto"/>
-                    <NavLink to="admin">
+                <div className="flex flex-col gap-3 items-center md:items-start min-[1190px]:flex-row">
+                    <input placeholder="fastProfile.com/" className="h-14 w-full  bg-[#fff] placeholder:font-semibold placeholder:text-[#969696] border-1 border-solid border-[#3B57A3] outline-none rounded-2xl px-3 focus:shadow-md focus:shadow-[#4867BE] focus:transition-shadow md:w-auto"/>
+                    <Link to="admin" className="self-center">
                         <Button className="w-[200px] py-6 text-[4vw] bg-[#1E3A8A] text-white hover:bg-[#3B57A3] hover:transition-all md:text-[2.5vw] lg:text-[1.2rem]">Créer</Button>
-                    </NavLink>
+                    </Link>
                 </div>
             </div>
             <div className="flex p-2 xl:pt-18">

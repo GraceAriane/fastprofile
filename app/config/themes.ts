@@ -10,7 +10,7 @@ export const themeImages = {
 
 export const themes = {
   light: {
-    container: "bg-[#F2F2F2] text-black",
+    container: "bg-[#F2F2F2]! text-black",
     police: "",
     link: `${styles.rounded} `,
   },

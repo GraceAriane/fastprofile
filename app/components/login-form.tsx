@@ -3,6 +3,7 @@ import { Button } from "~/components/ui/button"
 import { Input } from "~/components/ui/input"
 import { Label } from "~/components/ui/label"
 import google from "../assets/images/google.png"
+import { Link } from "react-router"
 
 export function LoginForm({
   className,
@@ -48,9 +49,9 @@ export function LoginForm({
       </div>
       <div className="text-center text-sm">
         Pas encore de compte?{""}
-        <a href="#" className="underline underline-offset-4 ml-1">
+        <Link to="/signup" className="underline underline-offset-4 ml-1">
           Inscrivez-vous
-        </a>
+        </Link>
       </div>
     </form>
   )

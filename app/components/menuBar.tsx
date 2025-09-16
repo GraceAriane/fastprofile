@@ -2,11 +2,14 @@ import { Button } from "./ui/button";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Link } from "react-router";
 
 type cssProps = {
   css?: string;
+  ancrePricing: string
+  ancreFeatures: string
 };
-export function MenuBar({ css }: cssProps) {
+export function MenuBar({ css, ancreFeatures, ancrePricing }: cssProps) {
   const [open, setOpen] = useState(false);
   return (
     <div className={`md:hidden ${css}`}>
@@ -23,7 +26,7 @@ export function MenuBar({ css }: cssProps) {
         <ul className="flex h-22 flex-col justify-around">
           <li>
             <a
-              href=""
+              href={ancreFeatures}
               
               className="text-[#505050] hover:text-gray-600 hover:transition-all pl-4 pt-4"
             >
@@ -32,7 +35,7 @@ export function MenuBar({ css }: cssProps) {
           </li>
           <li>
             <a
-              href=""
+              href={ancrePricing}
               className="text-[#505050] hover:text-gray-600 hover:transition-all pl-4 pt-5"
             >
               Tarifs
