@@ -23,7 +23,7 @@ import { Link } from "react-router";
 import dark from "../assets/images/dark.svg";
 import light from "../assets/images/light.svg";
 import fancy from "../assets/images/fancy.svg";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { themes } from "~/config/themes";
 import { themeImages } from "~/config/themes";
 import { styles } from "~/config/styles";
@@ -32,17 +32,23 @@ import { backgrounds,type BackgroundType } from "~/config/backgrounds";
 import globe from "../assets/images/globe.png"
 
 
-const mockUser: User = {
+
+
+export function Design() {
+
+  const [avatar, setAvatar] = useState("https://i.pravatar.cc/150?img=3")
+  const fileInputRef = useRef<HTMLInputElement | null>(null)
+
+  const mockUser: User = {
   name: "tchoukeu grace",
-  avatar: "https://i.pravatar.cc/150?img=3",
+  avatar: avatar,
   description: "Entrepreneur",
   links: [
     { title: "Mon GitHub", url: "https://github.com/" },
     { title: "Mon LinkedIn", url: "https://linkedin.com/" },
   ],
-};
+  };
 
-export function Design() {
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState<keyof typeof themes>("light");
   const [content, setContent] = useState<
@@ -52,6 +58,21 @@ export function Design() {
 
   const [color, setColor] = useState("#f1f1f1");
   const [backgroundType, setBackgroundType] = useState<BackgroundType>("solid");
+
+
+  // Quand on clique sur le bouton, on déclenche l’input caché
+  const handleButtonClick = () => {
+    fileInputRef.current?.click()
+  }
+
+  // Quand on choisit une image
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const imageUrl = URL.createObjectURL(file)
+      setAvatar(imageUrl)
+    }
+  }
 
   const handleOpen = (content: "Profil" | "Thème" | "Fond" | "Style") => {
     setContent(content);
@@ -67,14 +88,21 @@ export function Design() {
           <div className="flex flex-col gap-3 md:gap-7">
             <div className="flex items-center gap-6">
               <img
-                src={mockUser.avatar}
+                src={avatar}
                 alt={mockUser.name}
                 className="rounded-full w-[100px] md:w-30"
               />
-              <Button className="px-5 py-3 text-white bg-black text-[17px] rounded-4xl">
+              <Button className="px-5 py-3 text-white bg-black text-[17px] rounded-4xl" onClick={handleButtonClick}>
                 <FontAwesomeIcon icon={faPlus} />
                 add
               </Button>
+              <input 
+               type="file"
+               className="hidden"
+               accept="image/*"
+               ref={fileInputRef}
+               onChange={handleFileChange}
+              />
             </div>
 
             <div className="border-t border-[#a2a2a2] pt-4 md:border-none">
@@ -342,7 +370,7 @@ export function Design() {
 
           <div className="flex flex-col items-center h-full">
 
-            <div className="mt-4 mb-2">
+            <div className="mt-4 mb-4 xl:mb-2">
               <Button className="text-[18px] w-[150px] h-[45px] shadow rounded-full bg-white">
                   <img src={globe} alt="globe" className="w-5 " />
                   Ouvrir
