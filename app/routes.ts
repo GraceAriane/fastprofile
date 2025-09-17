@@ -5,14 +5,15 @@ export default [
     route("login","routes/login.tsx"),
     route("signup","routes/signup.tsx"),
     ...prefix("admin",[
-        index("routes/dashboard.tsx"),
+        index("routes/admin.tsx"),
         layout("routes/layout.tsx",[
             index("pages/adminFastprofile.tsx"),
             route("insights", "routes/insights.tsx")
         ]),
         route("design","routes/design.tsx")
         
-    ])
+    ]),
+    route("dashboard","routes/dashboard.tsx")
 
    
 

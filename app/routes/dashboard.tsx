@@ -1,7 +1,6 @@
-import Layout from "./layout"
+import { DashboardPage } from "~/pages/dashboardPage";
+
 
 export default function Dashboard(){
-    return(
-        <Layout/>
-    )
+    return <DashboardPage/>
 }
