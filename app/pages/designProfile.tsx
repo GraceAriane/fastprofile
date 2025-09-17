@@ -29,6 +29,8 @@ import { themeImages } from "~/config/themes";
 import { styles } from "~/config/styles";
 import { stylesImages } from "~/config/styles";
 import { backgrounds,type BackgroundType } from "~/config/backgrounds";
+import globe from "../assets/images/globe.png"
+
 
 const mockUser: User = {
   name: "tchoukeu grace",
@@ -338,16 +340,27 @@ export function Design() {
 
           </div>
 
-          <div className="flex items-center justify-center">
-            <UserPage
-              user={mockUser}
-              variant="design"
-              theme={theme}
-              style={style}
-              backgroundColor={color}
-              backgroundType={backgroundType}
-            ></UserPage>
+          <div className="flex flex-col items-center h-full">
+
+            <div className="mt-4 mb-2">
+              <Button className="text-[18px] w-[150px] h-[45px] shadow rounded-full bg-white">
+                  <img src={globe} alt="globe" className="w-5 " />
+                  Ouvrir
+              </Button>
+            </div>
+
+            <div className="">
+              <UserPage
+                user={mockUser}
+                variant="design"
+                theme={theme}
+                style={style}
+                backgroundColor={color}
+                backgroundType={backgroundType}
+              ></UserPage>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
