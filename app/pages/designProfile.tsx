@@ -166,7 +166,7 @@ export function Design() {
         break;
       case "Style":
         return (
-          <div className="grid grid-rows-[1fr] grid-cols-3 gap-4 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+          <div className="grid grid-rows-[1fr] grid-cols-3 gap-4 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))] md:pb-20">
                 {(Object.keys(styles) as (keyof typeof styles)[]).map((name) => (
                 <div
                     key={name}
@@ -270,74 +270,83 @@ export function Design() {
           <Pub />
         </div>
 
-        <div className="overflow-hidden h-full grid grid-rows-[60px_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
-          <div className="bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
-            <DNavbar></DNavbar>
-          </div>
+        <div className="h-full overflow-hidden grid grid-cols-[60%_1fr] xl:grid-cols-[70%_1fr] bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xl">
 
-          <div className="overflow-y-auto grid grid-cols-[auto_1fr_310px] xl:grid-cols-[250px_1fr_450px] 2xl:grid-cols-[250px_1fr_500px]">
-            <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969] xl:pt-8">
-              <Button
-                variant="ghost"
-                className="text-[20px] p-5 flex items-center justify-start"
-              >
-                <FontAwesomeIcon icon={faCircleUser} />
-                <span className="hidden xl:block">Profil</span>
-              </Button>
-              <Button
-                variant="ghost"
-                className="text-[20px] p-5 flex items-center justify-start"
-              >
-                <FontAwesomeIcon icon={faSliders} />
-                <span className="hidden xl:block">Thème</span>
-              </Button>
-              <Button
-                variant="ghost"
-                className="text-[20px] p-5 flex items-center justify-start"
-              >
-                <FontAwesomeIcon icon={faLayerGroup} />
-                <span className="hidden xl:block">Fond</span>
-              </Button>
-              <Button
-                variant="ghost"
-                className="text-[20px] p-5 flex items-center justify-start"
-              >
-                <FontAwesomeIcon icon={faPaintRoller} />
-                <span className="hidden xl:block">Style</span>
-              </Button>
+          {/* grid-cols-[auto_1fr_310px] xl:grid-cols-[250px_1fr_450px] 2xl:grid-cols-[250px_1fr_500px] */}
+
+          <div className="h-full overflow-y-auto grid grids-rows-[60px_1fr] ">
+
+            <div className="bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xls sticky top-0">
+              <DNavbar></DNavbar>
             </div>
 
-            <div className="overflow-y-auto p-4 flex flex-col gap-14 max-w-[1024px] 2xl:justify-self-center 2xl:w-[700px]">
-              <div className="max-w-[700px]">
-                <h2 className="text-2xl mb-4 font-semibold">Profil</h2>
-                <div>{contentDrawer("Profil")}</div>
+            <div className="h-full overflow-auto grid grid-cols-[60px_1fr] gap-4 xl:grid-cols-[200px_1fr]">
+
+              <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969] xl:pt-8">
+                <Button
+                  variant="ghost"
+                  className="text-[20px] p-5 flex items-center justify-start"
+                >
+                  <FontAwesomeIcon icon={faCircleUser} />
+                  <span className="hidden xl:block">Profil</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="text-[20px] p-5 flex items-center justify-start"
+                >
+                  <FontAwesomeIcon icon={faSliders} />
+                  <span className="hidden xl:block">Thème</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="text-[20px] p-5 flex items-center justify-start"
+                >
+                  <FontAwesomeIcon icon={faLayerGroup} />
+                  <span className="hidden xl:block">Fond</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="text-[20px] p-5 flex items-center justify-start"
+                >
+                  <FontAwesomeIcon icon={faPaintRoller} />
+                  <span className="hidden xl:block">Style</span>
+                </Button>
               </div>
-              <div className="max-w-[700px]">
-                <h2 className="text-2xl mb-4 font-semibold">Thème</h2>
-                <div className="max-w-[500px]">{contentDrawer("Thème")}</div>
-              </div>
-              <div className="max-w-[700px] h-auto xl:pb-14">
-                <h2 className="text-2xl mb-4 font-semibold">Fond</h2>
-                <div className="max-w-[600px] h-full">
-                  {contentDrawer("Fond")}
+
+              <div className="overflow-y-auto p-4 flex flex-col gap-14 max-w-[1024px] 2xl:justify-self-center 2xl:w-[700px]">
+                <div className="max-w-[700px]">
+                  <h2 className="text-2xl mb-4 font-semibold">Profil</h2>
+                  <div>{contentDrawer("Profil")}</div>
+                </div>
+                <div className="max-w-[700px]">
+                  <h2 className="text-2xl mb-4 font-semibold">Thème</h2>
+                  <div className="max-w-[500px]">{contentDrawer("Thème")}</div>
+                </div>
+                <div className="max-w-[700px] h-auto xl:pb-14">
+                  <h2 className="text-2xl mb-4 font-semibold">Fond</h2>
+                  <div className="max-w-[600px] h-full">
+                    {contentDrawer("Fond")}
+                  </div>
+                </div>
+                <div className="max-w-[700px]">
+                  <h2 className="text-2xl mb-4 font-semibold">Style</h2>
+                  <div>{contentDrawer("Style")}</div>
                 </div>
               </div>
-              <div className="max-w-[700px]">
-                <h2 className="text-2xl mb-4 font-semibold">Style</h2>
-                <div>{contentDrawer("Style")}</div>
-              </div>
+
             </div>
 
-            <div className="flex items-center justify-center">
-              <UserPage
-                user={mockUser}
-                variant="design"
-                theme={theme}
-                style={style}
-                backgroundColor={color}
-                backgroundType={backgroundType}
-              ></UserPage>
-            </div>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <UserPage
+              user={mockUser}
+              variant="design"
+              theme={theme}
+              style={style}
+              backgroundColor={color}
+              backgroundType={backgroundType}
+            ></UserPage>
           </div>
         </div>
       </div>
