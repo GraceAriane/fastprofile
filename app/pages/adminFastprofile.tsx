@@ -14,12 +14,17 @@ import {
   faBoltLightning,
   faBoxArchive,
   faChevronRight,
+  faBrush,
+  faCopy,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { UserPage } from "./linkPage";
 import { Separator } from "~/components/ui/separator";
 import type { User } from "~/types/user";
 import { Link } from "react-router";
+import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
+import globe from "../assets/images/globe.png"
 
 const mockUser: User = {
   name: "tchoukeu grace",
@@ -77,18 +82,29 @@ export function MyfastProfile() {
           <h2>Mon FastProfile</h2>
           <div className="flex gap-2.5">
             <Link to="design">
-              <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
-                <FontAwesomeIcon icon={faArrowUpFromBracket} className="" />
+              <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C] hover:bg-[#f5f2f2] hover:duration-300 hover:transition-all">
+                <FontAwesomeIcon icon={faBrush} />
                 Design
               </Button>
             </Link>
-            <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
-              <FontAwesomeIcon icon={faArrowUpFromBracket} className="" />
-              Partager
-            </Button>
-            <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C]">
-              <FontAwesomeIcon icon={faGear} className="" />
-            </Button>
+            <Popover>
+              <PopoverTrigger >
+                <Button className="bg-white rounded-xl p-4 border border-[#9C9C9C] hover:bg-[#f5f2f2] hover:duration-300 hover:transition-all">
+                  <FontAwesomeIcon icon={faArrowUpFromBracket} className="" />
+                  Partager
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-[200px] left-20 flex flex-col gap-3 items-start">
+                <Button className="shadow-none w-full justify-start hover:bg-[#DEDEDE] hover:duration-300 hover:transition-all">
+                  <FontAwesomeIcon icon={faCopy} />
+                  copier
+                </Button>
+                <Button className="shadow-none w-full justify-start hover:bg-[#DEDEDE] hover:duration-300 hover:transition-all">
+                    <FontAwesomeIcon icon={faGlobe} />
+                    Ouvrir
+                </Button>
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
 

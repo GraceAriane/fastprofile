@@ -10,6 +10,7 @@ import {
   faBolt,
   faBoltLightning,
   faCircleUser,
+  faGlobe,
   faLayerGroup,
   faPaintRoller,
   faPlus,
@@ -29,7 +30,6 @@ import { themeImages } from "~/config/themes";
 import { styles } from "~/config/styles";
 import { stylesImages } from "~/config/styles";
 import { backgrounds,type BackgroundType } from "~/config/backgrounds";
-import globe from "../assets/images/globe.png"
 
 
 
@@ -230,7 +230,7 @@ export function Design() {
         <DNavbar></DNavbar>
 
         <div
-          className={`border-1 rounded-tl-4xl rounded-tr-4xl relative transition-all duration-500  ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"} `}
+          className={`border-1 rounded-tl-4xl rounded-tr-4xl relative transition-all duration-500 overflow-auto  ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"} `}
         >
           <UserPage
             user={mockUser} variant="design"
@@ -372,7 +372,7 @@ export function Design() {
 
             <div className="mt-4 mb-4 xl:mb-2">
               <Button className="text-[18px] w-[150px] h-[45px] shadow rounded-full bg-white">
-                  <img src={globe} alt="globe" className="w-5 " />
+                  <FontAwesomeIcon icon={faGlobe} />
                   Ouvrir
               </Button>
             </div>
