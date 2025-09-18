@@ -25,6 +25,8 @@ import type { User } from "~/types/user";
 import { Link } from "react-router";
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
 import globe from "../assets/images/globe.png"
+import { DialogBio } from "~/components/dialog-bio";
+
 
 const mockUser: User = {
   name: "tchoukeu grace",
@@ -136,10 +138,8 @@ export function MyfastProfile() {
                   className="w-[60px] rounded-full"
                 />
                 <div className="flex flex-col gap-1">
-                  <h3 className="text-[20px] font-black">@tchoukeugrace</h3>
-                  <a href="" className="text-[#9C9C9C]">
-                    Ajouter une bio
-                  </a>
+                  <h3 className="text-[20px] font-black cursor-pointer">@tchoukeugrace</h3>
+                  <DialogBio name="ajouter une bio"></DialogBio>
 
                   <div className="text-[#9C9C9C] flex gap-1">
                     <FontAwesomeIcon icon={faEnvelope} />
