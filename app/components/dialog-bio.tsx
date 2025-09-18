@@ -11,41 +11,46 @@ import {
 } from "~/components/ui/dialog"
 import { Input } from "~/components/ui/input"
 import { Label } from "~/components/ui/label"
+import { Textarea } from "./ui/textarea"
 
 interface Props{
     name: string
 }
 
-export function DialogBio({name}: Props) {
+
+export function DialogBio() {
+
+    
+
   return (
-    <Dialog>
-      <form>
+    <Dialog >
+      <form >
         <DialogTrigger asChild>
-          <a className="text-[#9C9C9C] hover:underline">{name}</a>
+          <h3 className="text-[20px] font-black cursor-pointer">@tchoukeugrace</h3>
+        </DialogTrigger>
+        <DialogTrigger asChild>
+          <a className="text-[#9C9C9C] hover:underline cursor-pointer">Ajouter une bio</a>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
+
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
-            </DialogDescription>
+            <DialogTitle className="text-[18px]">Entrez le nom et la bio</DialogTitle>
           </DialogHeader>
+
           <div className="grid gap-4">
             <div className="grid gap-3">
-              <Label htmlFor="name-1">Name</Label>
-              <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+              <Label htmlFor="name-1">Nom</Label>
+              <Input className="" id="name-1" name="name" defaultValue="Pedro Duarte" maxLength={30}/>
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="username-1">Username</Label>
-              <Input id="username-1" name="username" defaultValue="@peduarte" />
+              <Label htmlFor="textarea">Bio</Label>
+              <Textarea className="resize-none" id="textarea" maxLength={180} ></Textarea>
+
             </div>
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button type="submit">Save changes</Button>
+
+          <DialogFooter className="">
+            <Button type="submit" className="w-full shadow-none rounded-3xl bg-[#1E3A8A] text-white py-5">Enregistrer</Button>
           </DialogFooter>
         </DialogContent>
       </form>
