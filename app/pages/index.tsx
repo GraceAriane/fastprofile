@@ -29,7 +29,7 @@ export function Index(){
             <div >
                 <div className="">
                     <div className="m-auto w-[90%]">
-                        <Header isSticky={isSticky} ancrePricing="#tarifs" ancreFeatures="#fonctionnalités"/>
+                        <Header isSticky={isSticky} ancrePricing="#tarifs" ancreFeatures="#fonctionnalités" ancreFaq="#faq"/>
                     </div>
                     <Hero></Hero>
                 </div>
@@ -141,7 +141,7 @@ export function Index(){
                     <section>
 
                     </section>
-                    <section className="bg-[#FFFFFF] text-[#1E3A8A] ">
+                    <section id="faq" className="bg-[#FFFFFF] text-[#1E3A8A] py-10 md:py-20 lg:py-24">
                         <Faq></Faq>
                     </section>
                 </main>

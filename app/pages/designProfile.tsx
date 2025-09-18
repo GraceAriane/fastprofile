@@ -343,12 +343,12 @@ export function Design() {
                 </Button>
               </div>
 
-              <div className="overflow-y-auto p-4 flex flex-col gap-14 max-w-[1024px] 2xl:justify-self-center 2xl:w-[700px]">
-                <div className="max-w-[700px]">
+              <div className="overflow-y-auto p-4 flex flex-col gap-14 max-w-[1024px] 2xl:justify-self-center 2xl:w-[800px] 2xl:max-w-[800px]">
+                <div className="max-w-[700px] 2xl:max-w-[800px]">
                   <h2 className="text-2xl mb-4 font-semibold">Profil</h2>
                   <div>{contentDrawer("Profil")}</div>
                 </div>
-                <div className="max-w-[700px]">
+                <div className="max-w-[700px] 2xl:max-w-[800px]">
                   <h2 className="text-2xl mb-4 font-semibold">Thème</h2>
                   <div className="max-w-[500px]">{contentDrawer("Thème")}</div>
                 </div>
@@ -358,7 +358,7 @@ export function Design() {
                     {contentDrawer("Fond")}
                   </div>
                 </div>
-                <div className="max-w-[700px]">
+                <div className="max-w-[700px] 2xl:max-w-[800px]">
                   <h2 className="text-2xl mb-4 font-semibold">Style</h2>
                   <div>{contentDrawer("Style")}</div>
                 </div>
