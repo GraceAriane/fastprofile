@@ -20,8 +20,6 @@ interface Props{
 
 export function DialogBio() {
 
-    
-
   return (
     <Dialog >
       <form >

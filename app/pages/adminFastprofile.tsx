@@ -28,6 +28,7 @@ import globe from "../assets/images/globe.png"
 import { DialogBio } from "~/components/dialog-bio";
 import { useRef } from "react";
 import { Dialog } from "~/components/ui/dialog";
+import { LinkButton } from "~/components/link";
 
 
 const mockUser: User = {
@@ -77,9 +78,9 @@ export function MyfastProfile() {
           <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#9C9C9C] text-white font-semibold">
             Pages
           </Button>
-          <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#E8E8E8]">
+          {/* <Button className="rounded-2xl shadow-none py-4 px-6 text-[16px] bg-[#E8E8E8]">
             Archives
-          </Button>
+          </Button> */}
         </div>
       </div>
 
@@ -159,17 +160,23 @@ export function MyfastProfile() {
               </Button>
             </div>
 
-            <div className="loader text-[#b1b1b1] flex flex-col items-center justify-center gap-2 mb-14">
-              <p>
-                <FontAwesomeIcon
-                  icon={faBoltLightning}
-                  className="text-[60px] text-2xl"
-                />
-              </p>
-              <p className="w-1/2 text-center">
-                Montrez qui vous êtes en partageant des liens. Ajoutez un lien.
-              </p>
+            <div className="flex flex-col items-center">
+              <div className="loader text-[#b1b1b1] flex flex-col items-center justify-center gap-2 mb-14">
+                <p>
+                  <FontAwesomeIcon
+                    icon={faBoltLightning}
+                    className="text-[60px] text-2xl"
+                  />
+                </p>
+                <p className="w-1/2 text-center">
+                  Montrez qui vous êtes en partageant des liens. Ajoutez un lien.
+                </p>
+              </div>
+              <div className="w-10/12">
+                <LinkButton></LinkButton>
+              </div>
             </div>
+
           </div>
 
           <div className="flex flex-col gap-2 pl-4 md:m-auto md:w-full md:pl-0 md:max-w-[220px] lg:max-w-[250px]">
