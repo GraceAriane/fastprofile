@@ -116,22 +116,24 @@ export function MyfastProfile() {
         </div>
 
         <div className="h-full gap-6 md:grid grid md:gap-4 md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)]">
-          <div className="border-r border-r-[#acacac81] pr-3 overflow-y-auto hidden md:flex flex-col gap-8 pl-4">
-            <div className="flex gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100 lg:mt-4 xl:max-w-[60%]">
-              <FontAwesomeIcon
-                icon={faCircleExclamation}
-                className="mt-2 text-[17px]"
-              />
-              <div className="flex flex-col">
-                <p className="lg:text-[14px] md:text-[12px]">
-                  🔥Votre FastProfile est créé ! :{" "}
-                  <span className="font-semibold">
-                    FastProfile.com/Tchoukeugrace
-                  </span>
-                </p>
-                <a href="" className="underline xl">
-                  Copier votre lien FastProfile
-                </a>
+          <div className="border-r border-r-[rgba(172,172,172,0.51)] pr-3 overflow-y-auto hidden md:flex flex-col gap-8 pl-4">
+            <div className="mt-4 w-10/12 mx-auto">
+              <div className="flex gap-2 border-2 border-blue-400 py-4 pl-2 rounded-[15px] bg-blue-100 lg:mt-4">
+                <FontAwesomeIcon
+                  icon={faCircleExclamation}
+                  className="mt-2 text-[17px]"
+                />
+                <div className="flex flex-col ">
+                  <p className="lg:text-[14px] md:text-[12px]">
+                    🔥Votre FastProfile est créé ! :{" "}
+                    <span className="font-semibold">
+                      FastProfile.com/Tchoukeugrace
+                    </span>
+                  </p>
+                  <a href="" className="underline xl">
+                    Copier votre lien FastProfile
+                  </a>
+                </div>
               </div>
             </div>
 
