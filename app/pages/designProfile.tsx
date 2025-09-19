@@ -312,7 +312,7 @@ export function Design() {
 
             <div className="h-full overflow-auto grid grid-cols-[60px_1fr] gap-4 xl:grid-cols-[200px_1fr]">
 
-              <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969] xl:pt-8">
+              <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969] xl:pt-3">
                 <Button
                   variant="ghost"
                   className="text-[20px] p-5 flex items-center justify-start"
@@ -358,7 +358,7 @@ export function Design() {
                     {contentDrawer("Fond")}
                   </div>
                 </div>
-                <div className="max-w-[700px] 2xl:max-w-[800px]">
+                <div className="max-w-[700px] xl:max-w-[500px] 2xl:max-w-[800px]">
                   <h2 className="text-2xl mb-4 font-semibold">Style</h2>
                   <div>{contentDrawer("Style")}</div>
                 </div>
@@ -370,7 +370,7 @@ export function Design() {
 
           <div className="flex flex-col items-center h-full">
 
-            <div className="mt-4 mb-4 xl:mb-2">
+            <div className="mt-4 mb-4 xl:mb-8">
               <Button className="text-[18px] w-[150px] h-[45px] shadow rounded-full bg-white">
                   <FontAwesomeIcon icon={faGlobe} />
                   Ouvrir

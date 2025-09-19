@@ -141,7 +141,7 @@ export default function Layout() {
                     <a href="">
                         <FontAwesomeIcon icon={faHeadset} />
                     </a>
-                </div> */}
+              </div> */}
         </div>
 
         <div className="overflow-auto md:rounded-tr-2xl bg-[#F9FAFB]">

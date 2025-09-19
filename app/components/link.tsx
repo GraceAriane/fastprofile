@@ -19,7 +19,7 @@ export function LinkButton(){
             <div className="text-[#787C71] flex flex-col w-[40%] lg:[20%]">
                 <Tooltip>
                     <TooltipTrigger className="self-end">
-                        <Button className="rounded-xl shadow-none hover:transition-all hover:duration-300 hover:bg-[#BBBBBB]">
+                        <Button className="rounded-xl shadow-none hover:transition-all hover:duration-300 hover:bg-[#E6E6E6]">
                             <FontAwesomeIcon icon={faChartSimple} />
                             <span>0</span>Clics
                         </Button>
@@ -31,7 +31,7 @@ export function LinkButton(){
 
                 <Tooltip>
                     <TooltipTrigger className="self-end">
-                        <Button className="shadow-none hover:transition-all hover:duration-300 hover:bg-[#BBBBBB]">
+                        <Button className="shadow-none hover:transition-all hover:duration-300 hover:bg-[#E6E6E6]">
                             <FontAwesomeIcon icon={faTrashCan} />
                         </Button>
                     </TooltipTrigger>
