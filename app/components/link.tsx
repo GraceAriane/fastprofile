@@ -11,7 +11,7 @@ import { Separator } from "./ui/separator";
 
 export function LinkButton(){
     return(
-        <form action="" className="border bg-white rounded-2xl p-4">
+        <form action="" className="shadow-xs border-[#acacac81] border bg-white rounded-2xl p-4">
             <div >
                 <h4>Github</h4>
                 <p>https://github.com/tchoukeu grace</p>

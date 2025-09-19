@@ -45,7 +45,7 @@ export function MyfastProfile() {
 
 
   return (
-    <div className=" bg-[#F9FAFB]">
+    <div className=" bg-[#F9FAFB] md:overflow-hidden md:h-full">
       <div className="md:hidden">
         <div className="flex justify-between px-4 pt-4">
           <div className="flex items-center justify-between w-[70%]">
@@ -84,8 +84,8 @@ export function MyfastProfile() {
         </div>
       </div>
 
-      <div className="md:flex md:flex-col">
-        <div className="hidden md:flex justify-between items-center px-4 py-4 sticky top-0 bg-[#F9FAFB] z-20">
+      <div className="md:flex md:flex-col md:h-full">
+        <div className="hidden border-b border-b-[#acacac81] md:flex justify-between items-center px-4 py-4 sticky top-0 bg-[#F9FAFB] z-20">
           <h2>Mon FastProfile</h2>
           <div className="flex gap-2.5">
             <Link to="design">
@@ -115,21 +115,21 @@ export function MyfastProfile() {
           </div>
         </div>
 
-        <div className="gap-6 md:grid grid md:gap-4 md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)]">
-          <div className="hidden md:flex flex-col gap-8 pl-4">
-            <div className="flex gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100 lg:mt-4">
+        <div className="h-full gap-6 md:grid grid md:gap-4 md:grid-cols-[minmax(314px,1fr)_minmax(180px,280px)] lg:grid-cols-[minmax(484px,1fr)_minmax(200px,400px)] xl:grid-cols-[minmax(570px,1fr)_minmax(200px,460px)]">
+          <div className="border-r border-r-[#acacac81] pr-3 overflow-y-auto hidden md:flex flex-col gap-8 pl-4">
+            <div className="flex gap-3 border-2 border-blue-400 mt-6 p-4 rounded-[15px] bg-blue-100 lg:mt-4 xl:max-w-[60%]">
               <FontAwesomeIcon
                 icon={faCircleExclamation}
                 className="mt-2 text-[17px]"
               />
               <div className="flex flex-col">
-                <p className="lg:text-[14px]">
+                <p className="lg:text-[14px] md:text-[12px]">
                   🔥Votre FastProfile est créé ! :{" "}
                   <span className="font-semibold">
                     FastProfile.com/Tchoukeugrace
                   </span>
                 </p>
-                <a href="" className="underline">
+                <a href="" className="underline xl">
                   Copier votre lien FastProfile
                 </a>
               </div>
@@ -161,7 +161,7 @@ export function MyfastProfile() {
             </div>
 
             <div className="flex flex-col items-center">
-              <div className="loader text-[#b1b1b1] flex flex-col items-center justify-center gap-2 mb-14">
+              {/* <div className="loader text-[#b1b1b1] flex flex-col items-center justify-center gap-2 mb-14">
                 <p>
                   <FontAwesomeIcon
                     icon={faBoltLightning}
@@ -171,9 +171,14 @@ export function MyfastProfile() {
                 <p className="w-1/2 text-center">
                   Montrez qui vous êtes en partageant des liens. Ajoutez un lien.
                 </p>
-              </div>
-              <div className="w-10/12">
+              </div> */}
+              <div className="w-10/12 flex flex-col gap-4 lg:mb-22">
                 <LinkButton></LinkButton>
+                <LinkButton></LinkButton>
+                <LinkButton></LinkButton>
+                <LinkButton></LinkButton>
+                <LinkButton></LinkButton>
+
               </div>
             </div>
 
