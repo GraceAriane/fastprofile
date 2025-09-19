@@ -11,34 +11,32 @@ import { Separator } from "./ui/separator";
 
 export function LinkButton(){
     return(
-        <form action="" className="shadow-xs border-[#acacac81] border bg-white rounded-2xl p-4">
-            <div >
-                <h4>Github</h4>
-                <p>https://github.com/tchoukeu grace</p>
+        <form action="" className="shadow-xs flex border-[#acacac81] border bg-white rounded-2xl p-4">
+            <div className=" flex flex-col gap-3 w-[60%] lg:w-[80%]">
+                <h4 className="font-semibold text-[17px] truncate">Github</h4>
+                <p className="truncate">https://github.com/tchoukeu grace</p>
             </div>
-            <div>
+            <div className="text-[#787C71] flex flex-col w-[40%] lg:[20%]">
                 <Tooltip>
-                    <TooltipTrigger>
-                        <Button>
-                            <FontAwesomeIcon icon={faTrashCan} />
-                            Supprimer
+                    <TooltipTrigger className="self-end">
+                        <Button className="rounded-xl shadow-none hover:transition-all hover:duration-300 hover:bg-[#BBBBBB]">
+                            <FontAwesomeIcon icon={faChartSimple} />
+                            <span>0</span>Clics
                         </Button>
-
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
-                        <p>Add to library</p>
+                        <p>Nombre de clics</p>
                     </TooltipContent>
                 </Tooltip>
 
                 <Tooltip>
-                    <TooltipTrigger>
-                        <Button>
-                            <FontAwesomeIcon icon={faChartSimple} />
-                            Clics
+                    <TooltipTrigger className="self-end">
+                        <Button className="shadow-none hover:transition-all hover:duration-300 hover:bg-[#BBBBBB]">
+                            <FontAwesomeIcon icon={faTrashCan} />
                         </Button>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
-                        <p>Add to library</p>
+                        <p>Supprimer</p>
                     </TooltipContent>
                 </Tooltip>
             </div>

@@ -94,13 +94,13 @@ export default function Layout() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <div>
+          <div className="text-[14px]">
             <Accordion type="single" collapsible className="">
               <AccordionItem value="item-1" className="pl-2 rounded-[10px]">
-                <AccordionTrigger className="md:text-[15px] hover:no-underline">
+                <AccordionTrigger className="md:text-[14px] hover:no-underline">
                   My FastProfile
                 </AccordionTrigger>
-                <AccordionContent className="ml-2 pl-2 flex flex-col md:text-[15px] gap-2 border-l-[#dadada] border-l">
+                <AccordionContent className="ml-2 pl-2 flex flex-col md:text-[14px] gap-2 border-l-[#dadada] border-l">
                   <Link
                     to=""
                     className={`p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all ${active}`}
@@ -121,7 +121,7 @@ export default function Layout() {
                 to=""
                 className="flex items-center gap-2 rounded-[10px] p-2 hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all"
               >
-                <FontAwesomeIcon icon={faChartLine} className="text-[15px]" />
+                <FontAwesomeIcon icon={faChartLine} className="text-[14px]" />
                 <p className="">Insights</p>
               </Link>
 
@@ -129,7 +129,7 @@ export default function Layout() {
                 to=""
                 className="flex items-center gap-2 rounded-[10px] p-2 hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all"
               >
-                <FontAwesomeIcon icon={faUserGroup} className="text-[15px]" />
+                <FontAwesomeIcon icon={faUserGroup} className="text-[14px]" />
                 <p className="">Audience</p>
               </Link>
             </div>

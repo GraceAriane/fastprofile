@@ -174,14 +174,14 @@ export function MyfastProfile() {
                   Montrez qui vous êtes en partageant des liens. Ajoutez un lien.
                 </p>
               </div> */}
-              <div className="w-10/12 flex flex-col gap-4 lg:mb-22">
+              <form className="w-10/12 flex flex-col gap-4 lg:mb-22">
                 <LinkButton></LinkButton>
                 <LinkButton></LinkButton>
                 <LinkButton></LinkButton>
                 <LinkButton></LinkButton>
                 <LinkButton></LinkButton>
 
-              </div>
+              </form>
             </div>
 
           </div>
