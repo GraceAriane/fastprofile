@@ -13,8 +13,8 @@ export default [
         route("design","routes/design.tsx")
         
     ]),
-    route("dashboard","routes/dashboard.tsx")
-
+    route("dashboard","routes/dashboard.tsx"),
+    route("tchoukeugrace", "routes/preview.tsx")
    
 
 ] satisfies RouteConfig;

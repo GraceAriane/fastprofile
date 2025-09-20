@@ -18,7 +18,7 @@ export function UserPage({user, variant = "admin", theme = "light", style="round
     const variants ={
         admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4 md:border-black",
         design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] lg:max-w-[450px] xl:w-[280px]",
-        preview: ""
+        preview: "h-screen md:shadow-none"
     }
     // bg-[#f7f9fe]
     const selectedTheme=themes[theme]
@@ -41,12 +41,12 @@ export function UserPage({user, variant = "admin", theme = "light", style="round
             }
             
         >
-
+            
             {/* Header */}
             <img src={user.avatar} className={`rounded-full ${variant === "admin" ? "w-11 md:w-18":"w-22 mt-4 md:w-18"}`} alt={user.name} />
             
             <div>
-                <h1 className={`font-semibold mt-2 ${selectedTheme.police} ${variant === "admin" ? "text-[12px] md:text-[18px]":"text-[24px] md:text-[18px]"}`}>{user.name}</h1>
+                <h1 className={`font-semibold mt-2 ${selectedTheme.police} ${variant === "admin" ? "text-[12px] md:text-[18px]": variant=="design" ? "text-[24px] md:text-[18px]" : ""}`}>{user.name}</h1>
                 <p className={`text-center ${selectedTheme.police} ${variant === "admin" ? "text-[8px] md:text-[12px]":"md:text-[12px]"}`}>{user.description}</p>
             </div>
                           

@@ -371,10 +371,12 @@ export function Design() {
           <div className="flex flex-col items-center h-full">
 
             <div className="mt-4 mb-4 xl:mb-8">
-              <Button className="text-[18px] w-[150px] h-[45px] shadow rounded-full bg-white">
-                  <FontAwesomeIcon icon={faGlobe} />
-                  Ouvrir
-              </Button>
+              <a href="/tchoukeugrace" target="_blank" rel="noopener noreferrer">
+                <Button className="text-[18px] w-[150px] h-[45px] shadow rounded-full bg-white">
+                    <FontAwesomeIcon icon={faGlobe} />
+                    Ouvrir
+                </Button>
+              </a>
             </div>
 
             <div className="">

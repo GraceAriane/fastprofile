@@ -12,5 +12,9 @@ const mockUser: User = {
 };
 
 export default function Preview(){
-    return <UserPage variant="preview" user={mockUser}/>
+    return (
+        <div className="">
+            <UserPage variant="preview" user={mockUser}/>
+        </div>
+    )
 }
