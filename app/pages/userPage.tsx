@@ -72,7 +72,7 @@ export function UserPage({user, variant = "admin", theme = "light", style="round
 
             <div className={`flex flex-col items-center ${variant=="preview"? "mb-8": ""}`}>
                 {/* Footer */}
-                <p className={`${selectedTheme.police} ${variant === "admin" ? "mt-[65%] text-[5px] md:text-[8px]": variant=="design" ? "mt-[30%] gap-y-8 md:p-8 md:text-[8px] ": "mb-0 mt-0"}`}>
+                <p className={`${selectedTheme.police} ${variant === "admin" ? "mt-[65%] text-[5px] md:text-[8px]": variant=="design" ? "mt-[30%] gap-y-8 md:p-8 md:text-[8px] md:mt-[40%] ": "mb-0 mt-0"}`}>
                     Made with ❤️ by <Link to="/" className="cursor-pointer">FastProfile</Link>
                 </p>    
             </div>

@@ -8,13 +8,17 @@ import {
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
+interface dataProps{
+    name: string,
+    link: string
+}
 
-export function LinkButton(){
+export function LinkButton({name, link}: dataProps){
     return(
         <form action="" className="shadow-xs flex border-[#acacac81] border bg-white rounded-2xl p-4">
             <div className=" flex flex-col gap-3 w-[60%] lg:w-[80%]">
-                <h4 className="font-semibold text-[17px] truncate">Github</h4>
-                <p className="truncate">https://github.com/tchoukeu grace</p>
+                <h4 className="font-semibold text-[17px] truncate">{name}</h4>
+                <p className="truncate">{link}</p>
             </div>
             <div className="text-[#787C71] flex flex-col w-[40%] lg:[20%]">
                 <Tooltip>

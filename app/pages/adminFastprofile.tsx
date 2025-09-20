@@ -175,11 +175,9 @@ export function MyfastProfile() {
                 </p>
               </div> */}
               <form className="w-10/12 flex flex-col gap-4 lg:mb-22">
-                <LinkButton></LinkButton>
-                <LinkButton></LinkButton>
-                <LinkButton></LinkButton>
-                <LinkButton></LinkButton>
-                <LinkButton></LinkButton>
+                <LinkButton name="Mon GitHub" link="https://github.com/tchoukeugrace"></LinkButton>
+                <LinkButton name="Mon LinkedIn" link="https://LinkedIn.com/tchoukeugrace"></LinkButton>
+
 
               </form>
             </div>
