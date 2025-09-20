@@ -19,7 +19,7 @@ import {
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
-import { UserPage } from "./linkPage";
+import { UserPage } from "./userPage";
 import { Separator } from "~/components/ui/separator";
 import type { User } from "~/types/user";
 import { Link } from "react-router";

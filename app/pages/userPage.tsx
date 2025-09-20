@@ -6,26 +6,41 @@ import { backgrounds, type BackgroundType } from "~/config/backgrounds";
 
 interface UserPageProps{
     user: User
-    variant?: "admin" | "design"
+    variant?: "admin" | "design" | "preview"
     theme?: keyof typeof themes
     style?: keyof typeof styles
     backgroundColor?: string; // couleur choisie
     backgroundType?: BackgroundType; // solid, gradient ou blur
 }
 
-export function UserPage({user, variant = "admin", theme = "light", style="rounded", backgroundColor="#fff", backgroundType="solid"}: UserPageProps){
+export function UserPage({user, variant = "admin", theme = "light", style="rounded", backgroundColor, backgroundType}: UserPageProps){
     const base ="flex flex-col items-center md:max-w-[394px] md:border-3 md:h-auto md:rounded-3xl md:shadow-2xl lg:max-w-[450px] xl:w-[280px]"
     const variants ={
         admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4 md:border-black",
-        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] lg:max-w-[450px] xl:w-[280px]"
+        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] lg:max-w-[450px] xl:w-[280px]",
+        preview: ""
     }
     // bg-[#f7f9fe]
     const selectedTheme=themes[theme]
     const selectedStyle= styles[style]
-    const selectedBackground = backgrounds[backgroundType](backgroundColor);
+    const selectedBackground = backgroundType && backgroundColor ? backgrounds[backgroundType](backgroundColor) : null ;
 
     return(
-        <div className={`${base} ${variants[variant]} ${selectedTheme.container || ""} ${selectedBackground?.className  || ""} `} style={selectedBackground ? selectedBackground.style : {} }>
+        <div className={`
+            ${base}
+            ${variants[variant]}
+            ${selectedTheme.container}
+            ${selectedBackground?.className  || ""} 
+            `} 
+            style={{
+                ...(selectedBackground?.style || {}),
+                ...(selectedTheme.style ),
+                
+            }
+                // selectedBackground ? selectedBackground.style : {}
+            }
+            
+        >
 
             {/* Header */}
             <img src={user.avatar} className={`rounded-full ${variant === "admin" ? "w-11 md:w-18":"w-22 mt-4 md:w-18"}`} alt={user.name} />

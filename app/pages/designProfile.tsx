@@ -18,7 +18,7 @@ import {
   faSliders,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { UserPage } from "./linkPage";
+import { UserPage } from "./userPage";
 import type { User } from "~/types/user";
 import { Link } from "react-router";
 import dark from "../assets/images/dark.svg";
@@ -56,7 +56,7 @@ export function Design() {
   >(null);
   const [style, setStyle] = useState<keyof typeof styles>("rounded")
 
-  const [color, setColor] = useState("#f1f1f1");
+  const [color, setColor] = useState("#F72587");
   const [backgroundType, setBackgroundType] = useState<BackgroundType>("solid");
 
 
@@ -358,7 +358,7 @@ export function Design() {
                     {contentDrawer("Fond")}
                   </div>
                 </div>
-                <div className="max-w-[700px] xl:max-w-[500px] 2xl:max-w-[800px]">
+                <div className="max-w-[700px] xl:max-w-[600px] 2xl:max-w-[600px]">
                   <h2 className="text-2xl mb-4 font-semibold">Style</h2>
                   <div>{contentDrawer("Style")}</div>
                 </div>

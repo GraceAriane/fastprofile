@@ -1,7 +1,7 @@
 export const backgrounds = {
   solid: (color: string) => ({
     className: "",
-    style: { backgroundColor: color },
+    style: { backgroundColor: `${color}` },
     label: "Rempli",
   }),
   gradient: (color: string) => ({

@@ -10,17 +10,20 @@ export const themeImages = {
 
 export const themes = {
   light: {
-    container: "bg-[#F2F2F2]! text-black",
+    style: {backgroundColor: "#F2F2F2"},
+    container: " text-black",
     police: "",
     link: `${styles.rounded} `,
   },
   dark: {
-    container: "bg-gray-900! text-white",
+    style: {backgroundColor: "#212121"},
+    container: "text-white",
     police:"font-purple",
     link: styles.full,
   },
   fancy: {
-    container: "bg-gradient-to-r from-purple-400 to-pink-500 text-white",
+    style: {background: "linear-gradient(to right, #a855f7, #ec4899)"},
+    container: "text-white",
     link: styles.transparent,
     police: "font-montserrat"
   }
