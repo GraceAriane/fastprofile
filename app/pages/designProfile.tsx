@@ -379,7 +379,7 @@ export function Design() {
               </a>
             </div>
 
-            <div className="">
+            <div className=" xl:h-full xl:mb-10">
               <UserPage
                 user={mockUser}
                 variant="design"

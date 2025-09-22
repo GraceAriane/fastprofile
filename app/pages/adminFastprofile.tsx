@@ -29,7 +29,7 @@ import { DialogBio } from "~/components/dialog-bio";
 import { useRef } from "react";
 import { Dialog } from "~/components/ui/dialog";
 import { LinkButton } from "~/components/link";
-
+import { DialogLink } from "~/components/dialog-link";
 
 const mockUser: User = {
   name: "tchoukeu grace",
@@ -106,10 +106,12 @@ export function MyfastProfile() {
                   <FontAwesomeIcon icon={faCopy} />
                   copier
                 </Button>
-                <Button className="shadow-none w-full justify-start hover:bg-[#DEDEDE] hover:duration-300 hover:transition-all">
-                    <FontAwesomeIcon icon={faGlobe} />
-                    Ouvrir
-                </Button>
+                <a href="/tchoukeugrace" target="_blank" rel="noopener noreferrer" className=" w-full">
+                  <Button className=" w-full shadow-none justify-start hover:bg-[#DEDEDE] hover:duration-300 hover:transition-all">
+                      <FontAwesomeIcon icon={faGlobe} />
+                      Ouvrir
+                  </Button>
+                </a>
               </PopoverContent>
             </Popover>
           </div>
@@ -157,9 +159,10 @@ export function MyfastProfile() {
                 </div>
               </div>
 
-              <Button className="p-7 text-[17px] font-medium bg-[#3B57A3] text-white hover:transition-all rounded-4xl md:p-6 mb-2 cursor-pointer">
-                Ajouter
-              </Button>
+              <div className="w-full">
+                <DialogLink></DialogLink>
+
+              </div>
             </div>
 
             <div className="flex flex-col items-center">
@@ -174,17 +177,15 @@ export function MyfastProfile() {
                   Montrez qui vous êtes en partageant des liens. Ajoutez un lien.
                 </p>
               </div> */}
-              <form className="w-10/12 flex flex-col gap-4 lg:mb-22">
+              <div className="w-10/12 flex flex-col gap-4 lg:mb-22">
                 <LinkButton name="Mon GitHub" link="https://github.com/tchoukeugrace"></LinkButton>
                 <LinkButton name="Mon LinkedIn" link="https://LinkedIn.com/tchoukeugrace"></LinkButton>
-
-
-              </form>
+              </div>
             </div>
 
           </div>
 
-          <div className="flex flex-col gap-2 pl-4 md:m-auto md:w-full md:pl-0 md:max-w-[220px] [@media(max-width:1024px)_and_(max-height:600px)]:scale-[0.85] [@media(max-width:1024px)_and_(max-height:600px)]:my-0 lg:max-w-[250px] xl:mx-auto xl:my-0 xl:pt-5">
+          <div className="flex flex-col gap-2 pl-4 md:m-auto md:w-full md:pl-0 md:max-w-[220px] [@media(max-width:1024px)_and_(max-height:600px)]:scale-[0.85] [@media(max-width:1024px)_and_(max-height:600px)]:my-0 lg:max-w-[250px] xl:mx-auto xl:my-0 xl:pt-5 xl:h-full xl:pb-15">
             <UserPage user={mockUser} variant="admin"></UserPage>
             <div className="flex items-center gap-2 md:hidden">
               <p className="font-semibold ml-2 text-[18px]">Liens</p>
