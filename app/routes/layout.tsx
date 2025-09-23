@@ -33,7 +33,13 @@ import {
 import { InsightPage } from "~/pages/adminInsights";
 import { Parameter } from "~/pages/parameters";
 
-export default function Layout() {
+
+interface LayoutProps {
+  children?: React.ReactNode;
+}
+
+
+export default function Layout({children}: LayoutProps) {
   let active;
   active = "bg-[#c7c7c7]";
 
@@ -145,9 +151,10 @@ export default function Layout() {
         </div>
 
         <div className="overflow-auto md:rounded-tr-2xl bg-[#F9FAFB]">
-          <MyfastProfile></MyfastProfile>
+          {/* <MyfastProfile></MyfastProfile> */}
           {/* <InsightPage></InsightPage> */}
           {/* <Parameter></Parameter> */}
+          {children || <Outlet/>}
         </div>
       </div>
 
