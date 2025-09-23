@@ -151,10 +151,10 @@ export default function Layout({children}: LayoutProps) {
         </div>
 
         <div className="overflow-auto md:rounded-tr-2xl bg-[#F9FAFB]">
-          {/* <MyfastProfile></MyfastProfile> */}
+          <MyfastProfile></MyfastProfile>
           {/* <InsightPage></InsightPage> */}
           {/* <Parameter></Parameter> */}
-          {children || <Outlet/>}
+          {/* {children || <Outlet/>} */}
         </div>
       </div>
 

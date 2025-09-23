@@ -19,8 +19,8 @@ import { Button } from "~/components/ui/button";
 export function UserPage({user, variant = "admin", theme = "light", style="rounded", backgroundColor, backgroundType}: UserPageProps){
     const base ="md:max-w-[394px] md:h-auto md:rounded-3xl md:shadow-2xl lg:max-w-[450px] "
     const variants ={
-        admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4 md:border-black xl:w-[280px] xl:h-full",
-        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] lg:max-w-[450px] xl:h-full xl:w-[280px] md:border-black md:border",
+        admin:"justify-center w-[48%] border-[#848484] border rounded-2xl gap-2 p-5 mt-3 md:w-[100%] md:max-w-[350px] md:px-1 md:py-4 md:border-black xl:w-[280px]",
+        design:"gap-3 h-[100%] rounded-tl-4xl rounded-tr-4xl md:w-[250px] md:max-w-[394px] lg:max-w-[450px] xl:w-[280px] md:border-black md:border",
         preview: "h-screen flex flex-col justify-between md:shadow-none md:h-full md:mt-20 md:w-[100%] md:max-w-[450px] md:rounded-bl-none md:rounded-br-none md:border-none lg:max-w-[600px]"
     }
     // bg-[#f7f9fe]
@@ -44,7 +44,7 @@ export function UserPage({user, variant = "admin", theme = "light", style="round
             }
             
         >
-            <div className={`flex flex-col items-center ${variant=="preview"? "": variant=="admin"? "xl:h-[63%]": "xl:h-[65%]"}`}>
+            <div className={`flex flex-col items-center ${variant=="preview"? "": ""}`}>
                 <Button className={`cursor-pointer ${variant=="preview" ? "self-start m-4 p-3 rounded-full bg-white shadow-md":"hidden"}`}>
                     <FontAwesomeIcon icon={faBoltLightning} className="text-xl"></FontAwesomeIcon>
                 </Button>

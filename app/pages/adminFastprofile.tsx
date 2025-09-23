@@ -185,7 +185,7 @@ export function MyfastProfile() {
 
           </div>
 
-          <div className="flex flex-col gap-2 pl-4 md:m-auto md:w-full md:pl-0 md:max-w-[220px] [@media(max-width:1024px)_and_(max-height:600px)]:scale-[0.85] [@media(max-width:1024px)_and_(max-height:600px)]:my-0 lg:max-w-[250px] xl:mx-auto xl:my-0 xl:pt-5 xl:h-full xl:pb-15">
+          <div className="flex flex-col gap-2 pl-4 md:m-auto md:pl-0 md:max-w-[220px] [@media(max-width:1024px)_and_(max-height:600px)]:scale-[0.85] [@media(max-width:1024px)_and_(max-height:600px)]:my-0 lg:max-w-[250px] xl:mx-auto xl:my-0 xl:pt-5 ">
             <UserPage user={mockUser} variant="admin"></UserPage>
             <div className="flex items-center gap-2 md:hidden">
               <p className="font-semibold ml-2 text-[18px]">Liens</p>
