@@ -11,9 +11,7 @@ import {
   faArrowRightFromBracket,
   faCircleQuestion,
   faAngleDown,
-  faHeadset,
 } from "@fortawesome/free-solid-svg-icons";
-import { MyfastProfile } from "~/pages/adminFastprofile";
 import { Button } from "~/components/ui/button";
 import { Pub } from "~/components/pub";
 import {
@@ -30,172 +28,117 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
-import { InsightPage } from "~/pages/adminInsights";
-import { Parameter } from "~/pages/parameters";
-
 
 interface LayoutProps {
   children?: React.ReactNode;
 }
 
-
-export default function Layout({children}: LayoutProps) {
-  let active;
-  active = "bg-[#c7c7c7]";
+export default function Layout({ children }: LayoutProps) {
+  const active = "bg-[#c7c7c7]";
 
   return (
-    <div className="flex flex-col h-screen md:p-0 md:bg-[#1E3A8A] md:text-[16px]">
-      <div>
-        <Pub />
-      </div>
+    <div className="flex flex-col min-h-screen bg-[#F9FAFB]">
+      {/* Barre de pub */}
+      <Pub />
 
-      <div className="self-start w-full h-full md:grid md:grid-cols-[200px_1fr] md:overflow-y-hidden md:rounded-tl-2xl md:rounded-tr-2xl">
-        <div className="bg-[#f5f5f5] sidebar hidden md:flex flex-col gap-3 p-4 -mr-1 md:rounded-tl-2xl">
+      {/* Conteneur principal */}
+      <div className="flex flex-1 md:grid md:grid-cols-[220px_1fr] md:rounded-t-2xl overflow-hidden">
+        {/* Sidebar desktop */}
+        <aside className="hidden md:flex flex-col bg-[#F5F5F5] p-4 gap-4 md:rounded-tl-2xl">
+          {/* Profil utilisateur */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-2 ">
+            <DropdownMenuTrigger className="flex items-center gap-2">
               <img
                 src="https://github.com/shadcn.png"
-                alt=""
-                className="w-[20px] rounded-full"
+                alt="avatar"
+                className="w-[28px] h-[28px] rounded-full"
               />
-              <h3 className="text-[14px] text-[#373737]">
+              <span className="text-sm text-[#373737] flex items-center">
                 tchoukeugrace
-                <FontAwesomeIcon
-                  icon={faAngleDown}
-                  className="text-[8px] ml-2 self-center"
-                />
-              </h3>
+                <FontAwesomeIcon icon={faAngleDown} className="ml-1 text-xs" />
+              </span>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="rounded-2xl">
-              <DropdownMenuLabel className="flex gap-2 items-center">
+              <DropdownMenuLabel className="flex items-center gap-2">
                 <img
                   src="https://github.com/shadcn.png"
-                  alt=""
-                  className="w-[30px] rounded-full"
+                  alt="avatar"
+                  className="w-[32px] h-[32px] rounded-full"
                 />
-                <div className="">
-                  <h3 className="text-[16px] text-[#373737]">tchoukeugrace</h3>
-                  <p className="text-[13px]">fastprofile.com/tchou...</p>
+                <div>
+                  <p className="text-sm font-medium text-[#373737]">tchoukeugrace</p>
+                  <p className="text-xs text-gray-500">fastprofile.com/tchou...</p>
                 </div>
-                <Button className="rounded-3xl border border-[#F5F5F5]">
+                <Button size="sm" variant="outline" className="rounded-3xl">
                   Free
                 </Button>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <FontAwesomeIcon icon={faUser} />
-                Compte
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <FontAwesomeIcon icon={faBoltLightning} />
-                Upgrade
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <FontAwesomeIcon icon={faCircleQuestion} />
-                Poser une question
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <FontAwesomeIcon icon={faArrowRightFromBracket} />
-                Se déconnecter
-              </DropdownMenuItem>
+              <DropdownMenuItem><FontAwesomeIcon icon={faUser} /> Compte</DropdownMenuItem>
+              <DropdownMenuItem><FontAwesomeIcon icon={faBoltLightning} /> Upgrade</DropdownMenuItem>
+              <DropdownMenuItem><FontAwesomeIcon icon={faCircleQuestion} /> Aide</DropdownMenuItem>
+              <DropdownMenuItem><FontAwesomeIcon icon={faArrowRightFromBracket} /> Déconnexion</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <div className="text-[14px]">
-            <Accordion type="single" collapsible className="">
-              <AccordionItem value="item-1" className="pl-2 rounded-[10px]">
-                <AccordionTrigger className="md:text-[14px] hover:no-underline">
-                  My FastProfile
-                </AccordionTrigger>
-                <AccordionContent className="ml-2 pl-2 flex flex-col md:text-[14px] gap-2 border-l-[#dadada] border-l">
+
+          {/* Menu */}
+          <nav className="text-sm">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="fastprofile">
+                <AccordionTrigger>My FastProfile</AccordionTrigger>
+                <AccordionContent className="ml-3 border-l pl-3 flex flex-col gap-2">
                   <Link
                     to=""
-                    className={`p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all ${active}`}
+                    className={`p-1 rounded hover:bg-[#c7c7c7] transition ${active}`}
                   >
-                    <a href="">Liens</a>
+                    Liens
                   </Link>
                   <Link
                     to="design"
-                    className={`p-1 pl-2 rounded-[10px] hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all`}
+                    className="p-1 rounded hover:bg-[#c7c7c7] transition"
                   >
-                    <a href="">Design</a>
+                    Design
                   </Link>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <div className="flex flex-col gap-1">
-              <Link
-                to=""
-                className="flex items-center gap-2 rounded-[10px] p-2 hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all"
-              >
-                <FontAwesomeIcon icon={faChartLine} className="text-[14px]" />
-                <p className="">Insights</p>
-              </Link>
 
-              <Link
-                to=""
-                className="flex items-center gap-2 rounded-[10px] p-2 hover:bg-[#c7c7c7] hover:duration-150 hover:transition-all"
-              >
-                <FontAwesomeIcon icon={faUserGroup} className="text-[14px]" />
-                <p className="">Audience</p>
+            <div className="mt-3 flex flex-col gap-2">
+              <Link to="" className="flex items-center gap-2 p-2 rounded hover:bg-[#c7c7c7]">
+                <FontAwesomeIcon icon={faChartLine} /> Insights
+              </Link>
+              <Link to="" className="flex items-center gap-2 p-2 rounded hover:bg-[#c7c7c7]">
+                <FontAwesomeIcon icon={faUserGroup} /> Audience
               </Link>
             </div>
-          </div>
-          {/* <div className="fixed bottom-0 border-4 left-0">
-                    <a href="">
-                        <FontAwesomeIcon icon={faCircleQuestion} />
-                    </a>
-                    <a href="">
-                        <FontAwesomeIcon icon={faHeadset} />
-                    </a>
-              </div> */}
-        </div>
+          </nav>
+        </aside>
 
-        <div className="overflow-auto md:rounded-tr-2xl bg-[#F9FAFB]">
-          {/* <MyfastProfile></MyfastProfile> */}
-          {/* <InsightPage></InsightPage> */}
-          {/* <Parameter></Parameter> */}
-          {children || <Outlet/>}
-        </div>
+        {/* Zone principale */}
+        <main className="p-4 overflow-y-auto bg-white md:rounded-tr-2xl">
+          {children || <Outlet />}
+        </main>
       </div>
 
-      <div className="fixed bottom-0 left-0 right-0 self-end w-[100%] h-[10%] pt-[2%] bg-[#F2F1ED] border-t-[#d1cfcd] border-t-1 flex md:hidden">
-        <div className="flex w-[90%] m-auto justify-between items-center text-[#666666]">
-          <Link
-            to=""
-            className="flex flex-col justify-center items-center gap-2"
-          >
-            <FontAwesomeIcon
-              icon={faArrowUpFromBracket}
-              className="text-[25px]"
-            />
-            <p className="text-[0.645rem]">FastProfile</p>
-          </Link>
-
-          <Link
-            to=""
-            className="flex flex-col justify-center items-center gap-2"
-          >
-            <FontAwesomeIcon icon={faChartLine} className="text-[25px]" />
-            <p className="text-[0.645rem]">Insights</p>
-          </Link>
-
-          <Link
-            to=""
-            className="flex flex-col justify-center items-center gap-2"
-          >
-            <FontAwesomeIcon icon={faUserGroup} className="text-[25px]" />
-            <p className="text-[0.645rem]">Audience</p>
-          </Link>
-
-          <Link
-            to=""
-            className="flex flex-col justify-center items-center gap-2"
-          >
-            <FontAwesomeIcon icon={faBars} className="text-[25px]" />
-            <p className="text-[0.645rem]">Plus</p>
-          </Link>
-        </div>
-      </div>
+      {/* Navigation mobile */}
+      <footer className="md:hidden fixed bottom-0 left-0 right-0 bg-[#F2F1ED] border-t flex justify-around py-2 text-[#666]">
+        <Link to="" className="flex flex-col items-center">
+          <FontAwesomeIcon icon={faArrowUpFromBracket} className="text-xl" />
+          <span className="text-xs">FastProfile</span>
+        </Link>
+        <Link to="" className="flex flex-col items-center">
+          <FontAwesomeIcon icon={faChartLine} className="text-xl" />
+          <span className="text-xs">Insights</span>
+        </Link>
+        <Link to="" className="flex flex-col items-center">
+          <FontAwesomeIcon icon={faUserGroup} className="text-xl" />
+          <span className="text-xs">Audience</span>
+        </Link>
+        <Link to="" className="flex flex-col items-center">
+          <FontAwesomeIcon icon={faBars} className="text-xl" />
+          <span className="text-xs">Plus</span>
+        </Link>
+      </footer>
     </div>
   );
 }
