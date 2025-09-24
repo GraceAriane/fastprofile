@@ -29,6 +29,8 @@ import {
   AccordionTrigger,
 } from "~/components/ui/accordion";
 import { MyfastProfile } from "~/pages/adminFastprofile";
+import { InsightPage } from "~/pages/adminInsights";
+
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -38,7 +40,7 @@ export default function Layout({ children }: LayoutProps) {
   const active = "bg-[#c7c7c7]";
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F9FAFB]">
+    <div className="flex flex-col h-screen bg-[#F9FAFB]">
       {/* Barre de pub */}
       <Pub />
 
@@ -83,10 +85,10 @@ export default function Layout({ children }: LayoutProps) {
           </DropdownMenu>
 
           {/* Menu */}
-          <nav className="text-sm">
+          <nav className="text-sm gap-0">
             <Accordion type="single" collapsible>
               <AccordionItem value="fastprofile">
-                <AccordionTrigger>My FastProfile</AccordionTrigger>
+                <AccordionTrigger className="pl-2 py-2">My FastProfile</AccordionTrigger>
                 <AccordionContent className="ml-3 border-l pl-3 flex flex-col gap-2">
                   <Link
                     to=""
@@ -104,7 +106,7 @@ export default function Layout({ children }: LayoutProps) {
               </AccordionItem>
             </Accordion>
 
-            <div className="mt-3 flex flex-col gap-2">
+            <div className="mt-2 flex flex-col gap-2">
               <Link to="" className="flex items-center gap-2 p-2 rounded hover:bg-[#c7c7c7]">
                 <FontAwesomeIcon icon={faChartLine} /> Insights
               </Link>
@@ -116,9 +118,10 @@ export default function Layout({ children }: LayoutProps) {
         </aside>
 
         {/* Zone principale */}
-        <main className="p-4 overflow-y-auto bg-white md:rounded-tr-2xl">
+        <main className="w-full overflow-y-auto md:rounded-tr-2xl">
           {/* {children || <Outlet />} */}
           <MyfastProfile></MyfastProfile>
+          {/* <InsightPage></InsightPage> */}
         </main>
       </div>
 
