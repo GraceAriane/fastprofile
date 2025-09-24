@@ -27,14 +27,16 @@ export function Index(){
     return(
         <> 
             <div >
+                {/*  */}
                 <div className="">
                     <div className="m-auto w-[90%]">
                         <Header isSticky={isSticky} ancrePricing="#tarifs" ancreFeatures="#fonctionnalités" ancreFaq="#faq"/>
                     </div>
                     <Hero></Hero>
                 </div>
-                
+                {/* contenu princiapl */}
                 <main>
+                    {/* fonctionnalités de l'application */}
                     <section id="fonctionnalités" className="py-24 md:py-32 lg:py-30">
                         <div className="w-[90%] mx-auto mb-6">
                             <h2 className="scroll-m-20 pb-2 text-[6.5vw] text-[#1E3A8A] font-bold tracking-tight first:mt-0 text-center md:text-[4.5vw] lg:text-[3.5vw]">
@@ -83,6 +85,7 @@ export function Index(){
                                 Tarification simple avec des fonctionnalités puissantes, annulez à tout moment.
                             </p> 
                         </div>
+                        {/* prix des plans */}
                         <div className="my-6 mx-auto p-4 flex flex-wrap justify-center items-center gap-8 w-[90%] md:flex-col lg:flex-row lg:w-auto">
                             <Price
                                 titre="Gratuit"
@@ -141,6 +144,7 @@ export function Index(){
                     <section>
 
                     </section>
+                    {/* reponse au question */}
                     <section id="faq" className="bg-[#FFFFFF] text-[#1E3A8A] py-10 md:py-20 lg:py-24">
                         <Faq></Faq>
                     </section>

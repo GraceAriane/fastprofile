@@ -78,6 +78,7 @@ export function Design() {
     setContent(content);
     setOpen(true);
   };
+  // contenu pour les différents styles comme le thème
   const contentDrawer = (
     content: "Profil" | "Thème" | "Fond" | "Style" | null
   ) => {
@@ -226,9 +227,11 @@ export function Design() {
 
   return (
     <div className="">
+      {/* rendu mobile */}
       <div className="min-h-screen grid grid-cols-1 grid-rows-[85px_1fr] md:hidden">
         <DNavbar></DNavbar>
 
+        {/* page de profil */}
         <div
           className={`border-1 rounded-tl-4xl rounded-tr-4xl relative transition-all duration-500 overflow-auto  ${open ? "scale-70 -translate-y-22 w-9/12 mx-auto" : "scale-100"} `}
         >
@@ -241,6 +244,7 @@ export function Design() {
           ></UserPage>
         </div>
 
+        {/* barre de navigation */}
         <div className="fixed z-50 rounded-[24px] left-1/2 -translate-x-1/2 bottom-3.5 p-4 shadow-lg flex items-center justify-center bg-[#fff]">
           <Button
             variant="ghost"
@@ -276,6 +280,7 @@ export function Design() {
           </Button>
         </div>
 
+        {/* Page utilisateur */}
         <div
           className={`grid grid-cols-1 grid-rows-[40px_1fr] gap-2 h-[60%] p-4 absolute bottom-0 left-0 right-0  ${open ? "translate-y-0" : "hidden translate-y-full"} z-1000 shadow-2xl rounded-tl-2xl rounded-tr-2xl bg-white transition-transform duration-500`}
         >
@@ -295,7 +300,9 @@ export function Design() {
         </div>
       </div>
 
+      {/* rendu à partir de tablette */}
       <div className="h-screen overflow-hidden hidden md:flex flex-col bg-[#1E3A8A]">
+      {/* publicité */}
         <div className="shrink-0">
           <Pub />
         </div>
@@ -305,13 +312,13 @@ export function Design() {
           {/* grid-cols-[auto_1fr_310px] xl:grid-cols-[250px_1fr_450px] 2xl:grid-cols-[250px_1fr_500px] */}
 
           <div className="h-full overflow-y-auto grid grids-rows-[60px_1fr] ">
-
+            {/* barre de navigation */}
             <div className="bg-[#F9FAFB] rounded-tl-2xl rounded-tr-2xls sticky top-0">
               <DNavbar></DNavbar>
             </div>
 
             <div className="h-full overflow-auto grid grid-cols-[60px_1fr] gap-4 xl:grid-cols-[200px_1fr]">
-
+              {/* barre de contenus */}
               <div className="flex flex-col pl-7 pt-6 pr-3 gap-2 text-[#696969] xl:pt-3">
                 <Button
                   variant="ghost"
@@ -343,6 +350,7 @@ export function Design() {
                 </Button>
               </div>
 
+              {/* application des contenus */}
               <div className="overflow-y-auto p-4 flex flex-col gap-14 max-w-[1024px] 2xl:justify-self-center 2xl:w-[800px] 2xl:max-w-[800px]">
                 <div className="max-w-[700px] 2xl:max-w-[800px]">
                   <h2 className="text-2xl mb-4 font-semibold">Profil</h2>
@@ -368,6 +376,7 @@ export function Design() {
 
           </div>
 
+          {/* page de l'utilisateur et son bouton pour ouvrir*/}
           <div className="flex flex-col items-center h-full">
 
             <div className="mt-4 mb-4 xl:mb-8">
@@ -378,7 +387,7 @@ export function Design() {
                 </Button>
               </a>
             </div>
-
+            
             <div className=" xl:h-full xl:mb-10">
               <UserPage
                 user={mockUser}

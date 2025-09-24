@@ -28,16 +28,16 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Trending up this month <IconTrendingUp className="size-4" />
+            Tendance à la haute ce mois-ci <IconTrendingUp className="size-4" />
           </div>
           <div className="text-neutral-500 dark:text-neutral-400">
-            Visitors for the last 6 months
+            Visiteurs des 6 derniers mois
           </div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>New Customers</CardDescription>
+          <CardDescription>Nouveau utilisateurs</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             1,234
           </CardTitle>
@@ -50,16 +50,16 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Down 20% this period <IconTrendingDown className="size-4" />
+            Diminution de 20% cette période <IconTrendingDown className="size-4" />
           </div>
           <div className="text-neutral-500 dark:text-neutral-400">
-            Acquisition needs attention
+            L’acquisition nécessite une attention particulière
           </div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Active Accounts</CardDescription>
+          <CardDescription>comptes actifs</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             45,678
           </CardTitle>
@@ -72,14 +72,14 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Strong user retention <IconTrendingUp className="size-4" />
+            Forte fidélisation des utilisateurs <IconTrendingUp className="size-4" />
           </div>
-          <div className="text-neutral-500 dark:text-neutral-400">Engagement exceed targets</div>
+          <div className="text-neutral-500 dark:text-neutral-400">L’engagement dépasse les objectifs</div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Growth Rate</CardDescription>
+          <CardDescription>Taux de croissance</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             4.5%
           </CardTitle>
@@ -92,7 +92,7 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Steady performance increase <IconTrendingUp className="size-4" />
+            Augmentation constante des performances <IconTrendingUp className="size-4" />
           </div>
           <div className="text-neutral-500 dark:text-neutral-400">Meets growth projections</div>
         </CardFooter>

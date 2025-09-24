@@ -28,6 +28,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
+import { MyfastProfile } from "~/pages/adminFastprofile";
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -116,7 +117,8 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Zone principale */}
         <main className="p-4 overflow-y-auto bg-white md:rounded-tr-2xl">
-          {children || <Outlet />}
+          {/* {children || <Outlet />} */}
+          <MyfastProfile></MyfastProfile>
         </main>
       </div>
 
