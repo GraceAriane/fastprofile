@@ -45,7 +45,7 @@ export function MyfastProfile() {
 
 
   return (
-    <div className=" bg-[#F9FAFB] md:overflow-hidden md:h-full">
+    <div className="md:overflow-hidden md:h-full">
       {/* rendu responsive */}
       <div className="md:hidden">
         {/* barre avec photo et bouton */}
