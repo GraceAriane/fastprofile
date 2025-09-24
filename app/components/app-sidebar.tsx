@@ -33,8 +33,8 @@ import {
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Admin",
+    email: "tchoukeugrace@gmail.com",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
@@ -44,39 +44,39 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
+      title: "Utilisateurs",
       url: "#",
       icon: IconListDetails,
     },
     {
-      title: "Analytics",
+      title: "Profil",
       url: "#",
       icon: IconChartBar,
     },
     {
-      title: "Projects",
+      title: "Plans",
       url: "#",
       icon: IconFolder,
     },
     {
-      title: "Team",
+      title: "Analyses",
       url: "#",
       icon: IconUsers,
     },
   ],
   navClouds: [
     {
-      title: "Capture",
+      title: "Contenus",
       icon: IconCamera,
       isActive: true,
       url: "#",
       items: [
         {
-          title: "Active Proposals",
+          title: "Templates",
           url: "#",
         },
         {
-          title: "Archived",
+          title: "FAQ",
           url: "#",
         },
       ],
@@ -114,34 +114,29 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Settings",
+      title: "Paramètres",
       url: "#",
       icon: IconSettings,
     },
     {
-      title: "Get Help",
+      title: "Aide",
       url: "#",
       icon: IconHelp,
     },
     {
-      title: "Search",
+      title: "Rechercher",
       url: "#",
       icon: IconSearch,
     },
   ],
   documents: [
     {
-      name: "Data Library",
-      url: "#",
-      icon: IconDatabase,
-    },
-    {
       name: "Reports",
       url: "#",
       icon: IconReport,
     },
     {
-      name: "Word Assistant",
+      name: "Exporter les données",
       url: "#",
       icon: IconFileWord,
     },
@@ -160,7 +155,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <a href="#">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">FastProfile</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

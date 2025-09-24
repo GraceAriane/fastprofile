@@ -20,6 +20,7 @@ export function DashboardPage() {
         } as React.CSSProperties
       }
     >
+      
       <AppSidebar variant="inset" />
       <SidebarInset>
         <SiteHeader />

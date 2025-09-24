@@ -21,6 +21,7 @@ interface Props{
 export function DialogLink() {
 
   return (
+    // pour ajouter un lien
     <Dialog >
       <form >
         <DialogTrigger asChild>

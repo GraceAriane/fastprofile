@@ -15,6 +15,7 @@ interface dataProps{
 
 export function LinkButton({name, link}: dataProps){
     return(
+        // lien ajouté
         <form action="" className="shadow-xs flex border-[#acacac81] border bg-white rounded-2xl p-4 md:gap-2 lg:gap-0">
             <div className=" flex flex-col gap-3 w-[60%] lg:w-[80%]">
                 <h4 className="font-semibold text-[17px] truncate">{name}</h4>

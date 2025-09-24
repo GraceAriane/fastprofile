@@ -56,7 +56,8 @@ export function UserPage({user, variant = "admin", theme = "light", style="round
                     <h1 className={`font-semibold mt-2 ${selectedTheme.police} ${variant === "admin" ? "text-[12px] md:text-[18px]": variant=="design" ? "text-[24px] md:text-[18px]" : "text-2xl md:text-[25px]"}`}>{user.name}</h1>
                     <p className={`text-center ${selectedTheme.police} ${variant === "admin" ? "text-[8px] md:text-[12px]" : variant=="design" ?  "md:text-[12px]": "md:text-[16px]"}`}>{user.description}</p>
                 </div>
-                            
+
+                {/* Liens ajoutés */}
                 <div className={`mt-2 ${variant === "admin" ? "text-[8px] md:text-[14px] md:w-11/12" : "text-[18px] w-11/12 md:text-[14px]" } ${variant=="preview" ? "mt-5" : ""}`}>
                     <ul className={`flex flex-col ${variant === "admin" ? "gap-2 md:gap-3" : variant=="design" ? "gap-3": "gap-3 md:gap-5"}`}>
                         {user.links.map((link, idx) => (

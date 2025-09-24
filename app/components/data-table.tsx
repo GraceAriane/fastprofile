@@ -659,6 +659,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
         <DrawerHeader className="gap-1">
           <DrawerTitle>{item.header}</DrawerTitle>
           <DrawerDescription>
+
             Showing total visitors for the last 6 months
           </DrawerDescription>
         </DrawerHeader>
@@ -772,7 +773,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                 <Input id="target" defaultValue={item.target} />
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Limit</Label>
+                <Label htmlFor="limit">Limites</Label>
                 <Input id="limit" defaultValue={item.limit} />
               </div>
             </div>
