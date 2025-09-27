@@ -16,7 +16,7 @@ export function SectionCards() {
       <Card className="@container/card">
         <CardHeader>
           <CardDescription>Total Revenue</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl text-[]">
             $1,250.00
           </CardTitle>
           <CardAction>
@@ -80,7 +80,7 @@ export function SectionCards() {
       <Card className="@container/card">
         <CardHeader>
           <CardDescription>Taux de croissance</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl text-[#]">
             4.5%
           </CardTitle>
           <CardAction>
@@ -94,7 +94,7 @@ export function SectionCards() {
           <div className="line-clamp-1 flex gap-2 font-medium">
             Augmentation constante des performances <IconTrendingUp className="size-4" />
           </div>
-          <div className="text-neutral-500 dark:text-neutral-400">Meets growth projections</div>
+          <div className="text-neutral-500 dark:text-neutral-400">Conforme aux projections de croissance</div>
         </CardFooter>
       </Card>
     </div>
