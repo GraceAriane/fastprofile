@@ -13,6 +13,7 @@ export default [
         route("design","routes/design.tsx")
         
     ]),
+    route("Unboarding","pages/unboarding.tsx"),
     route("dashboard","routes/dashboard.tsx"),
     route("tchoukeugrace", "routes/preview.tsx")
    

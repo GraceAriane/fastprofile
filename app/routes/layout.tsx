@@ -126,20 +126,20 @@ export default function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Navigation mobile */}
-      <footer className="md:hidden fixed bottom-0 left-0 right-0 bg-[#F2F1ED] border-t flex justify-around py-2 text-[#666]">
-        <Link to="" className="flex flex-col items-center">
+      <footer className="md:hidden fixed bottom-0 left-0 right-0 bg-[#F2F1ED] border-t flex justify-around py-1 pt-3 text-[#666]">
+        <Link to="" className="flex flex-col items-center gap-2">
           <FontAwesomeIcon icon={faArrowUpFromBracket} className="text-xl" />
           <span className="text-xs">FastProfile</span>
         </Link>
-        <Link to="" className="flex flex-col items-center">
+        <Link to="" className="flex flex-col items-center gap-2">
           <FontAwesomeIcon icon={faChartLine} className="text-xl" />
           <span className="text-xs">Insights</span>
         </Link>
-        <Link to="" className="flex flex-col items-center">
+        <Link to="" className="flex flex-col items-center gap-2">
           <FontAwesomeIcon icon={faUserGroup} className="text-xl" />
           <span className="text-xs">Audience</span>
         </Link>
-        <Link to="" className="flex flex-col items-center">
+        <Link to="" className="flex flex-col items-center gap-2">
           <FontAwesomeIcon icon={faBars} className="text-xl" />
           <span className="text-xs">Plus</span>
         </Link>

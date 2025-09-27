@@ -660,7 +660,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
           <DrawerTitle>{item.header}</DrawerTitle>
           <DrawerDescription>
 
-            Showing total visitors for the last 6 months
+            Affichage du nombre total de visiteurs au cours des 6 derniers mois
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
@@ -709,13 +709,13 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
               <Separator />
               <div className="grid gap-2">
                 <div className="flex gap-2 leading-none font-medium">
-                  Trending up by 5.2% this month{""}
+                  Tendance à la hausse de 5,2 % ce mois-ci{""}
                   <IconTrendingUp className="size-4" />
                 </div>
                 <div className="text-neutral-500 dark:text-neutral-400">
-                  Showing total visitors for the last 6 months. This is just
-                  some random text to test the layout. It spans multiple lines
-                  and should wrap around.
+                  Affichage du nombre total de visiteurs des 6 derniers mois.
+                  Ceci est un texte aléatoire pour tester la mise en page.
+                  Il s'étend sur plusieurs lignes et devrait s'enrouler autour.
                 </div>
               </div>
               <Separator />
@@ -723,7 +723,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
           )}
           <form className="flex flex-col gap-4">
             <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Header</Label>
+              <Label htmlFor="header">Noms</Label>
               <Input id="header" defaultValue={item.header} />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -754,7 +754,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                 </Select>
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="status">Status</Label>
+                <Label htmlFor="status">Statut</Label>
                 <Select defaultValue={item.status}>
                   <SelectTrigger id="status" className="w-full">
                     <SelectValue placeholder="Select a status" />
@@ -778,7 +778,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Label htmlFor="reviewer">Reviewer</Label>
+              <Label htmlFor="reviewer">Revues</Label>
               <Select defaultValue={item.reviewer}>
                 <SelectTrigger id="reviewer" className="w-full">
                   <SelectValue placeholder="Select a reviewer" />
@@ -795,9 +795,9 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
           </form>
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button>Sousmettre</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Done</Button>
+            <Button variant="outline">Terminer</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
