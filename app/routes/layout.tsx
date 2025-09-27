@@ -117,21 +117,14 @@ export default function Layout({ children }: LayoutProps) {
           </nav>
         </aside>
 
-<<<<<<< HEAD
-        <div className="overflow-auto md:rounded-tr-2xl bg-[#F9FAFB]">
-          <MyfastProfile></MyfastProfile>
-          {/* <InsightPage></InsightPage> */}
-          {/* <Parameter></Parameter> */}
-          {/* {children || <Outlet/>} */}
-        </div>
-=======
+
         {/* Zone principale */}
         <main className="w-full overflow-y-auto md:rounded-tr-2xl">
           {/* {children || <Outlet />} */}
           <MyfastProfile></MyfastProfile>
           {/* <InsightPage></InsightPage> */}
         </main>
->>>>>>> dev_ariane
+
       </div>
 
       {/* Navigation mobile */}
