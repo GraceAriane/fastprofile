@@ -5,22 +5,25 @@ import { Label } from "~/components/ui/label"
 import google from "../assets/images/google.png"
 import { Link } from "react-router"
 import { useState } from "react"
+import { signIn, signInWithGoogle } from "~/services/authService"
+import { useNavigate } from "react-router"
+
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
 
-  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState<{ username?: string; password?: string }>({})
-
+  // verification des inputs simplifiée
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
     const newErrors: { username?: string; password?: string } = {}
 
-    if (!username) newErrors.username = "Le nom d’utilisateur est obligatoire"
+    if (!email) newErrors.username = "Le nom d’utilisateur est obligatoire"
     if (!password) {
       newErrors.password = "Le mot de passe est obligatoire"
     } else if (password.length < 6) {
@@ -32,7 +35,31 @@ export function LoginForm({
       return
     }
 
-    console.log("✅ Formulaire soumis :", { username, password })
+    console.log("✅ Formulaire soumis :", { email, password })
+  }
+
+  let navigate = useNavigate()
+
+  // redirection vers admin après connexion
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signIn(email, password)
+      console.log("Utilisateur connecté:", userCredential.user)
+      navigate("/admin")
+    } catch (err) {
+      alert("Connexion échouée.")
+    }
+  }
+  
+  //connexion avec google
+  const handleGoogle = async () => {
+    try{
+      const result = await signInWithGoogle()
+      console.log("Connecté avec Google:", result.user)
+      navigate("/admin") 
+    } catch (err) {
+      console.error("Erreur Google:", err)
+    }
   }
 
   return (
@@ -51,8 +78,8 @@ export function LoginForm({
             type="email" 
             placeholder="m@example.com" 
             required 
-            value={username}
-           onChange={(e)=> setUsername(e.target.value)}
+            value={email}
+           onChange={(e)=> setEmail(e.target.value)}
           />
         </div>
         <div className="grid gap-3">
@@ -73,7 +100,11 @@ export function LoginForm({
            onChange={(e)=>{setPassword(e.target.value)}}
           />
         </div>
-        <Button type="submit" className="w-full bg-[#1E3A8A] text-white hover:bg-[#2547A7] hover:transition-all">
+        <Button 
+         type="submit" 
+         className="w-full bg-[#1E3A8A] text-white hover:bg-[#2547A7] hover:transition-all"
+         onClick={handleLogin}
+        >
           connexion
         </Button>
         <div className="after:border-neutral-200 relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t dark:after:border-neutral-800">
@@ -81,11 +112,17 @@ export function LoginForm({
             Ou continuez avec
           </span>
         </div>
-        <Button variant="outline" className="w-full cursor-pointer hover:bg-[#D1D1D1] hover:transition-all hover:border-none">
+        {/* connexion avec google */}
+        <Button 
+          variant="outline" 
+          className="w-full cursor-pointer hover:bg-[#D1D1D1] hover:transition-all hover:border-none"
+          onClick={handleGoogle}
+        >
           <img src={google} alt="icone de google" className="w-5"/>
           Continuer avec Google
         </Button>
       </div>
+      {/* cas où l'utilisateur n'a pas de compte */}
       <div className="text-center text-sm">
         Pas encore de compte?{""}
         <Link to="/signup" className="underline underline-offset-4 ml-1">
