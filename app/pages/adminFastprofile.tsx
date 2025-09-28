@@ -30,10 +30,11 @@ import { useRef } from "react";
 import { Dialog } from "~/components/ui/dialog";
 import { LinkButton } from "~/components/link";
 import { DialogLink } from "~/components/dialog-link";
+import { useState } from "react";
 
 const mockUser: User = {
   name: "tchoukeu grace",
-  avatar: "https://i.pravatar.cc/150?img=3",
+  avatar: "https://github.com/shadcn.png",
   description: "Entrepreneur",
   links: [
     { title: "Mon GitHub", url: "https://github.com/" },
@@ -41,8 +42,23 @@ const mockUser: User = {
   ],
 };
 
-export function MyfastProfile() {
+interface LinkItem {
+  id: string
+  name: string
+  url: string
+}
 
+export function MyfastProfile() {
+  const [links, setLinks] = useState<LinkItem[]>([])
+
+  const addLink = (name: string, url: string) => {
+    const newLink: LinkItem = { id: Date.now().toString(), name, url }
+    setLinks((prev) => [...prev, newLink])
+  }
+
+  const deleteLink = (id: string) => {
+    setLinks((prev) => prev.filter((link) => link.id !== id))
+  }
 
   return (
     <div className="md:overflow-hidden md:h-full">
@@ -170,13 +186,15 @@ export function MyfastProfile() {
               </div>
 
               <div className="w-full">
-                <DialogLink></DialogLink>
+                <DialogLink onAddLink={addLink}/>
 
               </div>
             </div>
 
             <div className="flex flex-col items-center">
-              {/* <div className="loader text-[#b1b1b1] flex flex-col items-center justify-center gap-2 mb-14">
+              {
+                links.length === 0 ? (
+                  <div className="loader text-[#b1b1b1] flex flex-col items-center justify-center gap-2 mb-14">
                 <p>
                   <FontAwesomeIcon
                     icon={faBoltLightning}
@@ -186,11 +204,27 @@ export function MyfastProfile() {
                 <p className="w-1/2 text-center">
                   Montrez qui vous êtes en partageant des liens. Ajoutez un lien.
                 </p>
-              </div> */}
-              <div className="w-10/12 flex flex-col gap-4 lg:mb-22">
-                <LinkButton name="Mon GitHub" link="https://github.com/tchoukeugrace"></LinkButton>
-                <LinkButton name="Mon LinkedIn" link="https://LinkedIn.com/tchoukeugrace"></LinkButton>
               </div>
+                ) : (
+                  <div>
+                    {/* <LinkButton id="1" name="Mon GitHub" link="" /> */}
+                    <div className="w-10/12 flex flex-col gap-4 lg:mb-22">
+                    {links.map((link) => (
+                      <LinkButton
+                        key={link.id}
+                        id={link.id}
+                        name={link.name}
+                        link={link.url}
+                        onDelete={deleteLink}
+                      />
+                    ))}
+                  </div>
+                  </div>
+
+                )
+              }
+              {/*  */}
+
             </div>
 
           </div>

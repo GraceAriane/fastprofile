@@ -1,9 +1,9 @@
+import { useState } from "react"
 import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -11,46 +11,69 @@ import {
 } from "~/components/ui/dialog"
 import { Input } from "~/components/ui/input"
 import { Label } from "~/components/ui/label"
-import { Textarea } from "./ui/textarea"
 
-interface Props{
-    name: string
+interface DialogLinkProps {
+  onAddLink: (name: string, link: string) => void
 }
 
+export function DialogLink({ onAddLink }: DialogLinkProps) {
+  const [name, setName] = useState("")
+  const [url, setUrl] = useState("")
 
-export function DialogLink() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!name || !url) return
+    onAddLink(name, url)
+    setName("")
+    setUrl("")
+  }
 
   return (
-    // pour ajouter un lien
-    <Dialog >
-      <form >
-        <DialogTrigger asChild>
-            <Button className="w-full p-7 text-[17px] font-medium bg-[#3B57A3] text-white hover:transition-all rounded-4xl md:p-6 mb-2 cursor-pointer">
-                Ajouter
-            </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className="w-full p-7 text-[17px] font-medium bg-[#3B57A3] text-white hover:transition-all rounded-4xl md:p-6 mb-2 cursor-pointer">
+          Ajouter
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <form onSubmit={handleSubmit}>
           <DialogHeader>
-            <DialogTitle className="text-[18px]">Entrez un lien</DialogTitle>
+            <DialogTitle className="text-[18px] mb-3">Entrez un lien</DialogTitle>
           </DialogHeader>
 
           <div className="grid gap-4">
             <div className="grid gap-3">
               <Label htmlFor="name-1">Nom du lien</Label>
-              <Input className="" id="name-1" name="name" defaultValue="Pedro Duarte" maxLength={30}/>
+              <Input
+                id="name-1"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                maxLength={30}
+              />
             </div>
-            <div className="grid gap-3">
-              <Label htmlFor="textarea">url</Label>
-              <Input className="resize-none" id="textarea" maxLength={50}/>
+            <div className="grid gap-3 mb-3">
+              <Label htmlFor="url">URL</Label>
+              <Input
+                id="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                maxLength={100}
+              />
             </div>
           </div>
 
-          <DialogFooter className="">
-            <Button type="submit" className="w-full shadow-none rounded-3xl bg-[#1E3A8A] text-white py-5">Enregistrer</Button>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button
+                type="submit"
+                className="w-full shadow-none rounded-3xl bg-[#1E3A8A] text-white py-5"
+              >
+                Enregistrer
+              </Button>
+            </DialogClose>
           </DialogFooter>
-        </DialogContent>
-      </form>
+        </form>
+      </DialogContent>
     </Dialog>
   )
 }

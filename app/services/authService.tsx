@@ -4,52 +4,20 @@ import { signInWithEmailAndPassword } from "firebase/auth"
 import { signInWithPopup } from "firebase/auth"
 import { signOut } from "firebase/auth"
 import { doc, setDoc, getDoc } from "firebase/firestore"
-
-
-// // inscription avec email et password
-
-// export const signUp = async (email: string, password: string) => {
-//   try {
-//     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-//     console.log("Utilisateur inscrit:", userCredential.user)
-//   } catch (error) {
-//     console.error("Erreur d'inscription:", error)
-//   }
-// }
-
-// //connexion avec email et password
-
-// export const signIn = async (email: string, password: string) => {
-//   try {
-//     const userCredential = await signInWithEmailAndPassword(auth, email, password)
-//     console.log("Utilisateur connecté:", userCredential.user)
-//   } catch (error) {
-//    alert("Connexion echoué. Veuillez réessayer.")
-//   }
-// }
-
-// //connexion avec google 
-
-// export const signInWithGoogle = async () => {
-//   try {
-//     const result = await signInWithPopup(auth, googleProvider)
-//     console.log("Connecté avec Google:", result.user)
-    
-//   } catch (error) {
-//     console.error("Erreur Google:", error)
-//   }
-// }
-
+import { generateUsernameFromEmail } from "~/config/utils/usernameGenerator"
 
 // inscription
 export const signUp = async (email: string, password: string) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
   const user = userCredential.user
 
+  const username = generateUsernameFromEmail(user.email || "")
+
   // Sauvegarde dans Firestore
   await setDoc(doc(db, "users", user.uid), {
     uid: user.uid,
     email: user.email,
+    username,
     createdAt: new Date(),
     provider: "password",
   })
@@ -70,6 +38,7 @@ export const signIn = async (email: string, password: string) => {
 export const signInWithGoogle = async () => {
   const result = await signInWithPopup(auth, googleProvider)
   const user = result.user
+  const username = generateUsernameFromEmail(user.email || "")
 
   // Vérifie si déjà en base
   const userRef = doc(db, "users", user.uid)
@@ -80,6 +49,7 @@ export const signInWithGoogle = async () => {
       uid: user.uid,
       email: user.email,
       name: user.displayName,
+      username,
       photoURL: user.photoURL,
       createdAt: new Date(),
       provider: "google",

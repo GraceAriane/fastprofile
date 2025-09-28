@@ -3,7 +3,7 @@ import type { User } from "~/types/user";
 
 const mockUser: User = {
   name: "tchoukeu grace",
-  avatar: "https://i.pravatar.cc/150?img=3",
+  avatar: "https://github.com/shadcn.png",
   description: "Entrepreneur",
   links: [
     { title: "Mon GitHub", url: "https://github.com/" },

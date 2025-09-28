@@ -36,7 +36,7 @@ import { backgrounds,type BackgroundType } from "~/config/backgrounds";
 
 export function Design() {
 
-  const [avatar, setAvatar] = useState("https://i.pravatar.cc/150?img=3")
+  const [avatar, setAvatar] = useState("https://github.com/shadcn.png")
   const fileInputRef = useRef<HTMLInputElement | null>(null)
 
   const mockUser: User = {
@@ -51,6 +51,8 @@ export function Design() {
 
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState<keyof typeof themes>("light");
+
+  
   const [content, setContent] = useState<
     "Profil" | "Thème" | "Fond" | "Style" | null
   >(null);
