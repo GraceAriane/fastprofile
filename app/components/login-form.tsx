@@ -47,10 +47,10 @@ export function LoginForm({
       console.log("Utilisateur connecté:", userCredential.user)
       navigate("/admin")
     } catch (err) {
-      alert("Connexion échouée.")
+      alert("Connexion échouée." )
     }
   }
-  
+
   //connexion avec google
   const handleGoogle = async () => {
     try{
@@ -63,7 +63,13 @@ export function LoginForm({
   }
 
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props}>
+    <form 
+      onSubmit={(e) => {
+        e.preventDefault() 
+        handleLogin()
+      }}
+      className={cn("flex flex-col gap-6", className)} {...props}
+    >
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-[27px] font-black">Bon retour parmi nous !</h1>
         <p className="text-neutral-500 text-sm text-balance dark:text-neutral-400">
@@ -103,7 +109,7 @@ export function LoginForm({
         <Button 
          type="submit" 
          className="w-full bg-[#1E3A8A] text-white hover:bg-[#2547A7] hover:transition-all"
-         onClick={handleLogin}
+         
         >
           connexion
         </Button>

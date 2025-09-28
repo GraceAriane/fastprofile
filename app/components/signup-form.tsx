@@ -65,9 +65,16 @@ export function SignUpForm({
       console.error("Erreur Google:", err)
     }
   }
+  
 
   return (
-    <form  className={cn("flex flex-col gap-6", className)} {...props}>
+    <form   
+      onSubmit={(e) => {
+      e.preventDefault(); 
+      handleSignup();
+      }}  
+      className={cn("flex flex-col gap-6", className)} {...props}
+    >
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-[35px] font-bold">Rejoignez FastProfile</h1>
         <p className="text-neutral-500 text-sm text-balance dark:text-neutral-400">
@@ -109,7 +116,7 @@ export function SignUpForm({
         <Button 
           type="submit" 
           className="w-full bg-[#1E3A8A] text-white  py-6 rounded-4xl hover:bg-[#2547A7] hover:transition-all"
-          onClick={handleSignup}
+          
         >
           Inscription
         </Button>

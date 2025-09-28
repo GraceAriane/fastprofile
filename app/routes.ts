@@ -8,9 +8,10 @@ export default [
         index("routes/admin.tsx"),
         layout("routes/layout.tsx",[
             index("pages/adminFastprofile.tsx"),
-            route("insights", "routes/insights.tsx")
+            
         ]),
-        route("design","routes/design.tsx")
+        route("design","routes/design.tsx"),
+        route("insights", "routes/insights.tsx")
         
     ]),
     route("Unboarding","pages/unboarding.tsx"),

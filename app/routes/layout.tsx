@@ -30,14 +30,30 @@ import {
 } from "~/components/ui/accordion";
 import { MyfastProfile } from "~/pages/adminFastprofile";
 import { InsightPage } from "~/pages/adminInsights";
+import { logout } from "~/services/authService";
+import { useNavigate } from "react-router";
 
 
 interface LayoutProps {
   children?: React.ReactNode;
 }
 
+
 export default function Layout({ children }: LayoutProps) {
   const active = "bg-[#c7c7c7]";
+
+  let navigate = useNavigate()
+
+  const handleLogout = async () =>{
+    try {
+      const result = await logout()
+      console.log("Utilisateur déconnecté")
+      navigate("/")
+
+    } catch (err) {
+      console.error("Erreur déconnexion:", err)
+    }
+  }
 
   return (
     <div className="flex flex-col h-screen bg-[#F9FAFB]">
@@ -61,7 +77,7 @@ export default function Layout({ children }: LayoutProps) {
                 <FontAwesomeIcon icon={faAngleDown} className="ml-1 text-xs" />
               </span>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="rounded-2xl">
+            <DropdownMenuContent className="rounded-2xl ml-3">
               <DropdownMenuLabel className="flex items-center gap-2">
                 <img
                   src="https://github.com/shadcn.png"
@@ -69,18 +85,35 @@ export default function Layout({ children }: LayoutProps) {
                   className="w-[32px] h-[32px] rounded-full"
                 />
                 <div>
-                  <p className="text-sm font-medium text-[#373737]">tchoukeugrace</p>
-                  <p className="text-xs text-gray-500">fastprofile.com/tchou...</p>
+                  <p className="text-sm font-medium text-[#373737]">tchukeugrace</p>
+                  <p className="text-xs text-gray-500 truncate w-[120px]">fastprofile.com/tchoukeugrace</p>
                 </div>
                 <Button size="sm" variant="outline" className="rounded-3xl">
                   Free
                 </Button>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem><FontAwesomeIcon icon={faUser} /> Compte</DropdownMenuItem>
-              <DropdownMenuItem><FontAwesomeIcon icon={faBoltLightning} /> Upgrade</DropdownMenuItem>
-              <DropdownMenuItem><FontAwesomeIcon icon={faCircleQuestion} /> Aide</DropdownMenuItem>
-              <DropdownMenuItem><FontAwesomeIcon icon={faArrowRightFromBracket} /> Déconnexion</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Button variant="ghost">
+                  <FontAwesomeIcon icon={faUser} /> Compte
+                </Button>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Button variant="ghost">
+                  <FontAwesomeIcon icon={faBoltLightning} /> Upgrade
+                </Button>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Button variant="ghost">
+                  <FontAwesomeIcon icon={faCircleQuestion} /> Aide
+                </Button>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+               <Button variant="ghost" onClick={handleLogout}>
+                  <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                  Déconnexion
+               </Button>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -107,7 +140,7 @@ export default function Layout({ children }: LayoutProps) {
             </Accordion>
 
             <div className="mt-2 flex flex-col gap-2">
-              <Link to="" className="flex items-center gap-2 p-2 rounded hover:bg-[#c7c7c7]">
+              <Link to="insights" className="flex items-center gap-2 p-2 rounded hover:bg-[#c7c7c7]">
                 <FontAwesomeIcon icon={faChartLine} /> Insights
               </Link>
               <Link to="" className="flex items-center gap-2 p-2 rounded hover:bg-[#c7c7c7]">

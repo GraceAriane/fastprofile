@@ -1,7 +1,10 @@
-import { auth, googleProvider } from "~/config/firebaseConfig"
+import { auth, googleProvider, db } from "~/config/firebaseConfig"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { signInWithPopup } from "firebase/auth"
+import { signOut } from "firebase/auth"
+import { doc, setDoc, getDoc } from "firebase/firestore"
+
 
 // // inscription avec email et password
 
@@ -40,15 +43,53 @@ import { signInWithPopup } from "firebase/auth"
 
 // inscription
 export const signUp = async (email: string, password: string) => {
-  return await createUserWithEmailAndPassword(auth, email, password)
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+  const user = userCredential.user
+
+  // Sauvegarde dans Firestore
+  await setDoc(doc(db, "users", user.uid), {
+    uid: user.uid,
+    email: user.email,
+    createdAt: new Date(),
+    provider: "password",
+  })
+
+  return userCredential
 }
 
 // connexion
 export const signIn = async (email: string, password: string) => {
-  return await signInWithEmailAndPassword(auth, email, password)
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password)
+    return userCredential
+  } catch (error: any) {
+    console.error("Erreur Firebase signIn:", error.code, error.message)
+    throw error
+  }
+}
+export const signInWithGoogle = async () => {
+  const result = await signInWithPopup(auth, googleProvider)
+  const user = result.user
+
+  // Vérifie si déjà en base
+  const userRef = doc(db, "users", user.uid)
+  const snap = await getDoc(userRef)
+
+  if (!snap.exists()) {
+    await setDoc(userRef, {
+      uid: user.uid,
+      email: user.email,
+      name: user.displayName,
+      photoURL: user.photoURL,
+      createdAt: new Date(),
+      provider: "google",
+    })
+  }
+
+  return result
 }
 
-// connexion avec Google
-export const signInWithGoogle = async () => {
-  return await signInWithPopup(auth, googleProvider)
+// deconnexion
+export const logout = async () => {
+    return  await signOut(auth)
 }
